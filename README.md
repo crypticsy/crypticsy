@@ -9,7 +9,7 @@
 
 <img align="left" width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=crypticsy&layout=compact&theme=dark" />
 
-<img width="50%" src="https://github-readme-stats.vercel.app/api?username=crypticsy&hide=prs,contribs&bg_color=#0D1117
+<img width="50%" src="https://github-readme-stats.vercel.app/api?username=crypticsy&hide=prs,contribs&bg_color=0d1117
                                                                 ?username=crypticsy&count_private=true
                                                                 ?username=crypticsy&show_icons=true&theme=dark"
                 alt="crypticsy" />
