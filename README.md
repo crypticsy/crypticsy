@@ -7,9 +7,10 @@
 
 <h2> Github Stats </h2> 
 
-<a href="https://github.com/crypticsy/github-readme-stats"><img align="left" width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=crypticsy&layout=compact&theme=dark" /></a>
+<img align="left" width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=crypticsy&layout=compact&theme=dark" />
 
-<img width="50%" src="https://github-readme-streak-stats.herokuapp.com/?user=crypticsy&theme=dark" alt="crypticsy" />
+
+<img width="50%" src="https://github-readme-stats.vercel.app/api?username=crypticsy&hide=prs,issues,contribs?username=crypticsy&count_private=true?username=crypticsy&show_icons=true&theme=dark" alt="crypticsy" />
 
 <br/>
 
