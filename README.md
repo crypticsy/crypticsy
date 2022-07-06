@@ -7,9 +7,9 @@
 
 <h2> Github Stats </h2> 
 
-<img align="left" width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=crypticsy&layout=compact&theme=dark" />
+<img align="left" width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=crypticsy&layout=compact&bg_color=0D1117,0D1117,0D1117&title_color=fff&text_color=929292" />
 
-<img width="50%" src="https://github-readme-stats.vercel.app/api?username=crypticsy&&count_private=true&show_icons=true&bg_color=000000,000000,000000&title_color=fff&text_color=929292&icon_color=F1E05A" alt="crypticsy" />
+<img width="50%" src="https://github-readme-stats.vercel.app/api?username=crypticsy&&count_private=true&show_icons=true&bg_color=0D1117,0D1117,0D1117&title_color=fff&text_color=929292&icon_color=F1E05A" alt="crypticsy" />
 
 <br/>
 
