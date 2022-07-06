@@ -1,19 +1,19 @@
 ### Hey 👋, It's __Animesh Singh Basnet__ !:smile:
 
 I am a data analytics and machine learning practitioner and learner. Solving a problem and visualizing the insights with the help of machine learning algorithms and data visualization has always looked like a superpower for me. And I am here to follow by dreams, and become more than a mere human who is fascinated by coding.
-<br/> 
+<br/> <br/> 
 
 **Updates:**
 - 🔭 I'm currently working as a Data Analyst at [**Xabit Analytics**](https://xabitanalytics.com/)
 - 🌱 I'm currently learning **Everything**. 
 - 👯 I'm looking to collaborate on **Data Science** and **Machine Learning**
-<br/> 
+<br/> <br/> 
 
 **Github Stats**
 
-<img width="50%" src="https://github-readme-stats.vercel.app/api?username=crypticsy&&count_private=true&show_icons=true&bg_color=0D1117,0D1117,0D1117&title_color=fff&text_color=929292&icon_color=F1E05A" alt="crypticsy" />
+<img width="42%" src="https://github-readme-stats.vercel.app/api?username=crypticsy&&count_private=true&show_icons=true&bg_color=0D1117,0D1117,0D1117&title_color=fff&text_color=929292&icon_color=F1E05A" alt="crypticsy" />
 
-<img align="left" width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=crypticsy&layout=compact&bg_color=0D1117,0D1117,0D1117&title_color=fff&text_color=929292" />
+<img align="left" width="50%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=crypticsy&layout=compact&bg_color=0D1117,0D1117,0D1117&title_color=fff&text_color=929292" />
 
 
 
