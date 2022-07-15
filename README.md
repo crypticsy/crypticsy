@@ -1,4 +1,4 @@
-### Hey 👋, It's __Animesh Singh Basnet__ !:smile:
+### Hey 👋, I'm __Animesh Singh Basnet__ !  (。・ω・。)
 
 I am a data analytics and machine learning practitioner and learner. Solving a problem and visualizing the insights with the help of machine learning algorithms and data visualization tools has always been a superpower for me. And I am here to follow my dreams, and become more than a mere human who is fascinated by coding.
 <br/> <br/> 
