@@ -14,7 +14,7 @@ I am a data analytics and machine learning practitioner and learner who can swit
 <img  align="left" width="50%" src="https://github-readme-stats.vercel.app/api?username=crypticsy&&count_private=true&show_icons=true&bg_color=0D1117&title_color=fff&text_color=929292&icon_color=F1E05A&hide_border=true" alt="crypticsy" />
 
 <img width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=crypticsy&layout=compact&bg_color=0D1117&title_color=fff&text_color=929292&hide_border=true" />
-<br/> <br/> 
+<br/>
 
 **Feeding my pet snake with commits**
 
