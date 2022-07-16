@@ -1,4 +1,4 @@
-### Hey 👋, I'm __Animesh Singh Basnet__ !  (。・ω・。)
+### Hey 👋, Fancy seeing you here ! &nbsp; o(*￣▽￣*)ブ
 
 I am a data analytics and machine learning practitioner and learner. Solving a problem and visualizing the insights with the help of machine learning algorithms and data visualization tools has always been a superpower for me. And I am here to follow my dreams, and become more than a mere human who is fascinated by coding.
 <br/> <br/> 
@@ -15,7 +15,10 @@ I am a data analytics and machine learning practitioner and learner. Solving a p
 
 <img width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=crypticsy&layout=compact&bg_color=0D1117,0D1117,0D1117&title_color=fff&text_color=929292" />
 
+
 ![github contribution grid snake animation](https://raw.githubusercontent.com/crypticsy/crypticsy/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only)![github contribution grid snake animation](https://raw.githubusercontent.com/crypticsy/crypticsy/output/github-contribution-grid-snake.svg#gh-light-mode-only)
+
+
 
 
 <!--
