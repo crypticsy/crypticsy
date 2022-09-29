@@ -4,7 +4,7 @@ I am a data analytics and machine learning practitioner and learner who can swit
 <br/> <br/> 
 
 **Updates:**
-- 🔭 I'm currently working as a Senior Data Analyst at [**Xabit Analytics**](https://xabitanalytics.com/)
+- 🔭 I'm currently working as a Data Analyst at [**Bhoos Games**](https://www.bhoos.com/about/)
 - 🌱 I'm currently learning **Everything**. 
 - 👯 I'm looking to collaborate on **Data Science** and **Machine Learning**
 <br/> <br/> 
@@ -16,7 +16,7 @@ I am a data analytics and machine learning practitioner and learner who can swit
 <img width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=crypticsy&layout=compact&bg_color=0D1117&title_color=fff&text_color=929292&hide_border=true" />
 <br/>
 
-**Watch my pet snake feed on commits:**
+**Watch my pet snake feed on my commits:**
 
 ![github contribution grid snake animation](https://raw.githubusercontent.com/crypticsy/crypticsy/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only)![github contribution grid snake animation](https://raw.githubusercontent.com/crypticsy/crypticsy/output/github-contribution-grid-snake.svg#gh-light-mode-only)
 
