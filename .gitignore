@@ -1,0 +1,10 @@
+# Ignore filetypes for the repo
+*.ipynb
+
+# Ignore folders and files for the repo
+.DS_Store
+
+# Ignore pre-compiled python files
+__pycache__/
+.ipynb_checkpoints/
+build/
