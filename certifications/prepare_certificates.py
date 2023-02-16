@@ -42,7 +42,7 @@ for col, label in [
 
 
 with open("README.md", 'w') as file:
-    file.writelines("# Certifications\n\n## Completed Courses\n\n")
+    file.writelines("# Certifications\n\nA list of online certifications curated over a period of time . . .\n\n<br/>\n\n## Completed Courses\n\n")
     file.writelines("\n".join(output))
     # to make the links open a new tab
     file.writelines("\n\n<base target='_blank'>")
