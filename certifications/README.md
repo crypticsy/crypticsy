@@ -5,6 +5,7 @@ A list of online certifications curated over a period of time . . .
 <br/>
 
 ## Completed Courses
+
 | Name                                                                             | Issuing Organization | Issue date         | Expiry date | Credential URL                                                                                              | 
 | -------------------------------------------------------------------------------- | -------------------- | ------------------ | ----------- | ----------------------------------------------------------------------------------------------------------- | 
 | A Crash Course in Data Science                                                   | Coursera             | August 30, 2020    | NA          | [Link](https://www.coursera.org/account/accomplishments/certificate/S7UGT8KG3H93)                           | 
@@ -50,6 +51,7 @@ A list of online certifications curated over a period of time . . .
 | Data Analyst with Python                                                         | Datacamp             | October 04, 2022   | NA          | [Link](https://www.datacamp.com/statement-of-accomplishment/track/ddbab617ccaec362bf8e3d5866d488d34018cb73) | 
 | Data Scientist with Python                                                       | Datacamp             | October 06, 2022   | NA          | [Link](https://www.datacamp.com/statement-of-accomplishment/track/b35837ca03143c964137a5ec914ee9676ffabe82) | 
 | Python Fundamentals                                                              | Datacamp             | February 06, 2023  | NA          | [Link](https://www.datacamp.com/statement-of-accomplishment/track/c01f406752333750182c8ef4a47af2cff13329e3) | 
+| Advanced SQL                                                                     | Kaggle               | February 22, 2023  | NA          | [Link](https://www.kaggle.com/learn/certification/crypticsy/advanced-sql)                                   | 
 | Intro to SQL                                                                     | Kaggle               | February 02, 2023  | NA          | [Link](https://www.kaggle.com/learn/certification/crypticsy/intro-to-sql)                                   | 
 | Python                                                                           | Kaggle               | February 03, 2023  | NA          | [Link](https://www.kaggle.com/learn/certification/crypticsy/python)                                         | 
 
