@@ -53,6 +53,7 @@ A list of online certifications curated over a period of time . . .
 | Python Fundamentals                                                              | Datacamp             | February 06, 2023  | NA          | [Link](https://www.datacamp.com/statement-of-accomplishment/track/c01f406752333750182c8ef4a47af2cff13329e3) | 
 | Advanced SQL                                                                     | Kaggle               | February 22, 2023  | NA          | [Link](https://www.kaggle.com/learn/certification/crypticsy/advanced-sql)                                   | 
 | Intro to SQL                                                                     | Kaggle               | February 02, 2023  | NA          | [Link](https://www.kaggle.com/learn/certification/crypticsy/intro-to-sql)                                   | 
+| Pandas                                                                           | Kaggle               | February 23, 2023  | NA          | [Link](https://www.kaggle.com/learn/certification/crypticsy/pandas)                                         | 
 | Python                                                                           | Kaggle               | February 03, 2023  | NA          | [Link](https://www.kaggle.com/learn/certification/crypticsy/python)                                         | 
 
 <base target='_blank'>
