@@ -2,7 +2,12 @@
 
 ### Hey :wave:, Fancy seeing you here ! &nbsp; o(_￣ ▽ ￣_)ブ
 
-<hr/>
+<!-- Bio and interest -->
+<div>
+<p align="justify">
+In the realm of data, I approach each challenge with a mindset akin to Alan Turing's insatiable curiosity, determined to decipher and connect the narrative within the numbers. I embrace new challenges and continuously seek to expand my skill set, be it enlivening the most mundane data through visualization, optimizing scripts with algorithms, or building games using an unfamiliar platform.
+</p>
+<br/>
 
 <div align="center">
 
@@ -35,20 +40,13 @@
 </a>
 
 </div>
-
-<!-- Bio and interest -->
-<br/>
-<div>
-<p align="justify">
-In the realm of data, I approach each challenge with a mindset akin to Alan Turing's insatiable curiosity, determined to decipher and connect the narrative within the numbers. I embrace new challenges and continuously seek to expand my skill set, be it enlivening the most mundane data through visualization, optimizing scripts with algorithms, or building games using an unfamiliar platform.
-</p>
-<br/>
+</br>
 
 <!-- Updates -->
 
 **Updates:**
 
-- 🔭 I'm currently working as a Data Analyst at [**Bhoos Games**](https://www.bhoos.com/about/)
+- 🔭 I'm currently working as a Data Analyst at [**Bhoos Games**](https://www.bhoos.com/about/).
 - 🌱 I'm currently learning **React**, [**Statistics, and Tableau**](https://github.com/crypticsy/Learning_Journal/tree/master/66_Days_of_Data_Science).
 - 🤔 Curious how I landed here? Let's just say [**online courses**](./certifications/) are my not-so-secret weapons!
 - 💬 Brainstorm with me over anime, algorithms, career, and music.
