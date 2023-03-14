@@ -2,7 +2,7 @@
 
 ### Hey :wave:, Fancy seeing you here ! &nbsp; o(_￣ ▽ ￣_)ブ
 
-<hr style="margin: 0; height: 1px;">
+<hr/>
 
 <div align="center">
 
@@ -58,11 +58,17 @@ In the realm of data, I approach each challenge with a mindset akin to Alan Turi
 <!-- Stats -->
 
 **Github Stats:**
-
-<img  align="left" width="50%" src="https://github-readme-stats-eight-theta.vercel.app/api?username=crypticsy&&count_private=true&show_icons=true&bg_color=0D1117&title_color=fff&text_color=929292&icon_color=F1E05A&hide_border=true" alt="crypticsy" />
-
-<img width="42%" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=crypticsy&layout=compact&bg_color=0D1117&title_color=fff&text_color=929292&hide_border=true" />
-<br/>
+<div align="center">
+<picture>
+<source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-theta.vercel.app/api?username=crypticsy&&count_private=true&show_icons=true&bg_color=ffffff&title_color=1f1f1f&text_color=1f1f1f&icon_color=ffbb00&hide_border=true">
+<img width="50%" src="https://github-readme-stats-eight-theta.vercel.app/api?username=crypticsy&&count_private=true&show_icons=true&bg_color=0D1117&title_color=ffffff&text_color=929292&icon_color=F1E05A&hide_border=true"/>
+</picture>
+<picture>
+<source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=crypticsy&layout=compact&bg_color=ffffff&title_color=1f1f1f&text_color=1f1f1f&hide_border=true">
+<img width="42%" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=crypticsy&layout=compact&bg_color=0D1117&title_color=ffffff&text_color=929292&hide_border=true" />
+</picture>
+</div>
+<br/> <br/>
 
 **Watch Pancake feed on my commits:**
 
