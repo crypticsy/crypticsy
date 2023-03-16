@@ -57,7 +57,7 @@ In the realm of data, I approach each challenge with a mindset akin to Alan Turi
 
 </div>
 
-<br/>
+<br/> <br/>
 
 
 
