@@ -23,6 +23,7 @@ In the realm of data, I approach each challenge with a mindset akin to Alan Turi
 <!-- Stats -->
 
 **Github Stats:**
+
 <div align="center">
 <picture>
 <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-theta.vercel.app/api?username=crypticsy&&count_private=true&show_icons=true&bg_color=ffffff&title_color=1f1f1f&text_color=1f1f1f&icon_color=ffbb00&hide_border=true">
@@ -39,8 +40,7 @@ In the realm of data, I approach each challenge with a mindset akin to Alan Turi
 
 ![github contribution grid snake animation](https://raw.githubusercontent.com/crypticsy/crypticsy/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only)![github contribution grid snake animation](https://raw.githubusercontent.com/crypticsy/crypticsy/output/github-contribution-grid-snake.svg#gh-light-mode-only)
 
-
-<br/> <br/>
+<br/>
 
 **Reach me at**
 
