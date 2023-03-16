@@ -19,8 +19,9 @@ In the realm of data, I approach each challenge with a mindset akin to Alan Turi
 - 💬 Brainstorm with me over anime, algorithms, career, and music.
 - ⚡ Fun fact: Oct 31 equals Dec 25
 
-
 <br/>
+
+
 
 **Reach me at**
 
@@ -56,7 +57,7 @@ In the realm of data, I approach each challenge with a mindset akin to Alan Turi
 
 </div>
 
-<br/> <br/>
+<br/>
 
 
 
@@ -74,7 +75,8 @@ In the realm of data, I approach each challenge with a mindset akin to Alan Turi
 <img width="42%" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=crypticsy&layout=compact&bg_color=0D1117&title_color=ffffff&text_color=929292&hide_border=true" />
 </picture>
 </div>
-<br/> <br/>
+
+<br/>
 
 **Watch Pancake feed on my commits:**
 
