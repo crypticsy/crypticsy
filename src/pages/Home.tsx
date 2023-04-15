@@ -1,11 +1,34 @@
-import './Home.css'
+import "./Home.css";
+import pixelCity from "../assets/pixelCity.webp";
 
 function Home() {
   return (
-    <div className="Home">
-      <span>This website is currently under construction.</span> 
+    <div>
+      <div className="Home relative">
+        <div className="section">
+          <div className="noise"></div>
+        </div>
+        <h1
+          className="text-2xl md:w-full md:text-3xl tracking-wide"
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          This website is currently under construction.
+        </h1>
+      </div>
+      <div className="absolute bottom-0 left-0">
+        <img
+          src={pixelCity}
+          className="opacity-50 city  prevent-select"
+          style={{ mixBlendMode: "multiply"  }}
+        />
+      </div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
