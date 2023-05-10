@@ -11,13 +11,15 @@ import {
 import Home from './pages/Home/Home';
 import Tournament from './pages/Tournament/Tournament';
 
+const initial_route = "/crypticsy";
+
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: initial_route + "/",
     element: <Home />,
   },
   {
-    path: "/tournament",
+    path: initial_route + "/tournament",
     element: <Tournament/>,
   }
 ]);
