@@ -1,5 +1,6 @@
-import "./Home.css";
-import pixelCity from "../assets/pixelCity.webp";
+import './Home.css';
+
+import pixelCity from '../../assets/pixelCity.webp';
 
 function Home() {
   return (

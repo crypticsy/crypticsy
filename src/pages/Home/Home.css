@@ -7,8 +7,8 @@
 .section {
   position: relative;
   top: -40vh;
-  width: 600px;
-  height: 600px;
+  width: 300px;
+  height: 300px;
 }
 
 .noise {
@@ -26,6 +26,11 @@
   animation: circle 80s infinite linear;
 }
 
+
+.Home {
+  font-family: 'Rubik Maze', Helvetica, Arial, sans-serif;
+}
+
 @keyframes circle {
   from {
     transform: rotate(0deg);
@@ -37,7 +42,7 @@
 
 @media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
   .noise {
-    filter: contrast(125%) brightness(650%) invert(100%);
+    filter: contrast(125%) brightness(650%) invert(99%);
     mix-blend-mode: color-dodge;
   }
 }
