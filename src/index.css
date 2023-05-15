@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .text-2xs {
+    font-size: 0.65rem;
+  }
+  .text-3xs {
+    font-size: 0.55rem;
+  }
+}
+
+
 :root {
   font-size: 16px;
   line-height: 24px;

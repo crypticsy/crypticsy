@@ -1,14 +1,18 @@
 import './Home.css';
+import { useNavigate } from "react-router-dom";
 
-import pixelCity from '../../assets/pixelCity.webp';
+import pixelCity from '../../assets/image/pixelCity.webp';
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className="Home relative">
-        <div className="section">
+        <div className="section" onClick={()=> navigate("tournament")}>
           <div className="noise"></div>
         </div>
+
         <h1
           className="text-2xl md:w-full md:text-3xl tracking-wide"
           style={{
@@ -21,11 +25,12 @@ function Home() {
           This website is currently under construction.
         </h1>
       </div>
+      
       <div className="absolute bottom-0 left-0">
         <img
           src={pixelCity}
           className="opacity-50 city  prevent-select"
-          style={{ mixBlendMode: "multiply"  }}
+          style={{ mixBlendMode: "multiply" }}
         />
       </div>
     </div>

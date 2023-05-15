@@ -1,27 +1,23 @@
 import './index.css';
-
 import React from 'react';
-
 import ReactDOM from 'react-dom/client';
 import {
-  createBrowserRouter,
-  RouterProvider,
+  createHashRouter,
+  RouterProvider
 } from 'react-router-dom';
 
 import Home from './pages/Home/Home';
 import Tournament from './pages/Tournament/Tournament';
 
-const initial_route = "/crypticsy";
-
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
-    path: initial_route + "/",
+    path: "/",
     element: <Home />,
   },
   {
-    path: initial_route + "/tournament",
-    element: <Tournament/>,
-  }
+    path: "tournament",
+    element: <Tournament />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
