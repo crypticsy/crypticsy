@@ -1,6 +1,13 @@
-import React, { useState, Dispatch } from 'react';
+import { useState, Dispatch } from 'react';
+import "./Form.css";
+import axios from 'axios';
+
+
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { TbMoneybag } from "react-icons/tb";
 import TableTennisBat from "../../assets/image/table_tennis.png";
 
+const GOOGLE_SHEET_URL = 'https://sheet.best/api/sheets/5a136b05-106c-4c0b-af16-d5f665029ff8';
 
 function createTextInput(type: string, title: string, placeholder: string, data: string, func: Dispatch<string>) {
     return (
@@ -22,34 +29,23 @@ function Form() {
     const [company, setCompany] = useState('');
     const [mobileNumber, setMobileNumber] = useState('');
 
+    const [submissionSuccess, setSubmissionSuccess] = useState(false);
+
     const handleSubmit = (event: any) => {
         event.preventDefault();
-        const data = {
-            name,
-            company,
-            mobileNumber
+        const participantData = {
+            name: name,
+            company: company,
+            mobileNumber: mobileNumber
         };
-        fetch('https://sheets.googleapis.com/v4/spreadsheets/YOUR_SPREADSHEET_ID/values/Sheet1!A1:C1:append?valueInputOption=USER_ENTERED', {
-            method: 'POST',
-            headers: {
-                'Authorization': 'Bearer YOUR_API_KEY',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                range: 'Sheet1!A1:C1',
-                majorDimension: 'ROWS',
-                values: [Object.values(data)],
-            }),
-        })
+
+        axios.post(GOOGLE_SHEET_URL, participantData)
             .then((response) => {
-                if (response.ok) {
-                    console.log('Data added to Google Sheets successfully');
-                } else {
-                    console.error('Error adding data to Google Sheets');
-                }
+                console.log('Congratulations, you have been !', response);
+                setSubmissionSuccess(true);
             })
             .catch((error) => {
-                console.error('Error adding data to Google Sheets:', error);
+                console.error('Opps, looks like something went wrong! Please resubmit.', error);
             });
     };
 
@@ -59,11 +55,16 @@ function Form() {
             style={{ filter: "drop-shadow(5px 10px 4px rgba(0, 0, 0, .4))", fontFamily: "Poppins" }}>
             <div className="mb-4">
                 <h1 className="text-xl mb-1 uppercase tracking-widest font-semibold">Table Tennis Tournament</h1>
-                <h2 className="text-sm font-md tracking-wide">Registration Form</h2>
+                <h2 className="text-sm font-md tracking-wide text-white/60">Registration Form</h2>
 
-                <p className="mt-6 font-light text-xs text-slate-50">
-                    Each of the participant must pay an amount of <span className='font-semibold'>NPR. 250 (in cash)</span>
-                </p>
+                <div className="text-xs mt-5 m-auto ml-0 flex">
+                    <div className="flex justify-center items-center mr-6">
+                        <FaRegCalendarAlt className='mr-2 w-5 h-5' /> Begin : 1st June
+                    </div>
+                    <div className="flex justify-center items-center">
+                        <TbMoneybag className='mr-2 w-5 h-5' /> Fee : NPR. 250 (in cash)
+                    </div>
+                </div>
 
             </div>
 
@@ -71,24 +72,31 @@ function Form() {
 
             <hr className="mb-6 border-white/60" />
 
-            <form onSubmit={handleSubmit}>
-                <>
-                    {createTextInput("text", "Name", "Harry Maguire", name, setName)}
-                    {createTextInput("text", "Company", "Bhoos", company, setCompany)}
-                    {createTextInput("number", "Mobile Number", "98########", mobileNumber, setMobileNumber)}
-                </>
+            {
+                submissionSuccess ?
+                    <div>
+                        <h3 className='font-bold'>Congratulations! </h3>
+                        <p className='mt-2 text-sm'>You participation detail has been added to the database.</p>
 
-                <div className="flex">
-                    <div className="text-xs mt-4 m-auto ml-0 flex">
-                        <div className="pt-2">
+                        <h3 className='mt-10 text-sm font-bold'>Details for the competition</h3>
+                        <p className='mt-2 text-sm'>- On game day, equipment will be provided, but you are welcome to bring your own bat.</p>
+                        <p className='mt-2 text-sm'>- This same website will include the date of the match as well as your opponent.</p>
+                        <p className='mt-2 text-sm'>- Failure for an appearance on game day will result in immediate disqualification.</p>
+                    </div> 
+                :
+                    <form onSubmit={handleSubmit}>
+                        <>
+                            {createTextInput("text", "Name", "Harry Maguire", name, setName)}
+                            {createTextInput("text", "Company", "Bhoos", company, setCompany)}
+                            {createTextInput("number", "Mobile Number", "98########", mobileNumber, setMobileNumber)}
+                        </>
 
+                        <div className="flex justify-center">
+                            <button type="submit" className="mt-4 bg-lime-400 text-[#00639F] font-bold px-5 prevent-select">Submit</button>
                         </div>
-                    </div>
 
-                    <button type="submit" className="mt-4 bg-lime-400 text-[#00639F] font-bold px-5 prevent-select">Submit</button>
-                </div>
-
-            </form>
+                    </form>
+            }
         </div>
     );
 }

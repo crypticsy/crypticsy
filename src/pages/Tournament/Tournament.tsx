@@ -3,7 +3,7 @@ import Form from "./Form"
 import TableTennisBackground from "../../assets/image/tt.png"
 
 const divStyle: React.CSSProperties = {
-  backgroundImage: `linear-gradient(to right,  rgba(26, 26, 26, 1), rgba(26, 26, 26, 0.92), rgba(26, 26, 26, 1)), url(${TableTennisBackground})`,
+  backgroundImage: `linear-gradient(to right,  rgba(26, 26, 26, 1), rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 1)), url(${TableTennisBackground})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
 };
@@ -12,7 +12,7 @@ const divStyle: React.CSSProperties = {
 function Tournament() {
   return (
     <div className="w-full h-full flex justify-center align-middle" style={divStyle}>
-       {/* <Bracket /> */}
+      {/* <Bracket /> */}
       <Form />
     </div>
   );
