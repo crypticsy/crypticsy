@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 
 import Home from './pages/Home/Home';
-import Tournament from './pages/Tournament/Tournament';
+import Editor from './pages/Editor/Editor';
 
 const router = createHashRouter([
   {
@@ -15,8 +15,8 @@ const router = createHashRouter([
     element: <Home />,
   },
   {
-    path: "tournament",
-    element: <Tournament />,
+    path: "editor",
+    element: <Editor />,
   },
 ]);
 
