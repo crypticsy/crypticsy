@@ -8,8 +8,13 @@ function Home() {
 
   return (
     <div>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Rubik+Maze&display=swap"
+        rel="stylesheet"
+      />
+
       <div className="Home relative">
-        <div className="section" onClick={()=> navigate("tournament")}>
+        <div className="section" onClick={() => navigate("tournament")}>
           <div className="noise"></div>
         </div>
 
@@ -25,7 +30,7 @@ function Home() {
           This website is currently under construction.
         </h1>
       </div>
-      
+
       <div className="absolute bottom-0 left-0">
         <img
           src={pixelCity}
