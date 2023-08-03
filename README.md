@@ -14,7 +14,7 @@ In the realm of data, I approach each challenge with a mindset akin to Alan Turi
 **Updates:**
 
 - 🔭 I'm currently working as a Data Analyst at [**Bhoos Games**](https://www.bhoos.com/about/).
-- 🌱 I'm currently learning **React, Blender, and** [**Tableau**](https://crypticsy.github.io/learning-journal/66_Days_of_Data_Science/).
+- 🌱 I'm currently learning **React, and** [**Tableau**](https://crypticsy.github.io/learning-journal/66_Days_of_Data_Science/).
 - 🤔 Curious how I landed here? Let's just say [**online courses**](./certifications/) are my not-so-secret weapons!
 - 💬 Brainstorm with me over anime, algorithms, career, and music.
 - ⚡ Fun fact: Oct 31 equals Dec 25
