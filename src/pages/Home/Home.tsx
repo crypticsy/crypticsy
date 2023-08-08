@@ -1,44 +1,37 @@
 import './Home.css';
 import { useNavigate } from "react-router-dom";
-
-import pixelCity from '../../assets/image/pixelCity.webp';
+import { Layout } from "../../components";
 
 function Home() {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Rubik+Maze&display=swap"
-        rel="stylesheet"
-      />
-
-      <div className="Home relative">
-        <div className="section" onClick={() => navigate("tournament")}>
-          <div className="noise"></div>
-        </div>
-
-        <h1
-          className="text-2xl md:w-full md:text-3xl tracking-wide"
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
+    <Layout>
+      <div className='justify-center w-[80%] mx-auto'>
+        <p className="sfmono-reg pb-6">Hi, my name is</p>
+        
+        <h1>Animesh Singh Basnet</h1>
+        <h2 className='text-gray-500  pb-6'>I help convert data into insights.</h2>
+        
+        <p className="calibre-reg text-xl text-gray-500  pb-10">
+          I’m a programmer specializing in building (and occasionally designing).
+          Currently, I’m focused on implementing data driven decisions at &nbsp;
+          <a 
+            className='cursor-pointer text-white hover:text-white'
+            href="https://www.bhoos.com/about/"
+            target="_blank"
+          >
+            Bhoos
+          </a>.
+        </p>
+        <button 
+          className='text-md px-4 py-3'
+          onClick={() => window.open("https://github.com/crypticsy/")}
         >
-          This website is currently under construction.
-        </h1>
+          Check out my projects !
+        </button>
       </div>
-
-      <div className="absolute bottom-0 left-0">
-        <img
-          src={pixelCity}
-          className="opacity-50 city  prevent-select"
-          style={{ mixBlendMode: "multiply" }}
-        />
-      </div>
-    </div>
+    </Layout>
   );
 }
 

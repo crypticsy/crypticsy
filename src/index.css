@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Calibre-Semibold';
+  src: url('./assets/fonts/Calibre/Calibre-Semibold.ttf');
+}
+
+@font-face {
+  font-family: 'Calibre-Regular';
+  src: url('./assets/fonts/Calibre/Calibre-Regular.ttf');
+}
+
+.calibre-reg{
+  font-family: 'Calibre-Regular';
+}
+
+@font-face {
+  font-family: 'SFMono-Regular';
+  src: url('./assets/fonts/SFMono/SFMono-Regular.ttf');
+}
+
+.sfmono-reg{
+  font-family: 'SFMono-Regular';
+}
+
 @layer components {
   .text-2xs {
     font-size: 0.65rem;
@@ -45,24 +68,30 @@ body {
 }
 
 h1 {
+  font-size: 4.0em;
+  line-height: 1.1;
+  font-family: 'Calibre-Semibold';
+}
+
+h2 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-family: 'Calibre-Semibold';
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid white;
   padding: 0.6em 1.2em;
   font-size: 0.8em;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  font-family: 'SFMono-Regular';
+  background-color: transparent;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 
 button:hover {
-  transform: scale(1.1);
+  transform: scale(1.06);
 }
 
 .prevent-select {
