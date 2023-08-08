@@ -6,12 +6,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "deploy": "gh-pages -d dist",
+    "deploy": "yarn build && gh-pages -d dist",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@monaco-editor/react": "^4.5.1",
     "axios": "^1.4.0",
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",
@@ -19,8 +18,7 @@
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.11.1",
-    "react-use": "^17.4.0",
-    "styled-components": "^6.0.7"
+    "react-use": "^17.4.0"
   },
   "devDependencies": {
     "@types/node": "^18.13.0",
