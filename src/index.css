@@ -17,6 +17,15 @@
 }
 
 @font-face {
+  font-family: 'Calibre-SemiBold';
+  src: url('./assets/fonts/Calibre/Calibre-Semibold.ttf');
+}
+
+.calibre-smbold{
+  font-family: 'Calibre-SemiBold';
+}
+
+@font-face {
   font-family: 'SFMono-Regular';
   src: url('./assets/fonts/SFMono/SFMono-Regular.ttf');
 }
@@ -51,6 +60,10 @@
   border: 0;
   outline: 0;
   box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
 }
 
 :root {

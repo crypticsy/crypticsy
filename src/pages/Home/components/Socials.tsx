@@ -14,8 +14,7 @@ function SocialIcon({ IconComponent, url, type }: { IconComponent: IconType, url
     return (
         <div className="icon-wrapper h-8 w-8 flex justify-center items-center cursor-pointer hover:text-sky-400"
             onClick={() => type === "email" ? onClickEmailHandler() : onClickURLHandler(url)} >
-            < IconComponent
-                className="w-6 h-6 cursor-pointer social-icon" />
+            < IconComponent className="w-6 h-6 cursor-pointer social-icon" />
         </div>
     )
 }
