@@ -6,13 +6,13 @@ export function About() {
 
     return (
         <div className="justify-center flex items-center min-h-screen">
-            <div className='max-w-[80%]' id="about">
-                <p className="sfmono-reg pb-6">Hi, my name is</p>
+            <div className='max-w-[90%] space-y-6' id="about">
+                <p className="sfmono-reg text-2xl">Hi, my name is</p>
 
-                <h1 className="text-[2.4rem] md:text-[4.2rem]">Animesh Singh Basnet</h1>
-                <h2 className="text-gray-500 text-[1.8rem] md:text-[3.2rem] pb-4">I help convert data into insights.</h2>
+                <h1 className="text-[2.4rem] md:text-[4.4rem]">Animesh Singh Basnet</h1>
+                <h2 className="text-gray-500 text-[1.8rem] md:text-[3.3rem]">I help convert data into insights.</h2>
 
-                <p className="calibre-reg text-xl text-gray-500 pb-10 justify-evenly max-w-2xl">
+                <p className="calibre-reg text-2xl text-gray-500 pb-6 justify-evenly max-w-2xl">
                     I’m a programmer specializing in building (and occasionally designing).
                     Currently, I’m focused on implementing data driven decisions at &nbsp;
                     <a
@@ -25,10 +25,10 @@ export function About() {
                 </p>
 
                 <button
-                    className='text-md px-4 py-3 border-2 border-white'
+                    className='text-xl px-4 py-3 border-2 border-white'
                     onClick={() => onClickMailtoHandler()}
                 >
-                    Contact me !
+                    Contact me!
                 </button>
             </div>
         </div>
