@@ -1,4 +1,6 @@
-.social-icon:hover{
-    transform: translate(0, -0.2rem);
-    transition: all 300ms ease;
+.icon-wrapper:hover{
+    .social-icon{
+        transform: translate(0, -0.2rem);
+        transition: all 300ms ease;
+    }
 }

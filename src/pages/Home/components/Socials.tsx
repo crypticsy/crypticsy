@@ -1,32 +1,45 @@
+import { IconType } from "react-icons";
 import { FiGithub, FiInstagram, FiLinkedin } from "react-icons/fi";
-import { TbBrandUnsplash } from "react-icons/tb";
+import { MdOutlineEmail } from "react-icons/md";
+import { SiCodingame } from "react-icons/si";
 
-export function SocialPlatform() {
+function onClickSocialHandler(url: string) {
+    window.open(url, "_blank");
+}
 
-    function onClickSocialHandler(url: string) {
-        window.open(url, "_blank");
-    }
+function SocialIcon({ IconComponent, url }: { IconComponent: IconType, url: string }) {
 
     return (
-        <div className="col-2 relative">
-            <div className="fixed bottom-0">
-                <div className="static space-y-8">
-                    <FiGithub className="w-5 h-5 cursor-pointer social-icon" onClick={() => onClickSocialHandler('https://github.com/crypticsy/')} />
-                    <FiInstagram className="w-5 h-5 cursor-pointer social-icon" onClick={() => onClickSocialHandler('https://www.instagram.com/crypticsy/')} />
-                    <FiLinkedin className="w-5 h-5 cursor-pointer social-icon" onClick={() => onClickSocialHandler('https://www.linkedin.com/in/animeshbasnet/')} />
-                    <TbBrandUnsplash className="w-5 h-5 cursor-pointer social-icon" onClick={() => onClickSocialHandler('https://unsplash.com/@crypticsy')} />
+        <div className="icon-wrapper h-8 w-8 flex justify-center items-center cursor-pointer "
+            onClick={() => onClickSocialHandler(url)} >
+            < IconComponent
+                className="w-5 h-5 cursor-pointer social-icon" />
+        </div>
+    )
+}
 
-                    <div className="h-[6rem] w-5 justify-center flex">
-                        <div className="bg-white w-0.5 h-full" />
-                    </div>
+export function LeftSocials() {
+    return (
+        <div className="fixed bottom-0 left-8 invisible md:visible">
+            <div className="space-y-6">
+                <SocialIcon IconComponent={MdOutlineEmail} url={'https://www.datacamp.com/portfolio/animeshbasnet'} />
+                <SocialIcon IconComponent={FiLinkedin} url={'https://www.linkedin.com/in/animeshbasnet/'} />
+                <SocialIcon IconComponent={FiInstagram} url={'https://www.instagram.com/crypticsy/'} />
+                <div className="h-[6rem] w-8 justify-center flex mt-4">
+                    <div className="bg-white w-0.5 h-full rounded-md" />
                 </div>
             </div>
         </div>)
 }
 
-export function UserEmail() {
+export function RightSocials() {
     return (
-        <div className="col-1">
-
+        <div className="fixed bottom-0 right-8 invisible md:visible">
+            <div className="space-y-6">
+                <SocialIcon IconComponent={FiGithub} url={'https://github.com/crypticsy/'} />
+                <div className="h-[6rem] w-8 justify-center flex mt-4">
+                    <div className="bg-white w-0.5 h-full rounded-md" />
+                </div>
+            </div>
         </div>)
 }
