@@ -1,3 +1,7 @@
+.social-icon{
+    transition: all 300ms ease;
+}
+
 .icon-wrapper:hover{
     .social-icon{
         transform: translate(0, -0.2rem);

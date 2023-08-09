@@ -1,22 +1,20 @@
-export function Intro() {
+import { onClickEmailHandler } from "./Socials";
 
-    function onClickMailtoHandler() {
-        window.location.href = 'mailto:animesh19basnet@domain.com'
-    }
+export function Intro() {
 
     return (
         <div className="justify-center flex items-center min-h-screen">
-            <div className='max-w-[90%] space-y-6' id="about">
-                <p className="sfmono-reg text-2xl">Hi, my name is</p>
+            <div className='max-w-[90%] space-y-4' id="about">
+                <p className="sfmono-reg text-xl text-sky-400">Hi, my name is</p>
 
-                <h1 className="text-[2.4rem] md:text-[4.4rem]">Animesh Singh Basnet</h1>
-                <h2 className="text-gray-500 text-[1.8rem] md:text-[3.3rem]">I help convert data into insights.</h2>
+                <h1 className="text-[2.4rem] md:text-[4.2rem]">Animesh Singh Basnet</h1>
+                <h2 className="text-slate-400 text-[1.8rem] md:text-[3.2rem]">I help convert data into insights.</h2>
 
-                <p className="calibre-reg text-2xl text-gray-500 pb-6 justify-evenly max-w-2xl">
+                <p className="calibre-reg text-xl text-gray-400 pb-6 justify-evenly max-w-3xl">
                     I’m a programmer specializing in building (and occasionally designing).
                     Currently, I’m focused on implementing data driven decisions at &nbsp;
                     <a
-                        className='cursor-pointer text-white hover:text-white'
+                        className='cursor-pointer text-sky-400 hover:text-sky-400 hover-underline-animation'
                         href="https://www.bhoos.com/about/"
                         target="_blank"
                     >
@@ -25,10 +23,10 @@ export function Intro() {
                 </p>
 
                 <button
-                    className='text-xl px-4 py-3 border-2 border-white'
-                    onClick={() => onClickMailtoHandler()}
+                    className='px-4 py-3 border-2  border-sky-400 text-sky-400'
+                    onClick={() => {}}
                 >
-                    Contact me!
+                    Check out what I am learning !
                 </button>
             </div>
         </div>

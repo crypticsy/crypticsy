@@ -25,6 +25,15 @@
   font-family: 'SFMono-Regular';
 }
 
+@font-face {
+  font-family: 'SFMono-Semibold';
+  src: url('./assets/fonts/SFMono/SFMono-Semibold.ttf');
+}
+
+.sfmono-smbold{
+  font-family: 'SFMono-Semibold';
+}
+
 @layer components {
   .text-2xs {
     font-size: 0.65rem;
@@ -53,14 +62,29 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  color: #646cff;
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+   to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 body {
   margin: 0;
   min-height:100vh;
   /* overflow: hidden; */
+  transform: translateY(20px);
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
 }
 
 h1 {
@@ -74,19 +98,43 @@ h2 {
 }
 
 button {
-  border: 1px solid white;
+  border: 1px solid rgb(59 130 246 / 0.5);
   font-family: 'SFMono-Regular';
   background-color: transparent;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.2s ease-in-out;
 }
 
 button:hover {
   transform: scale(1.06);
+  font-family: 'SFMono-Semibold';
 }
 
 .prevent-select {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(56 189 248);
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
