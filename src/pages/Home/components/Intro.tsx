@@ -1,4 +1,4 @@
-export function About() {
+export function Intro() {
 
     function onClickMailtoHandler() {
         window.location.href = 'mailto:animesh19basnet@domain.com'

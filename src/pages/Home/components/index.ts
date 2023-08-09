@@ -1,2 +1,2 @@
-export * from "./About.js";
+export * from "./Intro.js";
 export * from "./Socials.js";
