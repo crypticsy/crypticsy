@@ -8,12 +8,13 @@ export function Home() {
   return (
     <Layout>
       <NavBar />
-      <LeftSocials />
-      <RightSocials />
+      <div className="mx-8">
+        <LeftSocials />
+        <RightSocials />
 
-      <Intro />
-      <About />
-
+        <Intro />
+        <About />
+      </div>
     </Layout>
   );
 }

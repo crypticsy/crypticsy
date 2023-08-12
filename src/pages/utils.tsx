@@ -12,3 +12,18 @@ export function SectionTitle({ sn, title }: SectionTitleProps) {
         <hr className="w-full h-[0.05rem] bg-slate-600 border-0 rounded" />
     </div>)
 }
+
+export function handleDownload(fileName: string) {
+    const filePath = `/crypticsy/${fileName}`;
+
+    fetch(filePath)
+        .then(response => response.blob())
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Animesh Singh Basnet - ' + fileName;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        });
+};
