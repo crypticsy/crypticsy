@@ -10,11 +10,11 @@ export function onClickEmailHandler() {
     window.location.href = 'mailto:animesh19basnet@domain.com'
 }
 
-function SocialIcon({ IconComponent, url, type }: { IconComponent: IconType, url: string, type: string }) {
+export function SocialIcon({ IconComponent, url, type, size='medium' }: { IconComponent: IconType, url: string, type: string, size?: string }) {
     return (
-        <div className="icon-wrapper h-8 w-8 flex justify-center items-center cursor-pointer hover:text-sky-400"
+        <div className={"icon-wrapper flex justify-center items-center cursor-pointer hover:text-sky-400" + (size === 'medium' ? " h-8 w-8" : " h-5 w-5") }
             onClick={() => type === "email" ? onClickEmailHandler() : onClickURLHandler(url)} >
-            < IconComponent className="w-6 h-6 cursor-pointer social-icon" />
+            < IconComponent className={"cursor-pointer social-icon"  + (size === 'medium' ? " w-6 h-6" : " w-4 h-4") } />
         </div>
     )
 }

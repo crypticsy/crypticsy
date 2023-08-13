@@ -17,10 +17,9 @@ export function NavBar() {
 
     const handleScroll = () => {
         const rootDiv = document.getElementById('root');
+        
         if (rootDiv) {
             const scrollTop = rootDiv.scrollTop;
-            console.log("Top of the document", scrollTop)
-
             if (scrollTop === 0) {
                 setIsAtPageTop(true);
             } else if (lastScrollTop < scrollTop) {

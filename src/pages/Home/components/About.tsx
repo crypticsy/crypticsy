@@ -4,7 +4,7 @@ import { SectionTitle, handleDownload } from "../../utils";
 export function About() {
 
     return (
-        <div className="justify-center flex items-center min-h-screen">
+        <div className="justify-center flex items-center mt-[15vh]">
             <div className='space-y-8' id="about">
 
                 < SectionTitle sn={'01.'} title={'About me'} />
@@ -16,34 +16,37 @@ export function About() {
                         unfamiliar platform.
                     </p>
                     <table>
-                        <tr>
-                            <td className="pr-4">🔭</td>
-                            <td>
-                                I'm currently working as a Data Analyst at &nbsp;
-                                <a
-                                    className='cursor-pointer text-sky-400 hover:text-sky-400 hover-underline-animation'
-                                    href="https://www.bhoos.com/about/"
-                                    target="_blank">
-                                    Bhoos Games.
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>🌱</td>
-                            <td> I'm currently learning React Native, and Tableau. </td>
-                        </tr>
-                        <tr>
-                            <td>🤔</td>
-                            <td> Curious how I landed here? Let's just say online courses are my not-so-secret weapons! </td>
-                        </tr>
-                        <tr>
-                            <td>💬</td>
-                            <td> Brainstorm with me over anime, algorithms, career, and music. </td>
-                        </tr>
-                        <tr>
-                            <td>⚡</td>
-                            <td> Fun fact: Oct 31 equals Dec 25 </td>
-                        </tr>
+                        <tbody>
+
+                            <tr>
+                                <td className="pr-4">🔭</td>
+                                <td>
+                                    I'm currently working as a Data Analyst at &nbsp;
+                                    <a
+                                        className='cursor-pointer text-sky-400 hover:text-sky-400 hover-underline-animation'
+                                        href="https://www.bhoos.com/about/"
+                                        target="_blank">
+                                        Bhoos Games.
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>🌱</td>
+                                <td> I'm currently learning React Native, and Tableau. </td>
+                            </tr>
+                            <tr>
+                                <td>🤔</td>
+                                <td> Curious how I landed here? Let's just say online courses are my not-so-secret weapons! </td>
+                            </tr>
+                            <tr>
+                                <td>💬</td>
+                                <td> Brainstorm with me over anime, algorithms, career, and music. </td>
+                            </tr>
+                            <tr>
+                                <td>⚡</td>
+                                <td> Fun fact: Oct 31 equals Dec 25 </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
 
