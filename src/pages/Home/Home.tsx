@@ -14,7 +14,7 @@ export function Home() {
 
         <Intro/>
         <About/>
-        {/* <Work/> */}
+        <Work/>
 
         <Footer/>
       </div>

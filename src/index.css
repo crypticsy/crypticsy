@@ -152,7 +152,7 @@ button:hover {
 }
 
 #navbar{
-  z-index: 1;
+  z-index: 20;
 }
 
 @keyframes slide-up {

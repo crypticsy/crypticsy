@@ -14,7 +14,7 @@ export function SectionTitle({ sn, title }: SectionTitleProps) {
 }
 
 export function handleDownload(fileName: string) {
-    const filePath = `/crypticsy/${fileName}`;
+    const filePath = `/${fileName}`;
 
     fetch(filePath)
         .then(response => response.blob())

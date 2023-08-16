@@ -56,6 +56,7 @@ export function NavBar() {
             <nav
                 className="flex items-center justify-end py-7 pr-20 gap-8">
                 <NavSection sn={'01.'} title={'About'} scrollToID={'about'} />
+                <NavSection sn={'02.'} title={'Work'} scrollToID={'work'} />
             </nav>
         </div>
     )

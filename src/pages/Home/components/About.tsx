@@ -4,9 +4,8 @@ import { SectionTitle, handleDownload } from "../../utils";
 export function About() {
 
     return (
-        <div className="justify-center flex items-center mt-[15vh]">
-            <div className='space-y-8' id="about">
-
+        <div className="justify-center flex items-center pt-[15vh]" id="about">
+            <div className='space-y-8'>
                 < SectionTitle sn={'01.'} title={'About me'} />
                 <div className="calibre-reg sm:text-xs md:text-xl  max-w-4xl text-gray-400 text-justify space-y-5">
                     <p>
