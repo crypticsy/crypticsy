@@ -87,7 +87,7 @@ const NormalProjectList = [
     },
     {
         title: "Apollo Music Store",
-        description: "An XML-based website conceptualized for an imaginary music emporium facilitates users in accessing music videos online via YouTube integration, as well as navigating through their diverse array of artists using a shuffling feature. ",
+        description: "A XML-based website conceptualized for an imaginary music emporium facilitates users in accessing music videos online via YouTube integration, as well as navigating through their diverse array of artists using a shuffling feature. ",
         tags: ['XML', 'DTD', 'XSD'],
         githubURL: "https://github.com/crypticsy/Academia/tree/master/Apollo_Music_Center",
         hostedURL:"https://crypticsy.github.io/Academia/Apollo_Music_Center/apollo.xml",
@@ -98,7 +98,7 @@ function NormalProject({title, description, tags, githubURL, hostedURL}:NormalPr
     return (
     <div className="px-5 py-6 md:p-7 bg-slate-800 rounded-md flex-row h-full">
         <div className="space-y-3 mb-auto h-[88%]">
-            <p className={"flex space-x-4 text-left justify-end pb-2"}>
+            <p className={"flex space-x-5 text-left pb-3"}>
                 {githubURL && githubURL.length > 0 && <FiGithub className="w-5 h-5 hover:text-sky-500 cursor-pointer" onClick={() => window.open(githubURL, "_blank")} />}
                 {hostedURL && hostedURL.length > 0 && <IoMdOpen className="w-5 h-5 hover:text-sky-500 cursor-pointer" />}
             </p>
