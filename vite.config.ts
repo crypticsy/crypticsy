@@ -9,7 +9,7 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: 'certifications/certificates.csv',
+          src: 'certifications/*.csv',
           dest: 'certifications'
         }
       ]

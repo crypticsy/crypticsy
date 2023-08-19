@@ -1,4 +1,5 @@
 import { FiDownload } from "react-icons/fi";
+import { GrCertificate } from "react-icons/gr";
 import { SectionTitle, handleDownload, handleNavLinkClick } from "../../utils";
 
 export function About() {
@@ -35,14 +36,14 @@ export function About() {
                             </tr>
                             <tr>
                                 <td>🤔</td>
-                                <td> 
+                                <td>
                                     Curious how I landed here? Let's just say&nbsp;
                                     <a
                                         className='cursor-pointer text-sky-400 hover:text-sky-400 hover-underline-animation'
                                         onClick={() => handleNavLinkClick('/certificates')}>
                                         online courses
                                     </a>
-                                    &nbsp;are my not-so-secret weapons! 
+                                    &nbsp;are my not-so-secret weapons!
                                 </td>
                             </tr>
                             <tr>
@@ -57,7 +58,14 @@ export function About() {
                     </table>
                 </div>
 
-                <div className="flex">
+                <div className="flex space-x-6">
+                    <button
+                        className='px-5 py-3 border-2 border-sky-400 text-sky-400 rounded-md text-sm flex items-center'
+                        onClick={() => handleNavLinkClick('/certificates')}
+                    >
+                        <GrCertificate className="mr-3 w-4 h-4 grIcon" />
+                        <span className="my-auto sfmono-reg ">Certifications</span>
+                    </button>
                     <button
                         className='px-5 py-3 border-2  border-sky-400 text-sky-400 rounded-md text-sm flex items-center'
                         onClick={() => handleDownload('CV.pdf')}

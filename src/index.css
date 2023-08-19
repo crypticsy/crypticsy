@@ -147,6 +147,13 @@ button:hover {
   transform-origin: bottom left;
 }
 
+.hover-underline-animation-parent:hover{
+  .hover-underline-animation::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
 #navbar{
   z-index: 20;
 }
@@ -194,4 +201,8 @@ button:hover {
 
 .show-on-scroll {
   animation: slide-down 0.5s forwards;
+}
+
+.grIcon path{
+  stroke: rgb(56, 189, 248);
 }

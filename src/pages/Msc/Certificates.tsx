@@ -1,8 +1,8 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Layout } from "../../template";
-import { Footer } from "../Home/components";
+import { Footer, onClickURLHandler } from "../Home/components";
 import Papa from 'papaparse';
-import { SectionTitle } from "../utils";
+import { SubSectionTitle } from "../utils";
 
 interface CSVRow {
     name: string;
@@ -48,12 +48,12 @@ export function Certificates() {
         <Layout>
             <div className="mx-8 mt-[10vh]">
                 <div className="flex justify-center">
-                    <div>
-                        <h1 className="mt-8 mb-16 text-[1.4rem] md:text-[2.8rem] text-center" >My Certificates</h1>
+                    <div className="w-full max-w-5xl">
+                        <h1 className="mt-8 mb-16 text-[1.4rem] md:text-[2.5rem] text-center" >Certifications</h1>
                         <div className="space-y-8">
                             { issuers.map((issued_by, iIndex) => (
                                 <div key={iIndex}>
-                                    <SectionTitle sn={`0${iIndex + 1}.`} title={issued_by} />
+                                    <SubSectionTitle sn={`0${iIndex + 1}.`} title={issued_by} />
                                     <table className="w-full">
                                         <tbody>
                                             <tr>
@@ -63,11 +63,12 @@ export function Certificates() {
 
                                             {csvData.map((row, index) => (
                                                 row.name && (row.issued_by === issued_by) && (
-                                                    <tr key={index} className="hover:bg-gray-700/50 transition-all ease-in-out">
+                                                    <tr 
+                                                        key={index} className="hover:bg-gray-700/50 transition-all ease-in-out cursor-pointer hover-underline-animation-parent"
+                                                        onClick={()=>onClickURLHandler(row.credential_url)}
+                                                    >
                                                         <td className="p-3 pr-4 md:pr-10 rounded-l-md">
-                                                            <a className='cursor-pointer text-sky-400 hover:text-sky-400 hover-underline-animation'
-                                                                href={row.credential_url}
-                                                                target="_blank">
+                                                            <a className='text-sky-400 hover:text-sky-400 hover-underline-animation'>
                                                                 {row.name}
                                                             </a>
                                                         </td>
