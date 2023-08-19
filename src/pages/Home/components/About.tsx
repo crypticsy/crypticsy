@@ -1,5 +1,5 @@
 import { FiDownload } from "react-icons/fi";
-import { SectionTitle, handleDownload } from "../../utils";
+import { SectionTitle, handleDownload, handleNavLinkClick } from "../../utils";
 
 export function About() {
 
@@ -39,7 +39,7 @@ export function About() {
                                     Curious how I landed here? Let's just say&nbsp;
                                     <a
                                         className='cursor-pointer text-sky-400 hover:text-sky-400 hover-underline-animation'
-                                        href="/certicates">
+                                        onClick={() => handleNavLinkClick('/certificates')}>
                                         online courses
                                     </a>
                                     &nbsp;are my not-so-secret weapons! 

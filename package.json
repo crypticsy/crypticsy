@@ -22,7 +22,8 @@
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.11.1",
     "react-scroll": "^1.8.9",
-    "react-use": "^17.4.0"
+    "react-use": "^17.4.0",
+    "vite-plugin-static-copy": "^0.17.0"
   },
   "devDependencies": {
     "@types/node": "^18.13.0",

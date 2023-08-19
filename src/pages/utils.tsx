@@ -27,3 +27,7 @@ export function handleDownload(fileName: string) {
             window.URL.revokeObjectURL(url);
         });
 };
+
+export function handleNavLinkClick(hash:string){
+    window.location.hash = hash;
+};
