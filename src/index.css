@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Calibre-Semibold';
-  src: url('./assets/fonts/Calibre/Calibre-Semibold.ttf');
+* {
+  margin: 0;
+  /* padding: 0; */
+  list-style: none;
+  text-decoration: none;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: 'Calibre-Regular';
 }
 
 @font-face {
@@ -13,7 +19,7 @@
 }
 
 .calibre-reg{
-  font-family: 'Calibre-Regular';
+  font-family: 'Calibre-Regular' !important;
 }
 
 @font-face {
@@ -22,7 +28,7 @@
 }
 
 .calibre-smbold{
-  font-family: 'Calibre-SemiBold';
+  font-family: 'Calibre-SemiBold' !important;
 }
 
 @font-face {
@@ -31,7 +37,7 @@
 }
 
 .sfmono-reg{
-  font-family: 'SFMono-Regular';
+  font-family: 'SFMono-Regular' !important;
 }
 
 @font-face {
@@ -40,7 +46,7 @@
 }
 
 .sfmono-smbold{
-  font-family: 'SFMono-Semibold';
+  font-family: 'SFMono-Semibold' !important;
 }
 
 @layer components {
@@ -50,16 +56,6 @@
   .text-3xs {
     font-size: 0.55rem;
   }
-}
-
-* {
-  margin: 0;
-  /* padding: 0; */
-  list-style: none;
-  text-decoration: none;
-  border: 0;
-  outline: 0;
-  box-sizing: border-box;
 }
 
 html{

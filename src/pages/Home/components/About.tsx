@@ -20,7 +20,7 @@ export function About() {
                             <tr>
                                 <td className="pr-4">🔭</td>
                                 <td>
-                                    I'm currently working as a Data Analyst at &nbsp;
+                                    I'm currently working as a Data Analyst at&nbsp;
                                     <a
                                         className='cursor-pointer text-sky-400 hover:text-sky-400 hover-underline-animation'
                                         href="https://www.bhoos.com/about/"
@@ -35,7 +35,15 @@ export function About() {
                             </tr>
                             <tr>
                                 <td>🤔</td>
-                                <td> Curious how I landed here? Let's just say online courses are my not-so-secret weapons! </td>
+                                <td> 
+                                    Curious how I landed here? Let's just say&nbsp;
+                                    <a
+                                        className='cursor-pointer text-sky-400 hover:text-sky-400 hover-underline-animation'
+                                        href="/certicates">
+                                        online courses
+                                    </a>
+                                    &nbsp;are my not-so-secret weapons! 
+                                </td>
                             </tr>
                             <tr>
                                 <td>💬</td>
@@ -55,7 +63,7 @@ export function About() {
                         onClick={() => handleDownload('CV.pdf')}
                     >
                         <FiDownload className="mr-3 w-4 h-4" />
-                        <span className="my-auto">Download CV</span>
+                        <span className="my-auto sfmono-reg">Download CV</span>
                     </button>
                 </div>
             </div>

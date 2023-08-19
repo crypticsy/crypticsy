@@ -9,6 +9,15 @@
   }
 }
 
+.project:hover{
+  transform: translate(0, -0.5rem);
+  transition: all 300ms ease;
+
+  .title{
+    color:rgb(56 189 248);
+  }
+}
+
 nav{
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(15px);

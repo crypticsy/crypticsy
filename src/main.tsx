@@ -2,16 +2,21 @@ import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
-  createHashRouter,
+  createBrowserRouter,
   RouterProvider
 } from 'react-router-dom';
 
 import {Home} from './pages';
+import { Certificates } from './pages/Msc/Certificates';
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/certicates",
+    element: <Certificates/>,
   }
 ]);
 

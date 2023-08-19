@@ -11,8 +11,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/papaparse": "^5.3.7",
     "axios": "^1.4.0",
+    "csv-loader": "^3.0.5",
     "gh-pages": "^5.0.0",
+    "papaparse": "^5.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.0",

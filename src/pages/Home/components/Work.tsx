@@ -4,6 +4,7 @@ import { IoMdOpen } from "react-icons/io";
 
 import gragoPreview from "../../../assets/projects/grago.jpeg";
 import snadderPreview from "../../../assets/projects/snadder.webp";
+import { onClickURLHandler } from "./Socials";
 
 type FeaturedProjectsProps = {
     imageURL: string;
@@ -39,7 +40,11 @@ function FeaturedProject({ side, imageURL, title, description, tags, githubURL, 
         <div className={"w-full flex justify-start relative " + justifyType}>
             <div className={"hidden md:block  shadow-md md:shadow-none absolute inset-0 items-center justify-center "}>
                 <div className={"w-1/2 h-full overflow-hidden rounded-md " + imageSide}>
-                    <img src={imageURL} className="h-full w-full  object-cover" />
+                    {
+                        hostedURL && hostedURL.length > 0 
+                        ? <img src={imageURL} className="h-full w-full object-cover cursor-pointer"  onClick={() => window.open(hostedURL, "_blank")}  />
+                        : <img src={imageURL} className="h-full w-full object-cover" />
+                    }
                 </div>
             </div>
 
@@ -51,13 +56,13 @@ function FeaturedProject({ side, imageURL, title, description, tags, githubURL, 
 
                 <p className="p-0 md:p-7 bg-slate-800 flex text-base md:text-xl rounded-md">{description}</p>
 
-                <p className="text-xs md:text-sm sfmono-reg space-x-6 pb-1">
-                    {tags.length > 0 && tags.map((tag, idx) => { return <span className="capitalize" key={idx}>{tag}</span> })}
+                <p className="text-xs md:text-sm space-x-6 pb-1">
+                    {tags.length > 0 && tags.map((tag, idx) => { return <span className="capitalize  sfmono-reg " key={idx}>{tag}</span> })}
                 </p>
 
                 <p className={"flex space-x-4 text-left justify-start " + justifyType}>
                     {githubURL && githubURL.length > 0 && <FiGithub className="w-5 h-5 hover:text-sky-500 cursor-pointer" onClick={() => window.open(githubURL, "_blank")} />}
-                    {hostedURL && hostedURL.length > 0 && <IoMdOpen className="w-5 h-5 hover:text-sky-500 cursor-pointer" />}
+                    {hostedURL && hostedURL.length > 0 && <IoMdOpen className="w-5 h-5 hover:text-sky-500 cursor-pointer" onClick={() => window.open(hostedURL, "_blank")}  />}
                 </p>
             </div>
         </div>)
@@ -68,6 +73,7 @@ type NormalProjectProps = {
     title: string;
     description: string;
     tags: string[];
+    onClickURL: string;
     githubURL?: string;
     hostedURL?: string;
 }
@@ -77,41 +83,47 @@ const NormalProjectList = [
         title: "Chess Engine",
         description: "A full fledge chess game developed using pygame, and contains an ai engine that utilizes the minimax and alpha beta pruning algorithms to offer an immersive player-versus-bot experience.",
         tags: ['Python', 'PyGame', 'Algorithm'],
+        onClickURL: "https://github.com/crypticsy/Playground/tree/master/Game_Engine/Chess/",
         githubURL: "https://github.com/crypticsy/Playground/tree/master/Game_Engine/Chess/"
     }, 
     {
         title: "Ropey DVD Management System",
         description: "An inventory and rental management system developed in ASP.NET MVC Framework that has multiple level of access based on user level, as well as an interactive user interface to help with the leasing process of DVD within the store.",
         tags: ['ASP.NET', 'MVC', 'Bootstrap'],
+        onClickURL: "https://github.com/crypticsy/RopeyDVDManagementSystem",
         githubURL: "https://github.com/crypticsy/RopeyDVDManagementSystem"
     },
     {
-        title: "Apollo Music Store",
-        description: "A XML-based website conceptualized for an imaginary music emporium facilitates users in accessing music videos online via YouTube integration, as well as navigating through their diverse array of artists using a shuffling feature. ",
-        tags: ['XML', 'DTD', 'XSD'],
-        githubURL: "https://github.com/crypticsy/Academia/tree/master/Apollo_Music_Center",
-        hostedURL:"https://crypticsy.github.io/Academia/Apollo_Music_Center/apollo.xml",
-    },
+        title: "Sanctuary.io",
+        description: "A compilation of modest p5.js projects conceived during moments of leisure, ignited by a sense of curiosity.",
+        tags: ['P5JS', 'Javascript'],
+        onClickURL: "https://crypticsy.github.io/sanctuary/",
+        githubURL: "https://github.com/crypticsy/sanctuary",
+        hostedURL: "https://crypticsy.github.io/sanctuary/"
+    }
 ];
 
-function NormalProject({title, description, tags, githubURL, hostedURL}:NormalProjectProps){
+function NormalProject({title, description, tags, onClickURL, githubURL, hostedURL}:NormalProjectProps){
     return (
-    <div className="px-5 py-6 md:p-7 bg-slate-800 rounded-md flex-row h-full">
+    <div 
+        className="px-5 py-6 md:p-7 bg-slate-800 rounded-md flex-row h-full project cursor-pointer"
+        onClick={()=>onClickURLHandler(onClickURL)}>
+
         <div className="space-y-3 mb-auto h-[88%]">
             <p className={"flex space-x-5 text-left pb-3"}>
                 {githubURL && githubURL.length > 0 && <FiGithub className="w-5 h-5 hover:text-sky-500 cursor-pointer" onClick={() => window.open(githubURL, "_blank")} />}
                 {hostedURL && hostedURL.length > 0 && <IoMdOpen className="w-5 h-5 hover:text-sky-500 cursor-pointer" />}
             </p>
 
-            <p className="calibre-smbold text-[1.4rem] md:text-[1.6rem] text-white leading-8">{title}</p>
-            <p className="flex text-xs md:text-sm rounded-md leading-6">{description}</p>
-        </div>
-        <div className="mt-5">
-            <p className="text-xs md:text-xs sfmono-reg space-x-6">
-                {tags.length > 0 && tags.map((tag, idx) => { return <span className="capitalize" key={idx}>{tag}</span> })}
-            </p>
+            <p className="calibre-smbold text-[1.4rem] md:text-[1.6rem] text-white leading-8 title">{title}</p>
+            <p className="flex text-sm md:text-base rounded-md leading-6">{description}</p>
         </div>
 
+        <div className="mt-5">
+            <p className="text-xs md:text-xs sfmono-reg space-x-6">
+                {tags.length > 0 && tags.map((tag, idx) => { return <span className="capitalize sfmono-reg" key={idx}>{tag}</span> })}
+            </p>
+        </div>
     </div>
     )
     
@@ -149,6 +161,7 @@ export function Work() {
                                 title={project.title}
                                 description={project.description}
                                 tags={project.tags}
+                                onClickURL={project.onClickURL}
                                 githubURL={project.githubURL}
                                 hostedURL={project?.hostedURL} />
                         })

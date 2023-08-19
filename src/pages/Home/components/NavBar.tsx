@@ -53,8 +53,7 @@ export function NavBar() {
 
     return (
         <div className="fixed top-0 w-full hidden md:block transition-all duration-200 ease-in-out" id="navbar" style={isAtPageTop ? {} : movingNavStyles}>
-            <nav
-                className="flex items-center justify-end py-7 pr-20 gap-8">
+            <nav className="flex items-center justify-end py-7 pr-20 gap-8">
                 <NavSection sn={'01.'} title={'About'} scrollToID={'about'} />
                 <NavSection sn={'02.'} title={'Work'} scrollToID={'work'} />
             </nav>
@@ -71,9 +70,9 @@ function NavSection({ sn, title, scrollToID }: SectionTitleProps) {
     };
 
     return (<div className="flex items-center">
-        <div onClick={handleScrollToClick} className="gap-1.5 mr-8 flex cursor-pointer p-2 sfmono-reg text-sm text-white hover:text-sky-400">
-            <p className="text-sky-400">{sn}</p>
-            <p className="whitespace-nowrap">{title}</p>
+        <div onClick={handleScrollToClick} className="gap-1.5 mr-8 flex cursor-pointer p-2 text-sm text-white hover:text-sky-400">
+            <p className="text-sky-400 sfmono-reg">{sn}</p>
+            <p className="whitespace-nowrap sfmono-reg">{title}</p>
         </div>
     </div>)
 }

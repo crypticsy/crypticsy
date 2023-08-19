@@ -14,7 +14,7 @@ export function Footer() {
             </div>
             <div className="flex justify-center ">
                 <div className="sfmono-reg text-2xs md:text-xs max-w-4xl text-slate-300 text-center ">
-                    <p> {new Date().getFullYear()} Crypticsy © All Rights Reserved </p>
+                    {new Date().getFullYear()} Crypticsy © All Rights Reserved
                 </div>
             </div>
         </div>
