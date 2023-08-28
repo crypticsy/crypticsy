@@ -132,7 +132,7 @@ function NormalProject({title, description, tags, onClickURL, githubURL, hostedU
 
 export function Work() {
     return (
-        <div className="justify-center flex items-center mt-[15vh] md:pt-[25vh]"  id="work">
+        <div className="justify-center flex items-center mt-[15vh] md:pt-[15vh]"  id="work">
             <div className='space-y-8 max-w-5xl'>
 
                 < SectionTitle sn={'02.'} title={'Some Things I’ve Built'} />

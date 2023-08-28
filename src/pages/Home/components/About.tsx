@@ -8,7 +8,7 @@ export function About() {
         <div className="justify-center flex items-center pt-[15vh]" id="about">
             <div className='space-y-8'>
                 < SectionTitle sn={'01.'} title={'About me'} />
-                <div className="calibre-reg sm:text-xs md:text-xl  max-w-4xl text-gray-400 text-justify space-y-5">
+                <div className="calibre-reg sm:text-xs md:text-xl max-w-4xl text-gray-400 text-justify space-y-5">
                     <p>
                         &emsp; &emsp; In the realm of data, I approach each challenge with a mindset akin to Alan Turing's insatiable curiosity, determined to
                         decipher and connect the narrative within the numbers. I embrace new challenges and continuously seek to expand my skill set,
@@ -58,16 +58,16 @@ export function About() {
                     </table>
                 </div>
 
-                <div className="flex space-x-6">
+                <div className="flex space-x-3 md:space-x-6">
                     <button
-                        className='px-5 py-3 border-2 border-sky-400 text-sky-400 rounded-md text-sm flex items-center'
+                        className='px-2 md:px-5 py-3 border-2 border-sky-400 text-sky-400 rounded-md text-sm flex items-center'
                         onClick={() => handleNavLinkClick('/certificates')}
                     >
                         <GrCertificate className="mr-3 w-4 h-4 grIcon" />
                         <span className="my-auto sfmono-reg ">Certifications</span>
                     </button>
                     <button
-                        className='px-5 py-3 border-2  border-sky-400 text-sky-400 rounded-md text-sm flex items-center'
+                        className='px-2 md:px-5 py-3 border-2 border-sky-400 text-sky-400 rounded-md text-sm flex items-center'
                         onClick={() => handleDownload('CV.pdf')}
                     >
                         <FiDownload className="mr-3 w-4 h-4" />

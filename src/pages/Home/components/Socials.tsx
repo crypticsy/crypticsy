@@ -7,7 +7,7 @@ export function onClickURLHandler(url: string) {
 }
 
 export function onClickEmailHandler() {
-    window.location.href = 'mailto:animesh19basnet@domain.com'
+    window.location.href = 'mailto:contact@animeshbasnet.com.np'
 }
 
 export function SocialIcon({ IconComponent, url, type, size='medium' }: { IconComponent: IconType, url: string, type: string, size?: string }) {

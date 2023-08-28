@@ -12,7 +12,7 @@ interface CSVRow {
     credential_url: string;
 }
 
-function formatDate(date: Date) {
+export function formatDate(date: Date) {
     const splitDate = date.toString().split('/').map(Number)
     const newDate = new Date(splitDate[2], splitDate[1]-1, splitDate[0]);
     const day = newDate.getDate();
