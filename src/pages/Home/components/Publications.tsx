@@ -1,6 +1,4 @@
 import { SectionTitle } from "../../utils";
-import { formatDate } from "../../Msc/Certificates";
-
 import himalayanJavaCaseStudyImage from "../../../assets/publication/himalayanJavaCaseStudy.png";
 
 type PulicationProp = {
@@ -12,12 +10,19 @@ type PulicationProp = {
     publicationImage: string,
 }
 
+function formatDate(date: Date) {
+    const day = date.getDate();
+    const month = date.toLocaleString('default', { month: 'long' });
+    const year = date.getFullYear();
+    return `${month} ${day}, ${year}`;
+  };
+
 const publicaitonList = [
     {
         title: 'Himalayan Java',
         subtitle: 'Navigating Challenges and Pioneering Sustainability in Nepali Coffee Industry',
         type: 'A Case Study',
-        publishedDate: new Date(2023, 8, 1),
+        publishedDate: new Date(2023, 7, 1),
         publicationURL: 'https://parthstudent.vc/case-study/',
         publicationImage: himalayanJavaCaseStudyImage,
     }
