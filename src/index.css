@@ -10,43 +10,43 @@
   border: 0;
   outline: 0;
   box-sizing: border-box;
-  font-family: 'Calibre-Regular';
+  font-family: "Calibre-Regular";
 }
 
 @font-face {
-  font-family: 'Calibre-Regular';
-  src: url('./assets/fonts/Calibre/Calibre-Regular.ttf');
+  font-family: "Calibre-Regular";
+  src: url("./assets/fonts/Calibre/Calibre-Regular.ttf");
 }
 
-.calibre-reg{
-  font-family: 'Calibre-Regular' !important;
-}
-
-@font-face {
-  font-family: 'Calibre-SemiBold';
-  src: url('./assets/fonts/Calibre/Calibre-Semibold.ttf');
-}
-
-.calibre-smbold{
-  font-family: 'Calibre-SemiBold' !important;
+.calibre-reg {
+  font-family: "Calibre-Regular" !important;
 }
 
 @font-face {
-  font-family: 'SFMono-Regular';
-  src: url('./assets/fonts/SFMono/SFMono-Regular.ttf');
+  font-family: "Calibre-SemiBold";
+  src: url("./assets/fonts/Calibre/Calibre-Semibold.ttf");
 }
 
-.sfmono-reg{
-  font-family: 'SFMono-Regular' !important;
+.calibre-smbold {
+  font-family: "Calibre-SemiBold" !important;
 }
 
 @font-face {
-  font-family: 'SFMono-Semibold';
-  src: url('./assets/fonts/SFMono/SFMono-Semibold.ttf');
+  font-family: "SFMono-Regular";
+  src: url("./assets/fonts/SFMono/SFMono-Regular.ttf");
 }
 
-.sfmono-smbold{
-  font-family: 'SFMono-Semibold' !important;
+.sfmono-reg {
+  font-family: "SFMono-Regular" !important;
+}
+
+@font-face {
+  font-family: "SFMono-Semibold";
+  src: url("./assets/fonts/SFMono/SFMono-Semibold.ttf");
+}
+
+.sfmono-smbold {
+  font-family: "SFMono-Semibold" !important;
 }
 
 @layer components {
@@ -58,7 +58,7 @@
   }
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -73,12 +73,12 @@ html{
 
 @keyframes fadeInAnimation {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
   100% {
-      opacity: 1;
-   }
-   to {
+    opacity: 1;
+  }
+  to {
     opacity: 1;
     transform: translateY(0);
   }
@@ -86,7 +86,7 @@ html{
 
 body {
   margin: 0;
-  min-height:100vh;
+  min-height: 100vh;
   /* overflow: hidden; */
   transform: translateY(20px);
   animation: fadeInAnimation ease 1s;
@@ -97,18 +97,18 @@ body {
 }
 
 h1 {
-  font-family: 'Calibre-Semibold';
+  font-family: "Calibre-Semibold";
   line-height: 1.1;
 }
 
 h2 {
-  font-family: 'Calibre-Semibold';
+  font-family: "Calibre-Semibold";
   line-height: 0.8;
 }
 
 button {
   border: 1px solid rgb(59 130 246 / 0.5);
-  font-family: 'SFMono-Regular';
+  font-family: "SFMono-Regular";
   background-color: transparent;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -116,7 +116,7 @@ button {
 
 button:hover {
   transform: scale(1.06);
-  font-family: 'SFMono-Semibold';
+  font-family: "SFMono-Semibold";
 }
 
 .prevent-select {
@@ -130,7 +130,7 @@ button:hover {
 }
 
 .hover-underline-animation::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0);
@@ -147,14 +147,14 @@ button:hover {
   transform-origin: bottom left;
 }
 
-.hover-underline-animation-parent:hover{
+.hover-underline-animation-parent:hover {
   .hover-underline-animation::after {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
 }
 
-#navbar{
+#navbar {
   z-index: 20;
 }
 
@@ -203,6 +203,6 @@ button:hover {
   animation: slide-down 0.5s forwards;
 }
 
-.grIcon path{
+.grIcon path {
   stroke: rgb(56, 189, 248);
 }

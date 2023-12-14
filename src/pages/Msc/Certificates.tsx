@@ -35,7 +35,6 @@ export function Certificates() {
             header: true,
             complete: (result) => {
                 setCSVData(result.data as CSVRow[]);
-                
             },
         });
     }, []);

@@ -6,7 +6,7 @@ import {
   RouterProvider
 } from 'react-router-dom';
 
-import {Home} from './pages';
+import { Home } from './pages';
 import { Certificates } from './pages/Msc/Certificates';
 
 const router = createHashRouter([
@@ -16,7 +16,7 @@ const router = createHashRouter([
   },
   {
     path: "/certificates",
-    element: <Certificates/>,
+    element: <Certificates />,
   }
 ]);
 

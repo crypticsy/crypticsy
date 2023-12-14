@@ -87,11 +87,12 @@ const NormalProjectList = [
         githubURL: "https://github.com/crypticsy/Playground/tree/master/Game_Engine/Chess/"
     }, 
     {
-        title: "Ropey DVD Management System",
-        description: "An inventory and rental management system developed in ASP.NET MVC Framework that has multiple level of access based on user level, as well as an interactive user interface to help with the leasing process of DVD within the store.",
-        tags: ['ASP.NET', 'MVC', 'Bootstrap'],
-        onClickURL: "https://github.com/crypticsy/RopeyDVDManagementSystem",
-        githubURL: "https://github.com/crypticsy/RopeyDVDManagementSystem"
+        title: "Path Visualizer",
+        description: "A python project to visualize search algorithms on a grid,  built using the flask framework and the front-end is built using HTML, CSS and JavaScript, as well as uses tailwindcss for styling.",
+        tags: ['Flask', 'Javascript', 'TailwindCSS'],
+        onClickURL: "https://path-visualizer-crypticsy.vercel.app/",
+        githubURL: "https://github.com/crypticsy/PathVisualizer",
+        hostedURL: "https://path-visualizer-crypticsy.vercel.app/"
     },
     {
         title: "Sanctuary.io",
@@ -100,6 +101,13 @@ const NormalProjectList = [
         onClickURL: "https://crypticsy.github.io/sanctuary/",
         githubURL: "https://github.com/crypticsy/sanctuary",
         hostedURL: "https://crypticsy.github.io/sanctuary/"
+    },
+    {
+        title: "Ropey DVD Management System",
+        description: "An inventory and rental management system developed in ASP.NET MVC Framework that has multiple level of access based on user level, as well as an interactive user interface to help with the leasing process of DVD within the store.",
+        tags: ['ASP.NET', 'MVC', 'Bootstrap'],
+        onClickURL: "https://github.com/crypticsy/RopeyDVDManagementSystem",
+        githubURL: "https://github.com/crypticsy/RopeyDVDManagementSystem"
     }
 ];
 
