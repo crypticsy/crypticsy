@@ -21,18 +21,8 @@ export function About() {
                             <tr>
                                 <td className="pr-4">🔭</td>
                                 <td>
-                                    I'm currently working as a Data Analyst at&nbsp;
-                                    <a
-                                        className='cursor-pointer text-sky-400 hover:text-sky-400 hover-underline-animation'
-                                        href="https://www.bhoos.com/about/"
-                                        target="_blank">
-                                        Bhoos Games.
-                                    </a>
+                                    I'm currently seeking opportunities within the field of Machine Learning and Large Language Models.
                                 </td>
-                            </tr>
-                            <tr>
-                                <td>🌱</td>
-                                <td> I'm currently learning React Native, and Tableau. </td>
                             </tr>
                             <tr>
                                 <td>🤔</td>
