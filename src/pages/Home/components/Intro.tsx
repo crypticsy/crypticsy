@@ -12,14 +12,7 @@ export function Intro() {
 
                 <p className="calibre-reg sm:text-l md:text-xl text-gray-400 pb-6 text-justify max-w-3xl">
                     I’m a programmer specializing in building (and occasionally designing).
-                    Currently, I’m focused on implementing data driven decisions at &nbsp;
-                    <a
-                        className='cursor-pointer text-sky-400 hover:text-sky-400 hover-underline-animation'
-                        href="https://www.bhoos.com/about/"
-                        target="_blank"
-                    >
-                        Bhoos
-                    </a>.
+                    Currently, I’m focused on researching and developing Machine Learning models and Large Language Models.
                 </p>
                 <button
                     className='px-4 py-3 border-2 text-sm md:text-xl  border-sky-400 text-sky-400 rounded-md'
