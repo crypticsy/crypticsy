@@ -56,13 +56,6 @@ export function About() {
                         <GrCertificate className="mr-3 w-4 h-4 grIcon" />
                         <span className="my-auto sfmono-reg ">Certifications</span>
                     </button>
-                    <button
-                        className='px-2 md:px-5 py-3 border-2 border-sky-400 text-sky-400 rounded-md text-sm flex items-center'
-                        onClick={() => handleDownload('CV.pdf')}
-                    >
-                        <FiDownload className="mr-3 w-4 h-4" />
-                        <span className="my-auto sfmono-reg">Download CV</span>
-                    </button>
                 </div>
             </div>
         </div>
