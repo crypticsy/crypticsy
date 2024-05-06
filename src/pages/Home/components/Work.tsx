@@ -4,6 +4,7 @@ import { IoMdOpen } from "react-icons/io";
 
 import gragoPreview from "../../../assets/projects/grago.jpeg";
 import snadderPreview from "../../../assets/projects/snadder.webp";
+import nepaleseScholarshipHubPreview from "../../../assets/projects/nepaleseScholarshipHub.png";
 import { onClickURLHandler } from "./Socials";
 
 type FeaturedProjectsProps = {
@@ -23,6 +24,13 @@ const FeaturedProjectList = [
         tags: ['Python', 'React', 'Tailwind'],
         imageURL: snadderPreview,
         hostedURL: "https://snadder.io/"
+    },
+    {
+        title: "Nepalese Scholarship Hub",
+        description: "Nepalese Scholarship Hub is a platform designed to help individuals find opportunities in Nepal and beyond as well as connect them with those who are providing them",
+        tags: ['React', 'GoogleCloud', 'Tailwind'],
+        imageURL: nepaleseScholarshipHubPreview,
+        hostedURL: "https://www.nepalesescholarshiphub.com/"
     },
     {
         title: "Grago",
@@ -87,12 +95,11 @@ const NormalProjectList = [
         githubURL: "https://github.com/crypticsy/Playground/tree/master/Game_Engine/Chess/"
     }, 
     {
-        title: "Path Visualizer",
-        description: "A python project to visualize search algorithms on a grid,  built using the flask framework and the front-end is built using HTML, CSS and JavaScript, as well as uses tailwindcss for styling.",
-        tags: ['Flask', 'Javascript', 'TailwindCSS'],
-        onClickURL: "https://path-visualizer-crypticsy.vercel.app/",
-        githubURL: "https://github.com/crypticsy/PathVisualizer",
-        hostedURL: "https://path-visualizer-crypticsy.vercel.app/"
+        title: "Vision Caster",
+        description: "A web application that allows users to create and manage their own vision boards, built using the MERN stack and utilizes the cloudinary API to store images.",
+        tags: ['RasberryPi', 'Transformers', 'Azure'],
+        onClickURL : "https://github.com/crypticsy/VisionCaster",
+        githubURL: "https://github.com/crypticsy/VisionCaster"
     },
     {
         title: "Sanctuary.io",
@@ -108,6 +115,14 @@ const NormalProjectList = [
         tags: ['ASP.NET', 'MVC', 'Bootstrap'],
         onClickURL: "https://github.com/crypticsy/RopeyDVDManagementSystem",
         githubURL: "https://github.com/crypticsy/RopeyDVDManagementSystem"
+    },
+    {
+        title: "Path Visualizer",
+        description: "A python project to visualize search algorithms on a grid,  built using the flask framework and the front-end is built using HTML, CSS and JavaScript, as well as uses tailwindcss for styling.",
+        tags: ['Flask', 'Javascript', 'TailwindCSS'],
+        onClickURL: "https://path-visualizer-crypticsy.vercel.app/",
+        githubURL: "https://github.com/crypticsy/PathVisualizer",
+        hostedURL: "https://path-visualizer-crypticsy.vercel.app/"
     }
 ];
 
@@ -128,10 +143,10 @@ function NormalProject({title, description, tags, onClickURL, githubURL, hostedU
         </div>
 
         <div className="mt-5">
-            <p className="text-xs md:text-xs sfmono-reg space-x-6">
-                {tags.length > 0 && tags.map((tag, idx) => { return <span className="capitalize sfmono-reg" key={idx}>{tag}</span> })}
-            </p>
-        </div>
+        <p className="text-xs md:text-xs sfmono-reg flex flex-wrap space-x-5">
+            {tags.length > 0 && tags.map((tag, idx) => { return <span className="capitalize sfmono-reg" key={idx}>{tag}</span> })}
+        </p>
+    </div>
     </div>
     )
     

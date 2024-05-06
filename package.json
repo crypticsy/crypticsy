@@ -5,7 +5,7 @@
   "homepage": "https://crypticsy.github.io/crypticsy",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "deploy": "yarn build && gh-pages -d dist",
     "build": "tsc && vite build",
     "preview": "vite preview"
