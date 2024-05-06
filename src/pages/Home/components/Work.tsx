@@ -96,7 +96,7 @@ const NormalProjectList = [
     }, 
     {
         title: "Vision Caster",
-        description: "A web application that allows users to create and manage their own vision boards, built using the MERN stack and utilizes the cloudinary API to store images.",
+        description: "This project creates an interactive image analysis system for the visually impaired. It uses the BLIP model on a Raspberry Pi to process images and give real-time descriptive captions and auditory feedback.",
         tags: ['RasberryPi', 'Transformers', 'Azure'],
         onClickURL : "https://github.com/crypticsy/VisionCaster",
         githubURL: "https://github.com/crypticsy/VisionCaster"
