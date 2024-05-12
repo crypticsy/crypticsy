@@ -96,10 +96,17 @@ const NormalProjectList = [
     }, 
     {
         title: "Vision Caster",
-        description: "This project creates an interactive image analysis system for the visually impaired. It uses the BLIP model on a Raspberry Pi to process images and give real-time descriptive captions and auditory feedback.",
+        description: "An interactive image analysis system for the visually impaired. It uses the BLIP model on a Raspberry Pi to process images and give real-time descriptive captions and auditory feedback.",
         tags: ['RasberryPi', 'Transformers', 'Azure'],
         onClickURL : "https://github.com/crypticsy/VisionCaster",
         githubURL: "https://github.com/crypticsy/VisionCaster"
+    },
+    {
+        title: "Animated Movie Ontology",
+        description: "A semantic programming application tailored for the animated film industry that organizes and analyzes complex data sets from animated films, leveraging ontologies and RDF files to facilitate this process.",
+        tags: ['Semantics', 'Protege', 'Streamlit'],
+        onClickURL : "https://github.com/crypticsy/Academia/tree/master/Animated_Movie_Ontology",
+        githubURL: "https://github.com/crypticsy/Academia/tree/master/Animated_Movie_Ontology"
     },
     {
         title: "Sanctuary.io",
