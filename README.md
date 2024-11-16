@@ -5,7 +5,7 @@
 <!-- Bio and interest -->
 <div>
 <p align="justify">
-In the realm of data, I approach each challenge with a mindset akin to Alan Turing's insatiable curiosity, determined to decipher and connect the narrative within the numbers. I embrace new challenges and continuously seek to expand my skill set, be it enlivening the most mundane data through visualization, optimizing scripts with algorithms, or building games using an unfamiliar platform.
+A visionary and adaptable professional with expertise in data analysis, programming, and software development. Skilled in using advanced analytical tools, developing efficient pipelines, designing scalable software solutions, and integrating machine learning models to enhance decision-making and business outcomes. An effective team player who thrives in dynamic settings and keen to tackle challenges that promote both organisational and personal growth.
 </p>
 </br>
 
