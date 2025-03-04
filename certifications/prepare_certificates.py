@@ -1,4 +1,5 @@
 # import relevant libraries
+import os
 import pandas as pd
 
 import warnings
@@ -8,13 +9,16 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 Script that organizes the provided certificates based on the issuer and name of the certificate, and finally created the README.md file
 """
 
-df = pd.read_csv('certificates.csv')
+base_path = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(base_path, 'certificates.csv')
+
+df = pd.read_csv(csv_path)
 df.sort_values(by=['issued_by', 'name'], inplace=True)
 df.issued_by = df.issued_by.str.title().str.strip()
 df.name = df.name.str.strip()
 df.credential_url = df.credential_url.str.strip()
 
-df.to_csv('certificates.csv', index=False)
+df.to_csv(csv_path, index=False)
 
 print("--- Certificates have been organized ---")
 
@@ -41,7 +45,7 @@ for col, label in [
         output[n+2] += str.ljust(val, maximum_length) + " | "
 
 
-with open("README.md", 'w') as file:
+with open(os.path.join(base_path,"README.md"), 'w') as file:
     file.writelines("# Certifications\n\nA list of online certifications curated over a period of time . . .\n\n<br/>\n\n## Completed Courses\n\n")
     file.writelines("\n".join(output))
     # to make the links open a new tab
