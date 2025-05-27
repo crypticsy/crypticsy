@@ -26,7 +26,7 @@ Above all, I believe education is the most powerful tool we have. Whether it’s
 
 **Reach me at**
 
-<div align="center">
+<div align="left" style="display: flex; flex-wrap: wrap; gap: 12px;">
 
 <a href="https://www.linkedin.com/in/animeshbasnet/" target="_blank">
   <img alt="LinkedIn Badge" width="100px" src="https://img.shields.io/badge/-LinkedIn-blue?style=for-the-badge&logo=Linkedin&logoColor=white" />
