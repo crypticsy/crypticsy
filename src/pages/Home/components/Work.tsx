@@ -26,11 +26,11 @@ const FeaturedProjectList = [
         hostedURL: "https://snadder.io/"
     },
     {
-        title: "Nepalese Scholarship Hub",
-        description: "Nepalese Scholarship Hub is a platform designed to help individuals find opportunities in Nepal and beyond as well as connect them with those who are providing them",
-        tags: ['React', 'GoogleCloud', 'Tailwind'],
-        imageURL: nepaleseScholarshipHubPreview,
-        hostedURL: "https://www.nepalesescholarshiphub.com/"
+        title: "HAR System",
+        description: "Human Activity Recognition (HAR) system designed to process and analyze sensor data to recognize human activities using XGBoost for the CASAS Smart Home Data Set - Dataset 17.",
+        tags: ['Streamlit', 'XGBoost'],
+        imageURL: "https://github.com/crypticsy/human-activity-recognition/blob/master/Images/demo.gif?raw=true",
+        githubURL: "https://github.com/crypticsy/human-activity-recognition"
     },
     {
         title: "Grago",
