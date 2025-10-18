@@ -23,7 +23,7 @@ const publicaitonList = [
         title: 'APT Attribution Using Deep Reinforcement Learning',
         subtitle: 'This paper investigates the application of DRL for attributing APT groups through detailed behavioural analysis.',
         type: 'Research Paper',
-        publishedDate: new Date(2025, 5, 20),
+        publishedDate: new Date(2025, 9, 29),
         publicationURL: 'https://dl.acm.org/doi/10.1145/3736654',
         publicationImage: digital_threats,
     },
