@@ -64,7 +64,9 @@ export function Publications() {
                 < SectionTitle sn={'03.'} title={"Publications"} />
                 <div className="calibre-reg pt-2 md:pt-10 sm:text-xs md:text-xl text-gray-300 text-justify space-y-8 md:space-y-32 w-full">
                     <div className={"grid grid-cols-1 md:grid-cols-3 gap-6"}>
-                        {publicaitonList.map(publication => Publication(publication))}
+                        {publicaitonList.map((publication, idx) => (
+                            <Publication key={idx} {...publication} />
+                        ))}
                     </div>
                 </div>
             </div>

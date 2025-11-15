@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Layout } from "../../template";
-import { Footer, onClickURLHandler } from "../Home/components";
+import { Footer, LeftSocials, RightSocials, onClickURLHandler } from "../Home/components";
 import Papa from 'papaparse';
 import { SubSectionTitle } from "../utils";
+import { FiArrowLeft } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 interface CSVRow {
     name: string;
@@ -28,6 +30,7 @@ const issued_by = "Coursera"
 export function Certificates() {
     const [csvData, setCSVData] = useState<CSVRow[]>([]);
     const [issuers, setIssuers] = useState<string[]>([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         Papa.parse('../../../certifications/certificates.csv', {
@@ -46,9 +49,22 @@ export function Certificates() {
     return (
         <Layout>
             <div className="mx-8 mt-[10vh]">
+                <LeftSocials/>
+                <RightSocials/>
+
                 <div className="flex justify-center">
                     <div className="w-full max-w-5xl">
-                        <h1 className="mt-8 mb-16 text-[1.4rem] md:text-[2.5rem] text-center" >Certifications</h1>
+                        <div className="flex items-center justify-center relative mb-16">
+                            <button
+                                onClick={() => navigate('/')}
+                                className="absolute left-0 mt-8 text-gray-400 hover:text-sky-400 transition-colors cursor-pointer flex items-center gap-2 group border-none bg-transparent"
+                                aria-label="Back to home"
+                            >
+                                <FiArrowLeft className="w-5 h-5" />
+                                <span className="hidden md:inline text-sm sfmono-reg">Back</span>
+                            </button>
+                            <h1 className="mt-8 text-[1.4rem] md:text-[2.5rem] text-center" >Certifications</h1>
+                        </div>
                         <div className="space-y-8">
                             { issuers.map((issued_by, iIndex) => (
                                 <div key={iIndex}>
