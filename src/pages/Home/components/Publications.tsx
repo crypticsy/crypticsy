@@ -39,18 +39,18 @@ const publicaitonList = [
 
 function Publication(publication: PulicationProp) {
     return (
-        <div className="px-5 py-6 md:p-7 bg-slate-800 rounded-md flex-row h-full project cursor-pointer" onClick={() => window.open(publication.publicationURL, "_blank")} >
-            <div className="space-y-6">
-                <div className="w-full overflow-hidden rounded-lg aspect-square">
-                    <img className="" src={publication.publicationImage} />
-                </div>
-                <div className="space-y-2">
+        <div className="bg-slate-800 rounded-md overflow-hidden h-full project cursor-pointer flex flex-col" onClick={() => window.open(publication.publicationURL, "_blank")} >
+            <div className="w-full overflow-hidden aspect-square">
+                <img className="w-full h-full object-cover" src={publication.publicationImage} />
+            </div>
+            <div className="px-5 py-6 md:p-7 flex flex-col flex-grow">
+                <div className="space-y-2 flex-grow">
                     <div className="calibre-smbold">{publication.title}</div>
                     {publication.subtitle && <div className="text-sm md:text-base text-left">{publication.subtitle}</div>}
-                    <div className="flex sfmono-reg pt-3 text-xs md:text-xs">
-                        <div className="mr-auto">{publication.type}</div>
-                        <div className="">{formatDate(publication.publishedDate)}</div>
-                    </div>
+                </div>
+                <div className="flex sfmono-reg pt-3 text-xs md:text-xs mt-auto">
+                    <div className="mr-auto">{publication.type}</div>
+                    <div className="">{formatDate(publication.publishedDate)}</div>
                 </div>
             </div>
         </div>)

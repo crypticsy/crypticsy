@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { SectionTitle } from "../../utils";
 import { FiGithub } from "react-icons/fi";
 import { IoMdOpen } from "react-icons/io";
@@ -88,25 +89,27 @@ type NormalProjectProps = {
 
 const NormalProjectList = [
     {
-        title: "Chess Engine",
-        description: "A full fledge chess game developed using pygame, and contains an ai engine that utilizes the minimax and alpha beta pruning algorithms to offer an immersive player-versus-bot experience.",
-        tags: ['Python', 'PyGame', 'Algorithm'],
-        onClickURL: "https://github.com/crypticsy/Playground/tree/master/Game_Engine/Chess/",
-        githubURL: "https://github.com/crypticsy/Playground/tree/master/Game_Engine/Chess/"
-    }, 
+        title: "The Marauder's Map",
+        description: "A web application inspired by the Marauder’s Map from the Harry Potter universe, enabling users to explore a digital map of Hogwarts with moving footprints and hidden rooms.",
+        tags: [ 'React-Three-Fiber', 'Typescript'],
+        onClickURL: "https://crypticsy.github.io/the-marauders-map/",
+        githubURL: "https://github.com/crypticsy/the-marauders-map",
+        hostedURL: "https://crypticsy.github.io/the-marauders-map/"
+    },
+    {
+        title: "Pocket Booth",
+        description:"A pocket-sized digital photo booth application that allows users to capture instant photo strips and store them locally.",
+        tags: ['Camera', 'Google-oauth', 'Typescript'],
+        onClickURL: "https://crypticsy.github.io/pocket-booth/",
+        githubURL: "https://github.com/crypticsy/pocket-booth",
+        hostedURL: "https://crypticsy.github.io/pocket-booth/"
+    },
     {
         title: "Vision Caster",
         description: "An interactive image analysis system for the visually impaired. It uses the BLIP model on a Raspberry Pi to process images and give real-time descriptive captions and auditory feedback.",
         tags: ['RasberryPi', 'Transformers', 'Azure'],
         onClickURL : "https://github.com/crypticsy/VisionCaster",
         githubURL: "https://github.com/crypticsy/VisionCaster"
-    },
-    {
-        title: "Animated Movie Ontology",
-        description: "A semantic programming application tailored for the animated film industry that organizes and analyzes complex data sets from animated films, leveraging ontologies and RDF files to facilitate this process.",
-        tags: ['Semantics', 'Protege', 'Streamlit'],
-        onClickURL : "https://github.com/crypticsy/Academia/tree/master/Animated_Movie_Ontology",
-        githubURL: "https://github.com/crypticsy/Academia/tree/master/Animated_Movie_Ontology"
     },
     {
         title: "Sanctuary.io",
@@ -117,11 +120,33 @@ const NormalProjectList = [
         hostedURL: "https://crypticsy.github.io/sanctuary/"
     },
     {
+        title: "From Me to You",
+        description: "A web application for sending heartfelt digital letters to friends and loved ones.",
+        tags: ['Typescript', 'TailwindCSS'],
+        onClickURL: "https://crypticsy.github.io/from-me-to-you/",
+        githubURL: "https://github.com/crypticsy/from-me-to-you",
+        hostedURL: "https://crypticsy.github.io/from-me-to-you/"
+    },
+    {
         title: "Ropey DVD Management System",
         description: "An inventory and rental management system developed in ASP.NET MVC Framework that has multiple level of access based on user level, as well as an interactive user interface to help with the leasing process of DVD within the store.",
         tags: ['ASP.NET', 'MVC', 'Bootstrap'],
         onClickURL: "https://github.com/crypticsy/RopeyDVDManagementSystem",
         githubURL: "https://github.com/crypticsy/RopeyDVDManagementSystem"
+    },
+    {
+        title: "Chess Engine",
+        description: "A full fledge chess game developed using pygame, and contains an ai engine that utilizes the minimax and alpha beta pruning algorithms to offer an immersive player-versus-bot experience.",
+        tags: ['Python', 'PyGame', 'Algorithm'],
+        onClickURL: "https://github.com/crypticsy/Playground/tree/master/Game_Engine/Chess/",
+        githubURL: "https://github.com/crypticsy/Playground/tree/master/Game_Engine/Chess/"
+    },
+    {
+        title: "Animated Movie Ontology",
+        description: "A semantic programming application tailored for the animated film industry that organizes and analyzes complex data sets from animated films, leveraging ontologies and RDF files to facilitate this process.",
+        tags: ['Semantics', 'Protege', 'Streamlit'],
+        onClickURL : "https://github.com/crypticsy/Academia/tree/master/Animated_Movie_Ontology",
+        githubURL: "https://github.com/crypticsy/Academia/tree/master/Animated_Movie_Ontology"
     },
     {
         title: "Path Visualizer",
@@ -141,8 +166,8 @@ function NormalProject({title, description, tags, onClickURL, githubURL, hostedU
 
         <div className="space-y-3 mb-auto h-[88%]">
             <p className={"flex space-x-5 text-left pb-3"}>
-                {githubURL && githubURL.length > 0 && <FiGithub className="w-5 h-5 hover:text-sky-500 cursor-pointer" onClick={() => window.open(githubURL, "_blank")} />}
-                {hostedURL && hostedURL.length > 0 && <IoMdOpen className="w-5 h-5 hover:text-sky-500 cursor-pointer" />}
+                {githubURL && githubURL.length > 0 && <FiGithub className="w-5 h-5 hover:text-sky-500 cursor-pointer" onClick={(e) => { e.stopPropagation(); window.open(githubURL, "_blank"); }} />}
+                {hostedURL && hostedURL.length > 0 && <IoMdOpen className="w-5 h-5 hover:text-sky-500 cursor-pointer" onClick={(e) => { e.stopPropagation(); window.open(hostedURL, "_blank"); }} />}
             </p>
 
             <p className="calibre-smbold text-[1.4rem] md:text-[1.6rem] text-white leading-8 title">{title}</p>
@@ -161,11 +186,20 @@ function NormalProject({title, description, tags, onClickURL, githubURL, hostedU
 
 
 export function Work() {
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const filteredProjects = NormalProjectList.filter((project) => {
+        const searchLower = searchTerm.toLowerCase();
+        const titleMatch = project.title.toLowerCase().includes(searchLower);
+        const tagsMatch = project.tags.some(tag => tag.toLowerCase().includes(searchLower));
+        return titleMatch || tagsMatch;
+    });
+
     return (
         <div className="justify-center flex items-center mt-[15vh] md:pt-[15vh]"  id="work">
             <div className='space-y-8 max-w-5xl'>
 
-                < SectionTitle sn={'02.'} title={'Some Things I’ve Built'} />
+                < SectionTitle sn={'02.'} title={"Some Things I've Built"} />
                 <div className="calibre-reg pt-2 md:pt-10 sm:text-xs md:text-xl text-gray-300 text-justify space-y-8 md:space-y-32">
                     {
                         FeaturedProjectList.map((project: FeaturedProjectsProps, idx) => {
@@ -183,9 +217,20 @@ export function Work() {
                 </div>
 
                 <div className="calibre-smbold pt-8 md:pt-[28vh] pb-8 sm:text-xs md:text-3xl text-center">Other Noteworthy Projects</div>
+
+                <div className="flex justify-center pb-2">
+                    <input
+                        type="text"
+                        placeholder="Search by name or tags..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="w-full md:w-2/3 px-4 pt-4 py-3 bg-slate-800 text-white rounded-md border border-slate-700 focus:outline-none focus:border-sky-500 transition-colors"
+                    />
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {
-                        NormalProjectList.map((project: NormalProjectProps, idx) => {
+                        filteredProjects.map((project: NormalProjectProps, idx) => {
                             return <NormalProject
                                 key={idx}
                                 title={project.title}
@@ -197,6 +242,12 @@ export function Work() {
                         })
                     }
                 </div>
+
+                {filteredProjects.length === 0 && (
+                    <div className="text-center text-gray-400 py-8">
+                        No projects found matching "{searchTerm}"
+                    </div>
+                )}
             </div>
         </div>
     )
