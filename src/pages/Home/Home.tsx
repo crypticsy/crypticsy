@@ -11,6 +11,10 @@ export function Home() {
     const container = cursorRef.current;
     if (!container) return;
 
+    // Only enable cursor spotlight on devices with a mouse (non-touch devices)
+    const isTouchDevice = !window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (isTouchDevice) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       const rect = container.getBoundingClientRect();
       const x = e.clientX - rect.left;

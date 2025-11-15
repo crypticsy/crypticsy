@@ -42,18 +42,21 @@ nav.navbar-scrolled{
   position: relative;
 }
 
-.cursor-spotlight::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: radial-gradient(
-    600px at var(--mouse-x) var(--mouse-y),
-    rgba(29, 78, 216, 0.25),
-    transparent 80%
-  );
-  pointer-events: none;
-  z-index: 1;
+/* Disable cursor spotlight on mobile/touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .cursor-spotlight::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(
+      600px at var(--mouse-x) var(--mouse-y),
+      rgba(29, 78, 216, 0.25),
+      transparent 80%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
 }
