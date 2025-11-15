@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { SectionTitle } from "../../utils";
 import { FiGithub, FiStar, FiGitBranch, FiSearch } from "react-icons/fi";
 import { IoMdOpen } from "react-icons/io";
@@ -56,6 +56,24 @@ function FeaturedProject({
   const justifyType =
     side === "md:text-right" ? "md:justify-end" : "md:justify-start";
   const imageSide = side === "md:text-right" ? "float-left" : "float-right";
+  const imageOverlayRef = useRef<HTMLDivElement | null>(null);
+  const descOverlayRef = useRef<HTMLDivElement | null>(null);
+
+  const animateIn = (ref: React.RefObject<HTMLDivElement>) => {
+    const el = ref.current;
+    if (!el) return;
+    el.style.transition = 'none';
+    el.style.backgroundPosition = '-100% -100%, 0 0';
+    el.style.transition = '650ms ease';
+    el.style.backgroundPosition = '100% 100%, 0 0';
+  };
+
+  const animateOut = (ref: React.RefObject<HTMLDivElement>) => {
+    const el = ref.current;
+    if (!el) return;
+    el.style.transition = 'none';
+    el.style.backgroundPosition = '-100% -100%, 0 0';
+  };
 
   return (
     <div className={"w-full flex justify-start relative " + justifyType}>
@@ -64,7 +82,24 @@ function FeaturedProject({
           "hidden md:block  shadow-md md:shadow-none absolute inset-0 items-center justify-center "
         }
       >
-        <div className={"w-1/2 h-full overflow-hidden rounded-md " + imageSide}>
+        <div
+          className={"w-1/2 h-full overflow-hidden rounded-md relative " + imageSide}
+          onMouseEnter={() => animateIn(imageOverlayRef)}
+          onMouseLeave={() => animateOut(imageOverlayRef)}
+        >
+          <div
+            ref={imageOverlayRef}
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(-45deg, hsla(0,0%,0%,0) 60%, rgba(56, 189, 248, 0.3) 70%, hsla(0,0%,0%,0) 100%)',
+              backgroundSize: '250% 250%, 100% 100%',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: '-100% -100%, 0 0',
+              pointerEvents: 'none',
+              zIndex: 10
+            }}
+          />
           {hostedURL && hostedURL.length > 0 ? (
             <img
               src={imageURL}
@@ -92,9 +127,26 @@ function FeaturedProject({
           </p>
         </div>
 
-        <p className="p-0 md:p-7 bg-slate-800 flex text-base md:text-xl rounded-md">
-          {description}
-        </p>
+        <div
+          className="p-0 md:p-7 bg-slate-800 flex text-base md:text-xl rounded-md relative overflow-hidden"
+          onMouseEnter={() => animateIn(descOverlayRef)}
+          onMouseLeave={() => animateOut(descOverlayRef)}
+        >
+          <div
+            ref={descOverlayRef}
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(-45deg, hsla(0,0%,0%,0) 60%, rgba(56, 189, 248, 0.3) 70%, hsla(0,0%,0%,0) 100%)',
+              backgroundSize: '250% 250%, 100% 100%',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: '-100% -100%, 0 0',
+              pointerEvents: 'none',
+              zIndex: 10
+            }}
+          />
+          <p>{description}</p>
+        </div>
 
         <p className="text-xs md:text-sm space-x-6 pb-1">
           {tags.length > 0 &&
@@ -231,6 +283,23 @@ function NormalProject({
     stars: number;
     forks: number;
   } | null>(null);
+  const overlayRef = useRef<HTMLDivElement | null>(null);
+
+  const animateIn = () => {
+    const el = overlayRef.current;
+    if (!el) return;
+    el.style.transition = 'none';
+    el.style.backgroundPosition = '-100% -100%, 0 0';
+    el.style.transition = '650ms ease';
+    el.style.backgroundPosition = '100% 100%, 0 0';
+  };
+
+  const animateOut = () => {
+    const el = overlayRef.current;
+    if (!el) return;
+    el.style.transition = 'none';
+    el.style.backgroundPosition = '-100% -100%, 0 0';
+  };
 
   useEffect(() => {
     if (githubURL && githubURL.length > 0) {
@@ -287,9 +356,24 @@ function NormalProject({
 
   return (
     <div
-      className="px-5 py-6 md:p-7 bg-slate-800 rounded-md flex-row h-full project cursor-pointer"
+      className="px-5 py-6 md:p-7 bg-slate-800 rounded-md flex-row h-full project cursor-pointer relative overflow-hidden"
       onClick={() => onClickURLHandler(onClickURL)}
+      onMouseEnter={animateIn}
+      onMouseLeave={animateOut}
     >
+      <div
+        ref={overlayRef}
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(-45deg, hsla(0,0%,0%,0) 60%, rgba(56, 189, 248, 0.3) 70%, hsla(0,0%,0%,0) 100%)',
+          backgroundSize: '250% 250%, 100% 100%',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: '-100% -100%, 0 0',
+          pointerEvents: 'none',
+          zIndex: 10
+        }}
+      />
       <div className="space-y-3 mb-auto h-[88%]">
         <div className="flex justify-between items-center pb-3">
           <div className={"flex space-x-5 text-left"}>

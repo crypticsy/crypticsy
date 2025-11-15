@@ -57,7 +57,7 @@ export function Certificates() {
                         <div className="flex items-center justify-center relative mb-16">
                             <button
                                 onClick={() => navigate('/')}
-                                className="absolute left-0 mt-8 text-gray-400 hover:text-sky-400 transition-colors cursor-pointer flex items-center gap-2 group border-none bg-transparent"
+                                className="absolute left-0 mt-8 text-gray-400 hover:text-sky-400 transition-colors cursor-pointer flex items-center gap-2 group border-none bg-transparent ease-in-out"
                                 aria-label="Back to home"
                             >
                                 <FiArrowLeft className="w-5 h-5" />

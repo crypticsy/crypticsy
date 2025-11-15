@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { SectionTitle } from "../../utils";
 import himalayanJavaCaseStudyImage from "../../../assets/publication/himalayanJavaCaseStudy.png";
 import digital_threats from "../../../assets/publication/digital_threats.jpg";
@@ -38,8 +39,44 @@ const publicaitonList = [
 ]
 
 function Publication(publication: PulicationProp) {
+    const overlayRef = useRef<HTMLDivElement | null>(null);
+
+    const animateIn = () => {
+        const el = overlayRef.current;
+        if (!el) return;
+        el.style.transition = 'none';
+        el.style.backgroundPosition = '-100% -100%, 0 0';
+        el.style.transition = '650ms ease';
+        el.style.backgroundPosition = '100% 100%, 0 0';
+    };
+
+    const animateOut = () => {
+        const el = overlayRef.current;
+        if (!el) return;
+        el.style.transition = 'none';
+        el.style.backgroundPosition = '-100% -100%, 0 0';
+    };
+
     return (
-        <div className="bg-slate-800 rounded-md overflow-hidden h-full project cursor-pointer flex flex-col" onClick={() => window.open(publication.publicationURL, "_blank")} >
+        <div
+            className="bg-slate-800 rounded-md overflow-hidden h-full project cursor-pointer flex flex-col relative"
+            onClick={() => window.open(publication.publicationURL, "_blank")}
+            onMouseEnter={animateIn}
+            onMouseLeave={animateOut}
+        >
+            <div
+                ref={overlayRef}
+                style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(-45deg, hsla(0,0%,0%,0) 60%, rgba(56, 189, 248, 0.3) 70%, hsla(0,0%,0%,0) 100%)',
+                    backgroundSize: '250% 250%, 100% 100%',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: '-100% -100%, 0 0',
+                    pointerEvents: 'none',
+                    zIndex: 10
+                }}
+            />
             <div className="w-full overflow-hidden aspect-square">
                 <img className="w-full h-full object-cover" src={publication.publicationImage} />
             </div>
