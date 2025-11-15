@@ -453,7 +453,7 @@ export function Work() {
 
   return (
     <div
-      className="justify-center flex items-center mt-[15vh] md:pt-[15vh]"
+      className="justify-center flex items-center mt-[15vh] md:pt-[15vh] mx-8"
       id="work"
     >
       <div className="space-y-8 max-w-5xl">

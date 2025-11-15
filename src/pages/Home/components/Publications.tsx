@@ -96,7 +96,7 @@ function Publication(publication: PulicationProp) {
 
 export function Publications() {
     return (
-        <div className="justify-center flex items-center mt-[15vh] md:pt-[15vh]" id="publications">
+        <div className="justify-center flex items-center mt-[15vh] md:pt-[15vh] mx-8" id="publications">
             <div className='space-y-8 max-w-5xl'>
                 < SectionTitle sn={'03.'} title={"Publications"} />
                 <div className="calibre-reg pt-2 md:pt-10 sm:text-xs md:text-xl text-gray-300 text-justify space-y-8 md:space-y-32 w-full">

@@ -167,11 +167,6 @@ input::placeholder {
   from {
     transform: translateY(0);
     opacity: 1;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(15px);
-    -moz-backdrop-filter: blur(15px);
-    -o-backdrop-filter: blur(15px);
-    -ms-backdrop-filter: blur(15px);
   }
   to {
     transform: translateY(-100%);
@@ -187,20 +182,10 @@ input::placeholder {
   from {
     transform: translateY(-100%);
     opacity: 0;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(15px);
-    -moz-backdrop-filter: blur(15px);
-    -o-backdrop-filter: blur(15px);
-    -ms-backdrop-filter: blur(15px);
   }
   to {
     transform: translateY(0%);
     opacity: 1;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(15px);
-    -moz-backdrop-filter: blur(15px);
-    -o-backdrop-filter: blur(15px);
-    -ms-backdrop-filter: blur(15px);
   }
 }
 
