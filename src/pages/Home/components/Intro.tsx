@@ -12,20 +12,20 @@ export function Intro() {
             <div className="absolute inset-0 pointer-events-none z-0">
                 <PixelBlast
                     variant="circle"
-                    pixelSize={9}
+                    pixelSize={12}
                     color="#51369C"
-                    patternScale={3}
-                    patternDensity={1.2}
+                    patternScale={2.5}
+                    patternDensity={0.8}
                     pixelSizeJitter={0.5}
                     enableRipples
-                    rippleSpeed={0.4}
+                    rippleSpeed={0.3}
                     rippleThickness={0.12}
-                    rippleIntensityScale={1.5}
+                    rippleIntensityScale={1.2}
                     liquid
-                    liquidStrength={0.12}
+                    liquidStrength={0.1}
                     liquidRadius={1.2}
-                    liquidWobbleSpeed={5}
-                    speed={0.6}
+                    liquidWobbleSpeed={2.5}
+                    speed={0.5}
                     edgeFade={0}
                     transparent
                 />
