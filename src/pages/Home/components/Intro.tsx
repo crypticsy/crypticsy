@@ -3,21 +3,6 @@ import { onClickEmailHandler } from "./Socials";
 import PixelBlast from "../../../components/PixelBlast";
 
 export function Intro() {
-    const [pixelSize, setPixelSize] = useState(6);
-
-    useEffect(() => {
-        const updatePixelSize = () => {
-            setPixelSize(window.innerWidth < 768 ? 3 : 6);
-        };
-
-        // Set initial size
-        updatePixelSize();
-
-        // Update on resize
-        window.addEventListener('resize', updatePixelSize);
-        return () => window.removeEventListener('resize', updatePixelSize);
-    }, []);
-
     return (
         <div
             className="justify-center flex items-center min-h-screen relative"
@@ -27,7 +12,7 @@ export function Intro() {
             <div className="absolute inset-0 pointer-events-none z-0">
                 <PixelBlast
                     variant="circle"
-                    pixelSize={pixelSize}
+                    pixelSize={9}
                     color="#51369C"
                     patternScale={3}
                     patternDensity={1.2}
