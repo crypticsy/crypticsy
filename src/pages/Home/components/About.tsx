@@ -3,7 +3,7 @@ import { SectionTitle, handleNavLinkClick } from "../../utils";
 export function About() {
   return (
     <div
-      className="justify-center flex items-center pt-[15vh] mx-8"
+      className="justify-center flex items-center pt-[15vh] mx-8 lg:mx-20"
       id="about"
     >
       <div className="space-y-8 max-w-5xl">

@@ -21,7 +21,7 @@ export function SocialIcon({ IconComponent, url, type, size='medium' }: { IconCo
 
 export function LeftSocials() {
     return (
-        <div className="fixed bottom-0 left-12 invisible md:visible">
+        <div className="fixed bottom-0 left-6 lg:left-10 xl:left-12 invisible lg:visible">
             <div className="space-y-6">
                 <SocialIcon IconComponent={MdOutlineEmail} url={''} type={'email'} />
                 <SocialIcon IconComponent={FiLinkedin} url={'https://www.linkedin.com/in/animeshbasnet/'} type={'link'} />
@@ -35,7 +35,7 @@ export function LeftSocials() {
 
 export function RightSocials() {
     return (
-        <div className="fixed bottom-0 right-12 invisible md:visible">
+        <div className="fixed bottom-0 right-6 lg:right-10 xl:right-12 invisible lg:visible">
             <div className="space-y-6">
                 <SocialIcon IconComponent={FiGithub} url={'https://github.com/crypticsy/'} type={'link'} />
                 <div className="h-[8rem] w-8 justify-center flex mt-4">

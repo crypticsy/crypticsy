@@ -339,7 +339,7 @@ export function Work() {
 
   return (
     <div
-      className="justify-center flex items-center mt-[15vh] md:pt-[15vh] mx-8"
+      className="justify-center flex items-center mt-[15vh] md:pt-[15vh] mx-8 lg:mx-20"
       id="work"
     >
       <div className="space-y-8 max-w-6xl w-full">
@@ -362,7 +362,7 @@ export function Work() {
         </div>
 
         {/* Bento Box Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 auto-rows-[minmax(280px,auto)] px-4 md:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 auto-rows-[minmax(280px,auto)] px-4 lg:px-0">
           {filteredProjects.map((project, idx) => (
             <BentoProject
               key={idx}
