@@ -1,3 +1,5 @@
+import { LeftSocials, RightSocials } from './Home/components';
+
 type SectionTitleProps = {
     sn: String;
     title: String;
@@ -41,3 +43,22 @@ export function handleDownload(fileName: string) {
 export function handleNavLinkClick(hash:string){
     window.location.hash = hash;
 };
+
+type PageContentLayoutProps = {
+    children: React.ReactNode;
+    showSideSocials?: boolean;
+}
+
+export function PageContentLayout({ children, showSideSocials = true }: PageContentLayoutProps) {
+    if (!showSideSocials) {
+        return <>{children}</>;
+    }
+
+    return (
+        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr_auto]">
+            <LeftSocials/>
+            <div>{children}</div>
+            <RightSocials/>
+        </div>
+    );
+}

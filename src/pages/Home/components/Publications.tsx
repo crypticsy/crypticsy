@@ -107,15 +107,15 @@ function Publication(publication: PulicationProp) {
 export function Publications() {
   return (
     <div
-      className="justify-center flex items-center mt-[15vh] md:pt-[15vh] mx-8 lg:mx-20"
+      className="justify-center flex items-center mt-[15vh] md:pt-[10vh] mx-8 lg:mx-20"
       id="publications"
     >
-      <div className="space-y-8 max-w-6xl">
+      <div className="space-y-8 max-w-6xl xl:max-w-full">
         <div className="max-w-5xl m-auto">
           <SectionTitle sn={"03."} title={"Publications"} />
         </div>
         <div className="calibre-reg pt-2 md:pt-10 sm:text-xs md:text-xl text-gray-300 text-justify space-y-8 md:space-y-32 w-full">
-          <div className={"grid grid-cols-1 md:grid-cols-3 gap-8 px-4 lg:px-0"}>
+          <div className={"grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-8 px-4 lg:px-0"}>
             {publicaitonList.map((publication, idx) => (
               <Publication key={idx} {...publication} />
             ))}

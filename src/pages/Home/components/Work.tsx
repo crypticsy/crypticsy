@@ -140,7 +140,7 @@ function BentoProject({
   const isImageRight = imagePosition === "right" && hasImage;
   const isImageLeft = imagePosition === "left" && hasImage;
   const isImageBottom = imagePosition === "bottom" && hasImage;
-  const isHorizontal = (isImageRight || isImageLeft);
+  const isHorizontal = isImageRight || isImageLeft;
 
   const animateIn = () => {
     const el = overlayRef.current;
@@ -244,7 +244,9 @@ function BentoProject({
       {hasImage && (
         <div
           className={`overflow-hidden ${
-            isHorizontal ? "w-full h-48 md:w-1/2 md:h-full" : "w-full h-48 md:h-64"
+            isHorizontal
+              ? "w-full h-48 md:w-1/2 md:h-full"
+              : "w-full h-48 md:h-64"
           }`}
         >
           <img
@@ -256,65 +258,65 @@ function BentoProject({
       )}
 
       <div
-        className={`px-5 py-6 md:p-7 flex-1 flex flex-col ${
+        className={`p-5 flex-1 flex flex-col ${
           isHorizontal ? "w-full md:w-1/2" : ""
         }`}
       >
         <div className="space-y-3 flex-1">
-          <div className="flex justify-between items-center pb-2">
-            <div className="flex space-x-5 text-left">
-              {githubURL && githubURL.length > 0 && (
-                <FiGithub
-                  className="w-5 h-5 hover:text-sky-500 cursor-pointer"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    window.open(githubURL, "_blank");
-                  }}
-                />
-              )}
-              {hostedURL && hostedURL.length > 0 && (
-                <IoMdOpen
-                  className="w-5 h-5 hover:text-sky-500 cursor-pointer"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    window.open(hostedURL, "_blank");
-                  }}
-                />
-              )}
-            </div>
-
-            {githubStats &&
-              (githubStats.stars > 0 || githubStats.forks > 0) && (
-                <div className="text-sm sfmono-reg flex gap-3 text-gray-300">
-                  {githubStats.stars > 0 && (
-                    <span className="flex items-center gap-1">
-                      <FiStar className="w-4 h-4" />
-                      <p>{githubStats.stars}</p>
-                    </span>
-                  )}
-                  {githubStats.forks > 0 && (
-                    <span className="flex items-center gap-1">
-                      <FiGitBranch className="w-4 h-4" />
-                      <p>{githubStats.forks}</p>
-                    </span>
-                  )}
-                </div>
-              )}
-          </div>
-
           <p className="calibre-smbold text-[1.4rem] md:text-[1.6rem] text-white leading-8 title">
             {title}
           </p>
+
           <p className="text-sm md:text-base rounded-md leading-6">
             {description}
           </p>
         </div>
 
+        <div className="flex justify-between items-center pt-6 pb-2">
+          <div className="flex space-x-5 text-left">
+            {githubURL && githubURL.length > 0 && (
+              <FiGithub
+                className="w-5 h-5 hover:text-sky-500 cursor-pointer"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(githubURL, "_blank");
+                }}
+              />
+            )}
+            {hostedURL && hostedURL.length > 0 && (
+              <IoMdOpen
+                className="w-5 h-5 hover:text-sky-500 cursor-pointer"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(hostedURL, "_blank");
+                }}
+              />
+            )}
+          </div>
+
+          {githubStats && (githubStats.stars > 0 || githubStats.forks > 0) && (
+            <div className="text-sm sfmono-reg flex gap-3 text-gray-300">
+              {githubStats.stars > 0 && (
+                <span className="flex items-center gap-1">
+                  <FiStar className="w-4 h-4" />
+                  <p>{githubStats.stars}</p>
+                </span>
+              )}
+              {githubStats.forks > 0 && (
+                <span className="flex items-center gap-1">
+                  <FiGitBranch className="w-4 h-4" />
+                  <p>{githubStats.forks}</p>
+                </span>
+              )}
+            </div>
+          )}
+        </div>
+
         <div className="mt-4">
-          <p className="text-xs sfmono-reg flex flex-wrap gap-x-5 gap-y-2">
+          <p className="text-xs sfmono-reg flex flex-wrap gap-x-3 gap-y-2">
             {tags.length > 0 &&
               tags.map((tag, idx) => (
-                <span className="capitalize" key={idx}>
+                <span className="capitalize bg-black/20 p-1.5 px-3 rounded-lg" key={idx}>
                   {tag}
                 </span>
               ))}
@@ -342,12 +344,12 @@ export function Work() {
       className="justify-center flex items-center mt-[15vh] md:pt-[15vh] mx-8 lg:mx-20"
       id="work"
     >
-      <div className="space-y-8 max-w-6xl w-full">
+      <div className="space-y-8 max-w-6xl xl:max-w-full w-full">
         <div className="max-w-5xl m-auto">
           <SectionTitle sn={"02."} title={"Things I've Built"} />
         </div>
 
-        <div className="flex justify-center pb-6 pt-4">
+        <div className="flex justify-center pb-6">
           <div className="relative w-full md:max-w-5xl">
             <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
             <input
@@ -362,7 +364,7 @@ export function Work() {
         </div>
 
         {/* Bento Box Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 auto-rows-[minmax(280px,auto)] px-4 lg:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-7 auto-rows-[minmax(280px,auto)] px-4 lg:px-0">
           {filteredProjects.map((project, idx) => (
             <BentoProject
               key={idx}
