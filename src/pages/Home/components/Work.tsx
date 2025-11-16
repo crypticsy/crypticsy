@@ -47,19 +47,22 @@ const AllProjects: ProjectProps[] = [
     hostedURL: "https://crypticsy.github.io/sanctuary/",
   },
   {
+    title: "Vision Caster",
+    description:
+      "An interactive image analysis system for the visually impaired. It uses the BLIP model on a Raspberry Pi to process images and give real-time descriptive captions and auditory feedback.",
+    tags: ["RasberryPi", "Transformers", "Azure"],
+    githubURL: "https://github.com/crypticsy/VisionCaster",
+  },
+  {
     title: "From Me to You",
     description:
       "A web application for sending heartfelt digital letters to friends and loved ones.",
     tags: ["Typescript", "TailwindCSS"],
     githubURL: "https://github.com/crypticsy/from-me-to-you",
     hostedURL: "https://crypticsy.github.io/from-me-to-you/",
-  },
-  {
-    title: "Vision Caster",
-    description:
-      "An interactive image analysis system for the visually impaired. It uses the BLIP model on a Raspberry Pi to process images and give real-time descriptive captions and auditory feedback.",
-    tags: ["RasberryPi", "Transformers", "Azure"],
-    githubURL: "https://github.com/crypticsy/VisionCaster",
+    imageURL:
+      "https://github.com/crypticsy/from-me-to-you/blob/master/public/demo.gif?raw=true",
+    imagePosition: "right",
   },
   {
     title: "Ropey DVD Management System",
@@ -69,11 +72,13 @@ const AllProjects: ProjectProps[] = [
     githubURL: "https://github.com/crypticsy/RopeyDVDManagementSystem",
   },
   {
-    title: "Grago",
+    title: "The Marauder's Map",
     description:
-      "Grago, 'Graph on the go', is a graphical visualization tool designed for enthusiasts aiming to bolster the utilization of data analysis within the endeavors of local businesses and startups, developed as a final year project during my undergraduate study.",
-    tags: ["Django", "Postgresql", "Data Science"],
-    imageURL: gragoPreview,
+      "A web application inspired by the Marauder's Map from the Harry Potter universe, enabling users to explore a digital map of Hogwarts with moving footprints and hidden rooms.",
+    tags: ["React-Three-Fiber", "Typescript"],
+    imageURL: "https://crypticsy.github.io/the-marauders-map/main_screen.png",
+    githubURL: "https://github.com/crypticsy/the-marauders-map",
+    hostedURL: "https://crypticsy.github.io/the-marauders-map/",
     imagePosition: "top",
   },
   {
@@ -85,16 +90,6 @@ const AllProjects: ProjectProps[] = [
       "https://github.com/crypticsy/human-activity-recognition/blob/master/Images/demo.gif?raw=true",
     githubURL: "https://github.com/crypticsy/human-activity-recognition",
     imagePosition: "right",
-  },
-  {
-    title: "The Marauder's Map",
-    description:
-      "A web application inspired by the Marauder's Map from the Harry Potter universe, enabling users to explore a digital map of Hogwarts with moving footprints and hidden rooms.",
-    tags: ["React-Three-Fiber", "Typescript"],
-    imageURL: "https://crypticsy.github.io/the-marauders-map/main_screen.png",
-    githubURL: "https://github.com/crypticsy/the-marauders-map",
-    hostedURL: "https://crypticsy.github.io/the-marauders-map/",
-    imagePosition: "bottom",
   },
   {
     title: "Chess Engine",
@@ -111,6 +106,14 @@ const AllProjects: ProjectProps[] = [
     tags: ["Semantics", "Protege", "Streamlit"],
     githubURL:
       "https://github.com/crypticsy/Academia/tree/master/Animated_Movie_Ontology",
+  },
+  {
+    title: "Grago",
+    description:
+      "Grago, 'Graph on the go', is a graphical visualization tool designed for enthusiasts aiming to bolster the utilization of data analysis within the endeavors of local businesses and startups, developed as a final year project during my undergraduate study.",
+    tags: ["Django", "Postgresql", "Data Science"],
+    imageURL: gragoPreview,
+    imagePosition: "top",
   },
   {
     title: "Path Visualizer",
@@ -211,7 +214,9 @@ function BentoProject({
 
   return (
     <div
-      className={`bg-slate-800 rounded-md project ${ (githubURL || hostedURL ) && " cursor-pointer " } relative overflow-hidden group flex flex-col transition-all duration-300 hover:ring-1 hover:ring-sky-600 ${
+      className={`bg-slate-800 rounded-md project ${
+        (githubURL || hostedURL) && " cursor-pointer "
+      } relative overflow-hidden group flex flex-col transition-all duration-300 hover:ring-1 hover:ring-sky-600 ${
         hasImage
           ? isImageRight
             ? "md:col-span-2 md:row-span-1 md:flex-row-reverse" // Horizontal: wide, image on RIGHT
@@ -297,16 +302,16 @@ function BentoProject({
           {githubStats && (githubStats.stars > 0 || githubStats.forks > 0) && (
             <div className="text-sm sfmono-reg flex gap-3 text-gray-300">
               {githubStats.stars > 0 && (
-                <span className="flex items-center gap-1">
-                  <FiStar className="w-4 h-4" />
-                  <p>{githubStats.stars}</p>
-                </span>
+                <div className="flex items-center gap-1">
+                  <FiStar className="w-4 h-4 align-middle" />
+                  <p className="leading-none pt-1">{githubStats.stars}</p>
+                </div>
               )}
               {githubStats.forks > 0 && (
-                <span className="flex items-center gap-1">
-                  <FiGitBranch className="w-4 h-4" />
-                  <p>{githubStats.forks}</p>
-                </span>
+                <div className="flex items-center gap-1">
+                  <FiGitBranch className="w-4 h-4 align-middle" />
+                  <p className="leading-none pt-1">{githubStats.forks}</p>
+                </div>
               )}
             </div>
           )}
@@ -316,7 +321,10 @@ function BentoProject({
           <p className="text-xs sfmono-reg flex flex-wrap gap-x-3 gap-y-2">
             {tags.length > 0 &&
               tags.map((tag, idx) => (
-                <span className="capitalize bg-black/20 p-1.5 px-3 rounded-lg" key={idx}>
+                <span
+                  className="capitalize bg-black/20 p-1.5 px-3 rounded-lg"
+                  key={idx}
+                >
                   {tag}
                 </span>
               ))}
@@ -387,7 +395,9 @@ export function Work() {
 
         <div className="flex justify-center pt-8 pb-4">
           <button
-            onClick={() => window.open("https://github.com/crypticsy/", "_blank")}
+            onClick={() =>
+              window.open("https://github.com/crypticsy/", "_blank")
+            }
             className="flex items-center px-6 py-4 bg-transparent hover:bg-slate-800 text-slate-300 hover:text-sky-500 rounded-xl border border-slate-700 hover:border-sky-500 transition-all duration-300 sfmono-reg group"
           >
             More projects on GitHub &nbsp;
