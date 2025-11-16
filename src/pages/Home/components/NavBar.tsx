@@ -15,49 +15,54 @@ export function NavBar() {
     const [isAtPageTop, setIsAtPageTop] = useState(true);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const lastScrollTopRef = useRef(0);
+    const ticking = useRef(false);
 
     const handleScroll = () => {
         const rootDiv = document.getElementById('root');
 
-        if (rootDiv) {
-            const scrollTop = rootDiv.scrollTop;
+        if (rootDiv && !ticking.current) {
+            ticking.current = true;
 
-            // Check if we're at the top (with small threshold for reliability)
-            if (scrollTop <= 10) {
-                setIsAtPageTop(true);
-            } else {
-                setIsAtPageTop(false);
-            }
+            requestAnimationFrame(() => {
+                const scrollTop = rootDiv.scrollTop;
 
-            // Handle navbar show/hide animation
-            if (lastScrollTopRef.current < scrollTop) {
-                // Scrolling down
-                const navBar = document.getElementById("navbar")
-                if(navBar){
-                    if(navBar.classList.contains('show-on-scroll')){
-                        navBar.classList.replace('show-on-scroll', 'hide-on-scroll')
-                    }else{
-                        navBar.classList.add('hide-on-scroll')
-                    }
+                // Check if we're at the top (with small threshold for reliability)
+                const isTop = scrollTop <= 10;
+                if (isAtPageTop !== isTop) {
+                    setIsAtPageTop(isTop);
                 }
-            } else if (lastScrollTopRef.current > scrollTop) {
-                // Scrolling up
-                document.getElementById("navbar")?.classList.replace('hide-on-scroll', 'show-on-scroll')
-            }
 
-            lastScrollTopRef.current = scrollTop;
+                // Handle navbar show/hide animation
+                if (lastScrollTopRef.current < scrollTop) {
+                    // Scrolling down
+                    const navBar = document.getElementById("navbar")
+                    if(navBar){
+                        if(navBar.classList.contains('show-on-scroll')){
+                            navBar.classList.replace('show-on-scroll', 'hide-on-scroll')
+                        }else{
+                            navBar.classList.add('hide-on-scroll')
+                        }
+                    }
+                } else if (lastScrollTopRef.current > scrollTop) {
+                    // Scrolling up
+                    document.getElementById("navbar")?.classList.replace('hide-on-scroll', 'show-on-scroll')
+                }
+
+                lastScrollTopRef.current = scrollTop;
+                ticking.current = false;
+            });
         }
     };
 
     useEffect(() => {
         const rootDiv = document.getElementById('root');
         if (rootDiv) {
-            rootDiv.addEventListener('scroll', handleScroll);
+            rootDiv.addEventListener('scroll', handleScroll, { passive: true });
             return () => {
                 rootDiv.removeEventListener('scroll', handleScroll);
             };
         }
-    }, []);
+    }, [isAtPageTop]);
 
     return (
         <>

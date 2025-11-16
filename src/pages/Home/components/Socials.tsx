@@ -21,12 +21,12 @@ export function SocialIcon({ IconComponent, url, type, size='medium' }: { IconCo
 
 export function LeftSocials() {
     return (
-        <div className="fixed bottom-0 left-6 lg:left-10 xl:left-12 invisible lg:visible">
-            <div className="space-y-6">
+        <div className="invisible lg:visible self-end sticky bottom-0 pl-6 lg:pl-10 xl:pl-12">
+            <div className="grid grid-rows-[auto_auto_auto_1fr] gap-6">
                 <SocialIcon IconComponent={MdOutlineEmail} url={''} type={'email'} />
                 <SocialIcon IconComponent={FiLinkedin} url={'https://www.linkedin.com/in/animeshbasnet/'} type={'link'} />
                 <SocialIcon IconComponent={FiInstagram} url={'https://www.instagram.com/crypticsy/'} type={'link'} />
-                <div className="h-[8rem] w-8 justify-center flex mt-4">
+                <div className="h-[8rem] w-8 justify-center flex">
                     <div className="bg-white w-0.5 h-full rounded-md" />
                 </div>
             </div>
@@ -35,10 +35,10 @@ export function LeftSocials() {
 
 export function RightSocials() {
     return (
-        <div className="fixed bottom-0 right-6 lg:right-10 xl:right-12 invisible lg:visible">
-            <div className="space-y-6">
+        <div className="invisible lg:visible self-end sticky bottom-0 pr-6 lg:pr-10 xl:pr-12">
+            <div className="grid grid-rows-[auto_1fr] gap-6">
                 <SocialIcon IconComponent={FiGithub} url={'https://github.com/crypticsy/'} type={'link'} />
-                <div className="h-[8rem] w-8 justify-center flex mt-4">
+                <div className="h-[8rem] w-8 justify-center flex">
                     <div className="bg-white w-0.5 h-full rounded-md" />
                 </div>
             </div>

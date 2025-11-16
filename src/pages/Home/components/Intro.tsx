@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { onClickEmailHandler } from "./Socials";
 import PixelBlast from "../../../components/PixelBlast";
 
