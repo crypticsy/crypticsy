@@ -211,7 +211,7 @@ function BentoProject({
 
   return (
     <div
-      className={`bg-slate-800 rounded-md project cursor-pointer relative overflow-hidden group flex flex-col transition-all duration-300 hover:ring-1 hover:ring-sky-600 ${
+      className={`bg-slate-800 rounded-md project ${ (githubURL || hostedURL ) && " cursor-pointer " } relative overflow-hidden group flex flex-col transition-all duration-300 hover:ring-1 hover:ring-sky-600 ${
         hasImage
           ? isImageRight
             ? "md:col-span-2 md:row-span-1 md:flex-row-reverse" // Horizontal: wide, image on RIGHT
@@ -384,6 +384,16 @@ export function Work() {
             No projects found matching "{searchTerm}"
           </div>
         )}
+
+        <div className="flex justify-center pt-8 pb-4">
+          <button
+            onClick={() => window.open("https://github.com/crypticsy/", "_blank")}
+            className="flex items-center px-6 py-4 bg-transparent hover:bg-slate-800 text-slate-300 hover:text-sky-500 rounded-xl border border-slate-700 hover:border-sky-500 transition-all duration-300 sfmono-reg group"
+          >
+            More projects on GitHub &nbsp;
+            <FiGithub className="w-5 h-5 transition-transform" />
+          </button>
+        </div>
       </div>
     </div>
   );
