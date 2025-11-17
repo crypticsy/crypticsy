@@ -76,14 +76,28 @@
         y.parentNode.insertBefore(t, y);
       })(window, document, "clarity", "script", "ir8u5o5xwo");
     </script>
-    <script type="module" crossorigin src="./assets/index-215999df.js"></script>
-    <link rel="stylesheet" href="./assets/index-9710a207.css">
+    <script type="module" crossorigin src="./assets/index-82b0b510.js"></script>
+    <link rel="stylesheet" href="./assets/index-fc13b922.css">
   </head>
 
-  <body class="ease-in-out overflow-hidden">
+  <body class="ease-in-out overflow-hidden bg-bg-primary transition-colors duration-300">
+    <!-- Theme Script - Runs before React to prevent flash -->
+    <script>
+      (function() {
+        try {
+          const savedTheme = localStorage.getItem('theme');
+          const theme = (savedTheme === 'dark' || savedTheme === 'light') ? savedTheme : 'dark';
+          document.documentElement.classList.add(theme);
+          document.body.classList.add(theme);
+        } catch (e) {
+          console.error('Error loading theme:', e);
+        }
+      })();
+    </script>
+
     <div
       id="root"
-      class="bg-[#171717] text-white h-screen overflow-y-scroll"
+      class="bg-bg-primary text-text-primary h-screen overflow-y-scroll overflow-x-hidden transition-colors duration-300"
     ></div>
 
     <div
