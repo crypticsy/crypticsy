@@ -4,7 +4,7 @@ import PixelBlast from "../../../components/PixelBlast";
 export function Intro() {
     return (
         <div
-            className="justify-center flex items-center min-h-screen relative"
+            className="justify-center flex items-center min-h-[85vh] md:min-h-screen relative"
             id="intro"
         >
             {/* PixelBlast Background */}

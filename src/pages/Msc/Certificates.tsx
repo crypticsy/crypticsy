@@ -59,7 +59,7 @@ export function Certificates() {
     return (
         <Layout>
             <PageContentLayout>
-                <div className="mx-8 mt-[10vh]">
+                <div className="mx-8 mt-[5vh] md:mt-[10vh]">
                     <div className="flex justify-center">
                         <div className="w-full max-w-5xl">
                             <div className="flex items-center justify-center relative mb-16">
