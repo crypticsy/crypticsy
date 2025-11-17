@@ -22,7 +22,7 @@ export function SocialIcon({ IconComponent, url, type, size='medium' }: { IconCo
 
 export function LeftSocials() {
     return (
-        <div className="hidden lg:block self-end sticky bottom-0 pl-6 lg:pl-10 xl:pl-12">
+        <div className="hidden lg:block self-end sticky bottom-0 pl-6 lg:pl-10 xl:pl-12 z-20">
             <div className="grid grid-rows-[auto_auto_auto_1fr] gap-6">
                 <SocialIcon IconComponent={MdOutlineEmail} url={''} type={'email'} />
                 <SocialIcon IconComponent={FiLinkedin} url={socialLinks.linkedin} type={'link'} />
@@ -36,7 +36,7 @@ export function LeftSocials() {
 
 export function RightSocials() {
     return (
-        <div className="hidden lg:block self-end sticky bottom-0 pr-6 lg:pr-10 xl:pr-12">
+        <div className="hidden lg:block self-end sticky bottom-0 pr-6 lg:pr-10 xl:pr-12 z-20">
             <div className="grid grid-rows-[auto_1fr] gap-6">
                 <SocialIcon IconComponent={FiGithub} url={socialLinks.github} type={'link'} />
                 <div className="h-[8rem] w-8 justify-center flex">

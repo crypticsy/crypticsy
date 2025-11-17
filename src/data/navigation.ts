@@ -13,5 +13,10 @@ export const navigationItems = [
         sn: '03.',
         title: 'Publication',
         scrollToID: 'publications'
+    },
+    {
+        sn: '04.',
+        title: 'Contact',
+        scrollToID: 'contact'
     }
 ];

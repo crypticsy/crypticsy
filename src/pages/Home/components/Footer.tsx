@@ -6,7 +6,7 @@ import { socialLinks, personalInfo } from "../../../data";
 
 export function Footer() {
     return (
-        <div className="items-center space-y-4 mt-[15vh] md:mt-[18vh] mb-[20vh] md:mb-[5vh] mx-8 lg:mx-20" id="footer">
+        <div className="items-center space-y-4 mt-[5vh] md:mt-[2vh] mb-[20vh] md:mb-[5vh] mx-8 lg:mx-20" id="footer">
             <div className="space-x-3 justify-center flex lg:hidden" >
                 <SocialIcon IconComponent={MdOutlineEmail} url={''} type={'email'} size="small" />
                 <SocialIcon IconComponent={FiLinkedin} url={socialLinks.linkedin} type={'link'} size="small" />
