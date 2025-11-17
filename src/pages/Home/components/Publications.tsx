@@ -1,16 +1,6 @@
 import { useRef } from "react";
 import { SectionTitle } from "../../utils";
-import himalayanJavaCaseStudyImage from "../../../assets/publication/himalayanJavaCaseStudy.png";
-import digital_threats from "../../../assets/publication/digital_threats.jpg";
-
-type PulicationProp = {
-  title: string;
-  subtitle?: string;
-  type: string;
-  publishedDate: Date;
-  publicationURL: string;
-  publicationImage: string;
-};
+import { publications, Publication as PulicationProp } from "../../../data";
 
 function formatDate(date: Date) {
   const day = date.getDate();
@@ -18,27 +8,6 @@ function formatDate(date: Date) {
   const year = date.getFullYear();
   return `${month} ${day}, ${year}`;
 }
-
-const publicaitonList = [
-  {
-    title: "APT Attribution Using Deep Reinforcement Learning",
-    subtitle:
-      "This paper investigates the application of DRL for attributing APT groups through detailed behavioural analysis.",
-    type: "Research Paper",
-    publishedDate: new Date(2025, 9, 29),
-    publicationURL: "https://dl.acm.org/doi/10.1145/3736654",
-    publicationImage: digital_threats,
-  },
-  {
-    title: "Himalayan Java",
-    subtitle:
-      "Navigating Challenges and Pioneering Sustainability in Nepali Coffee Industry",
-    type: "A Case Study",
-    publishedDate: new Date(2023, 7, 1),
-    publicationURL: "https://parthstudent.vc/case-study/",
-    publicationImage: himalayanJavaCaseStudyImage,
-  },
-];
 
 function Publication(publication: PulicationProp) {
   const overlayRef = useRef<HTMLDivElement | null>(null);
@@ -116,7 +85,7 @@ export function Publications() {
         </div>
         <div className="calibre-reg pt-2 md:pt-10 sm:text-xs md:text-xl text-gray-300 text-justify space-y-8 md:space-y-32 w-full">
           <div className={"grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-8 px-4 lg:px-0"}>
-            {publicaitonList.map((publication, idx) => (
+            {publications.map((publication, idx) => (
               <Publication key={idx} {...publication} />
             ))}
           </div>

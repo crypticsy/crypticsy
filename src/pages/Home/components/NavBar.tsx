@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { navigationItems } from "../../../data";
 
 type SectionTitleProps = {
     sn: string,
@@ -69,9 +70,9 @@ export function NavBar() {
             {/* Desktop Navbar */}
             <div className="fixed top-0 left-0 right-0 hidden md:block transition-all duration-300 ease-in-out" id="navbar" style={isAtPageTop ? {} : movingNavStyles}>
                 <nav className={`flex items-center justify-end py-7 pr-20 gap-8 transition-all duration-500 ease-in-out ${isAtPageTop ? '' : 'navbar-scrolled'}`}>
-                    <NavSection sn={'01.'} title={'About'} scrollToID={'about'} />
-                    <NavSection sn={'02.'} title={'Work'} scrollToID={'work'} />
-                    <NavSection sn={'03.'} title={'Publication'} scrollToID={'publications'} />
+                    {navigationItems.map((item) => (
+                        <NavSection key={item.scrollToID} sn={item.sn} title={item.title} scrollToID={item.scrollToID} />
+                    ))}
                 </nav>
             </div>
 
@@ -103,24 +104,15 @@ export function NavBar() {
                 }`}
             >
                 <div className="flex flex-col pt-20 px-6 space-y-6">
-                    <MobileNavSection
-                        sn={'01.'}
-                        title={'About'}
-                        scrollToID={'about'}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                    />
-                    <MobileNavSection
-                        sn={'02.'}
-                        title={'Work'}
-                        scrollToID={'work'}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                    />
-                    <MobileNavSection
-                        sn={'03.'}
-                        title={'Publication'}
-                        scrollToID={'publications'}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                    />
+                    {navigationItems.map((item) => (
+                        <MobileNavSection
+                            key={item.scrollToID}
+                            sn={item.sn}
+                            title={item.title}
+                            scrollToID={item.scrollToID}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        />
+                    ))}
                 </div>
             </div>
 

@@ -1,5 +1,6 @@
 import { onClickEmailHandler } from "./Socials";
 import PixelBlast from "../../../components/PixelBlast";
+import { personalInfo } from "../../../data";
 
 export function Intro() {
     return (
@@ -40,14 +41,13 @@ export function Intro() {
 
             {/* Content */}
             <div className='relative z-10 space-y-4 px-8' id="intro-content">
-                <p className="sfmono-reg text-lg text-sky-400  pb-2">Hi, my name is</p>
+                <p className="sfmono-reg text-lg text-sky-400  pb-2">{personalInfo.greeting}</p>
 
-                <h1 className="text-[2.2rem] md:text-[4.2rem]">Animesh Singh Basnet</h1>
-                <h2 className="text-slate-400 text-[1.4rem] md:text-[3.2rem]">I build things from data.</h2>
+                <h1 className="text-[2.2rem] md:text-[4.2rem]">{personalInfo.name}</h1>
+                <h2 className="text-slate-400 text-[1.4rem] md:text-[3.2rem]">{personalInfo.tagline}</h2>
 
                 <p className="calibre-reg sm:text-l md:text-xl text-white pb-6 text-justify max-w-3xl">
-                    I'm a programmer specializing in building (and occasionally designing).
-                    Currently, I'm focused on researching and developing Machine Learning and Large Language Models.
+                    {personalInfo.description}
                 </p>
                 <button
                     className='px-4 py-3 border-2 text-sm md:text-xl  border-sky-400 text-sky-400 rounded-md'
