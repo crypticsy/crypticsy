@@ -1,12 +1,32 @@
-import { useTheme } from "../contexts/ThemeContext";
+import { useEffect, useState } from "react";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 export function ThemeToggle() {
-    const { theme, toggleTheme } = useTheme();
+    const [theme, setTheme] = useState<string>(() => {
+        const saved = localStorage.getItem("theme");
+        return (saved === 'dark' || saved === 'light') ? saved : 'dark';
+    });
+
+    useEffect(() => {
+        document.documentElement.classList.toggle("dark", theme === "dark");
+        document.body.classList.toggle("dark", theme === "dark");
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("theme", theme);
+        document.documentElement.classList.remove('dark', 'light');
+        document.documentElement.classList.add(theme);
+        document.body.classList.remove('dark', 'light');
+        document.body.classList.add(theme);
+    }, [theme]);
+
+    const handleThemeChange = () => {
+        setTheme(prevTheme => prevTheme === "dark" ? "light" : "dark");
+    };
 
     return (
         <button
-            onClick={toggleTheme}
+            onClick={handleThemeChange}
             className="relative w-14 h-7 rounded-full border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-sky-400 hover:border-sky-400 dark:border-slate-600 border-gray-200 dark:bg-slate-700 bg-gray-200"
             aria-label="Toggle theme"
         >

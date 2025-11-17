@@ -1,7 +1,7 @@
 import { onClickEmailHandler } from "./Socials";
 import PixelBlast from "../../../components/PixelBlast";
 import { personalInfo } from "../../../data";
-import { useTheme } from "../../../contexts/ThemeContext";
+import { useTheme } from "../../../hooks/useTheme";
 
 export function Intro() {
     const { theme } = useTheme();

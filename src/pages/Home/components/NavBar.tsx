@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { navigationItems } from "../../../data";
 import { ThemeToggle } from "../../../components/ThemeToggle";
-import { useTheme } from "../../../contexts/ThemeContext";
+import { useTheme } from "../../../hooks/useTheme";
 
 type SectionTitleProps = {
     sn: string,

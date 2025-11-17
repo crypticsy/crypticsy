@@ -1,7 +1,7 @@
 import { contactInfo } from "../../../data";
 import { onClickEmailHandler } from "./Socials";
 import Squares from "../../../components/Squares";
-import { useTheme } from "../../../contexts/ThemeContext";
+import { useTheme } from "../../../hooks/useTheme";
 
 export function Contact() {
     const { theme } = useTheme();
