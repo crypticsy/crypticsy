@@ -78,7 +78,7 @@ function BentoProject({
               );
             }
           })
-          .catch(() => {});
+          .catch(() => { });
       }
     }
   }, [githubURL]);
@@ -93,19 +93,17 @@ function BentoProject({
 
   return (
     <div
-      className={`bg-slate-800 rounded-md project ${
-        (githubURL || hostedURL) && " cursor-pointer "
-      } relative overflow-hidden group flex flex-col transition-all duration-300 hover:ring-1 hover:ring-sky-600 ${
-        hasImage
+      className={`dark:bg-slate-800 bg-slate-300 rounded-md project border dark:border-slate-700 border-gray-300 ${(githubURL || hostedURL) && " cursor-pointer "
+        } relative overflow-hidden group flex flex-col transition-all duration-300 hover:ring-1 hover:ring-sky-600 ${hasImage
           ? isImageRight
             ? "md:col-span-2 md:row-span-1 md:flex-row-reverse" // Horizontal: wide, image on RIGHT
             : isImageLeft
-            ? "md:col-span-2 md:row-span-1 md:flex-row" // Horizontal: wide, image on LEFT
-            : isImageBottom
-            ? "md:row-span-2 md:flex-col-reverse" // Vertical: tall, image on BOTTOM
-            : "md:row-span-2 md:flex-col" // Vertical: tall, image on TOP (default)
+              ? "md:col-span-2 md:row-span-1 md:flex-row" // Horizontal: wide, image on LEFT
+              : isImageBottom
+                ? "md:row-span-2 md:flex-col-reverse" // Vertical: tall, image on BOTTOM
+                : "md:row-span-2 md:flex-col" // Vertical: tall, image on TOP (default)
           : ""
-      }`}
+        }`}
       onClick={clickHandler}
       onMouseEnter={animateIn}
       onMouseLeave={animateOut}
@@ -127,11 +125,10 @@ function BentoProject({
 
       {hasImage && (
         <div
-          className={`overflow-hidden ${
-            isHorizontal
+          className={`overflow-hidden ${isHorizontal
               ? "w-full h-48 md:w-1/2 md:h-full"
               : "w-full h-48 md:h-64"
-          }`}
+            }`}
         >
           <img
             src={imageURL}
@@ -142,16 +139,15 @@ function BentoProject({
       )}
 
       <div
-        className={`p-5 flex-1 flex flex-col ${
-          isHorizontal ? "w-full md:w-1/2" : ""
-        }`}
+        className={`p-5 flex-1 flex flex-col ${isHorizontal ? "w-full md:w-1/2" : ""
+          }`}
       >
         <div className="space-y-3 flex-1">
-          <p className="calibre-smbold text-[1.4rem] md:text-[1.6rem] text-white leading-8 title">
+          <p className="calibre-smbold text-[1.4rem] md:text-[1.6rem] dark:text-white text-gray-900 leading-8 title">
             {title}
           </p>
 
-          <p className="text-sm md:text-base rounded-md leading-6">
+          <p className="text-sm md:text-base rounded-md leading-6 dark:text-gray-300 text-gray-700">
             {description}
           </p>
         </div>
@@ -179,7 +175,7 @@ function BentoProject({
           </div>
 
           {githubStats && (githubStats.stars > 0 || githubStats.forks > 0) && (
-            <div className="text-sm sfmono-reg flex gap-3 text-gray-300">
+            <div className="text-sm sfmono-reg flex gap-3 text-gray-500/60">
               {githubStats.stars > 0 && (
                 <div className="flex items-center gap-1">
                   <FiStar className="w-4 h-4 align-middle" />
@@ -201,7 +197,7 @@ function BentoProject({
             {tags.length > 0 &&
               tags.map((tag, idx) => (
                 <span
-                  className="capitalize bg-black/20 p-1.5 px-3 rounded-lg"
+                  className="capitalize dark:bg-black/20 bg-gray-200 p-1.5 px-3 rounded-lg"
                   key={idx}
                 >
                   {tag}
@@ -244,7 +240,7 @@ export function Work() {
               placeholder="Search by name or tags..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-11 pr-4 py-3 pt-4 bg-slate-800 text-white rounded-md border border-slate-700 focus:outline-none focus:border-sky-500 transition-colors"
+              className="w-full pl-11 pr-4 py-3 pt-4 dark:bg-slate-800 bg-slate-200 dark:text-white text-gray-900 rounded-md border dark:border-slate-700 border-gray-300 focus:outline-none focus:border-sky-500 transition-colors dark:placeholder:text-gray-400 placeholder:text-gray-500"
               style={{ lineHeight: "1.5" }}
             />
           </div>
@@ -277,7 +273,7 @@ export function Work() {
             onClick={() =>
               window.open("https://github.com/crypticsy/", "_blank")
             }
-            className="flex items-center px-6 py-4 bg-transparent hover:bg-slate-800 text-slate-300 hover:text-sky-500 rounded-xl border border-slate-700 hover:border-sky-500 transition-all duration-300 sfmono-reg group"
+            className="flex items-center px-6 py-4 bg-transparent dark:hover:bg-slate-800 hover:bg-gray-100 dark:text-slate-300 text-gray-700 hover:text-sky-500 rounded-xl border dark:border-slate-700 border-gray-300 hover:border-sky-500 transition-all duration-300 sfmono-reg group"
           >
             More projects on GitHub &nbsp;
             <FiGithub className="w-5 h-5 transition-transform" />

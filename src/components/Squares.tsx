@@ -13,6 +13,7 @@ interface SquaresProps {
   borderColor?: CanvasStrokeStyle;
   squareSize?: number;
   hoverFillColor?: CanvasStrokeStyle;
+  backgroundColor?: string;
 }
 
 const Squares: React.FC<SquaresProps> = ({
@@ -20,7 +21,8 @@ const Squares: React.FC<SquaresProps> = ({
   speed = 1,
   borderColor = '#999',
   squareSize = 40,
-  hoverFillColor = '#222'
+  hoverFillColor = '#222',
+  backgroundColor = '#171717'
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const requestRef = useRef<number | null>(null);
@@ -52,6 +54,7 @@ const Squares: React.FC<SquaresProps> = ({
       const startX = Math.floor(gridOffset.current.x / squareSize) * squareSize;
       const startY = Math.floor(gridOffset.current.y / squareSize) * squareSize;
 
+      // Draw squares FIRST
       for (let x = startX; x < canvas.width + squareSize; x += squareSize) {
         for (let y = startY; y < canvas.height + squareSize; y += squareSize) {
           const squareX = x - (gridOffset.current.x % squareSize);
@@ -71,7 +74,12 @@ const Squares: React.FC<SquaresProps> = ({
         }
       }
 
-      // Radial gradient (horizontal fade)
+      // Parse RGB values from hex for gradients
+      const rBg = parseInt(backgroundColor.slice(1, 3), 16);
+      const gBg = parseInt(backgroundColor.slice(3, 5), 16);
+      const bBg = parseInt(backgroundColor.slice(5, 7), 16);
+
+      // Radial gradient (horizontal fade) - Draw AFTER squares
       const radialGradient = ctx.createRadialGradient(
         canvas.width / 2,
         canvas.height / 2,
@@ -80,18 +88,19 @@ const Squares: React.FC<SquaresProps> = ({
         canvas.height / 2,
         Math.sqrt(canvas.width ** 2 + canvas.height ** 2) / 2
       );
-      radialGradient.addColorStop(0, 'rgba(0, 0, 0, 0)');
-      radialGradient.addColorStop(1, '#171717');
+      radialGradient.addColorStop(0, `rgba(${rBg}, ${gBg}, ${bBg}, 0)`);
+      radialGradient.addColorStop(0.5, `rgba(${rBg}, ${gBg}, ${bBg}, 0.1)`);
+      radialGradient.addColorStop(1, backgroundColor);
 
       ctx.fillStyle = radialGradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Vertical gradient (top and bottom fade)
+      // Vertical gradient (top and bottom fade) - Draw LAST for edge fading
       const verticalGradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      verticalGradient.addColorStop(0, '#171717');
-      verticalGradient.addColorStop(0.15, 'rgba(23, 23, 23, 0)');
-      verticalGradient.addColorStop(0.85, 'rgba(23, 23, 23, 0)');
-      verticalGradient.addColorStop(1, '#171717');
+      verticalGradient.addColorStop(0, backgroundColor);
+      verticalGradient.addColorStop(0.15, `rgba(${rBg}, ${gBg}, ${bBg}, 0)`);
+      verticalGradient.addColorStop(0.85, `rgba(${rBg}, ${gBg}, ${bBg}, 0)`);
+      verticalGradient.addColorStop(1, backgroundColor);
 
       ctx.fillStyle = verticalGradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -158,7 +167,7 @@ const Squares: React.FC<SquaresProps> = ({
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [direction, speed, borderColor, hoverFillColor, squareSize]);
+  }, [direction, speed, borderColor, hoverFillColor, squareSize, backgroundColor]);
 
   return <canvas ref={canvasRef} className="w-full h-full border-none block"></canvas>;
 };

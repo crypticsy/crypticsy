@@ -8,6 +8,7 @@ import {
 
 import { Home } from './pages';
 import { Certificates } from './pages/Msc/Certificates';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 const router = createHashRouter([
   {
@@ -22,6 +23,8 @@ const router = createHashRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>
 );

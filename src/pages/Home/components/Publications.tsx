@@ -30,7 +30,7 @@ function Publication(publication: PulicationProp) {
 
   return (
     <div
-      className="bg-slate-800 rounded-md overflow-hidden h-full cursor-pointer relative group transition-all duration-300 hover:ring-1 hover:ring-sky-600"
+      className="dark:bg-slate-800 bg-slate-100 rounded-md overflow-hidden h-full cursor-pointer relative group transition-all duration-300 hover:ring-1 hover:ring-sky-600 border dark:border-slate-700 border-gray-300"
       onClick={() => window.open(publication.publicationURL, "_blank")}
       onMouseEnter={animateIn}
       onMouseLeave={animateOut}
@@ -55,16 +55,16 @@ function Publication(publication: PulicationProp) {
           src={publication.publicationImage}
         />
       </div>
-      <div className="absolute bottom-0 left-0 right-0 bg-slate-800 px-5 py-6 md:p-7 flex flex-col transition-all duration-500 ease-in-out group-hover:h-auto z-20" style={{ minHeight: 'fit-content' }}>
-        <div className="calibre-smbold mb-2 text-left">{publication.title}</div>
+      <div className="absolute bottom-0 left-0 right-0 dark:bg-slate-800 bg-slate-300 px-5 py-6 md:p-7 flex flex-col transition-all duration-500 ease-in-out group-hover:h-auto z-20" style={{ minHeight: 'fit-content' }}>
+        <div className="calibre-smbold mb-2 text-left dark:text-white text-gray-900">{publication.title}</div>
         {publication.subtitle && (
           <div className="overflow-hidden max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out">
-            <div className="text-sm md:text-base text-left pb-2">
+            <div className="text-sm md:text-base text-left pb-2 dark:text-gray-300 text-gray-700">
               {publication.subtitle}
             </div>
           </div>
         )}
-        <div className="flex sfmono-reg text-xs md:text-xs mt-4">
+        <div className="flex sfmono-reg text-xs md:text-xs mt-4 dark:text-gray-400 text-gray-600">
           <div className="mr-auto">{publication.type}</div>
           <div className="">{formatDate(publication.publishedDate)}</div>
         </div>

@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme Variables */
+:root.dark {
+  --bg-primary: #171717;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --border-color: #2a2a2a;
+}
+
+:root.light {
+  --bg-primary: #f1f5f9;
+  --bg-secondary: #e2e8f0;
+  --text-primary: #171717;
+  --text-secondary: #4b5563;
+  --border-color: #d1d5db;
+}
+
 * {
   margin: 0;
   /* padding: 0; */
@@ -69,6 +86,56 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+/* Scrollbar Styling - Dark Theme */
+:root.dark #root::-webkit-scrollbar {
+  width: 12px;
+}
+
+:root.dark #root::-webkit-scrollbar-track {
+  background: #171717;
+}
+
+:root.dark #root::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 6px;
+  border: 2px solid #171717;
+}
+
+:root.dark #root::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Scrollbar Styling - Light Theme */
+:root.light #root::-webkit-scrollbar {
+  width: 12px;
+}
+
+:root.light #root::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+:root.light #root::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 6px;
+  border: 2px solid #f1f5f9;
+}
+
+:root.light #root::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Firefox Scrollbar - Dark Theme */
+:root.dark #root {
+  scrollbar-width: thin;
+  scrollbar-color: #4b5563 #171717;
+}
+
+/* Firefox Scrollbar - Light Theme */
+:root.light #root {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
 }
 
 @keyframes fadeInAnimation {

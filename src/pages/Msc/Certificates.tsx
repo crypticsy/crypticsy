@@ -16,13 +16,13 @@ interface CSVRow {
 
 function formatDate(date: Date) {
     const splitDate = date.toString().split('/').map(Number)
-    const newDate = new Date(splitDate[2], splitDate[1]-1, splitDate[0]);
+    const newDate = new Date(splitDate[2], splitDate[1] - 1, splitDate[0]);
     const day = newDate.getDate();
     const month = newDate.toLocaleString('default', { month: 'long' });
     const year = newDate.getFullYear();
 
     return `${month} ${day}, ${year}`;
-  };
+};
 
 export function Certificates() {
     const [csvData, setCSVData] = useState<CSVRow[]>([]);
@@ -40,7 +40,7 @@ export function Certificates() {
         });
     }, []);
 
-    useEffect(()=>{
+    useEffect(() => {
         setIssuers(Array.from(new Set(csvData.filter((row) => row.name && row.name.length !== 0).map((row) => { return row.issued_by }))))
     }, [csvData])
 
@@ -82,35 +82,35 @@ export function Certificates() {
                                         placeholder="Search by name or issuer..."
                                         value={searchTerm}
                                         onChange={(e) => setSearchTerm(e.target.value)}
-                                        className="w-full pl-11 pr-4 py-3 pt-4 bg-slate-800 text-white rounded-md border border-slate-700 focus:outline-none focus:border-sky-500 transition-colors"
+                                        className="w-full pl-11 pr-4 py-3 pt-4 dark:bg-slate-800 bg-slate-200 dark:text-white text-gray-900 rounded-md border dark:border-slate-700 border-gray-300 focus:outline-none focus:border-sky-500 transition-colors dark:placeholder:text-gray-400 placeholder:text-gray-500"
                                         style={{ lineHeight: "1.5" }}
                                     />
                                 </div>
                             </div>
 
                             <div className="space-y-8">
-                                { filteredIssuers.map((issued_by, iIndex) => (
+                                {filteredIssuers.map((issued_by, iIndex) => (
                                     <div key={iIndex}>
                                         <SubSectionTitle sn={`0${iIndex + 1}.`} title={issued_by} />
                                         <table className="w-full">
                                             <tbody>
                                                 <tr>
                                                     <th>&nbsp;</th>
-                                                    <th className="text-gray-500 text-right">Issued Date</th>
+                                                    <th className="dark:text-gray-500 text-gray-600 text-right">Issued Date</th>
                                                 </tr>
 
                                                 {filteredData.map((row, index) => (
                                                     row.name && (row.issued_by === issued_by) && (
                                                         <tr
-                                                            key={index} className="hover:bg-gray-700/50 transition-all ease-in-out cursor-pointer hover-underline-animation-parent"
-                                                            onClick={()=>onClickURLHandler(row.credential_url)}
+                                                            key={index} className="dark:hover:bg-gray-700/50 hover:bg-gray-200/50 transition-all ease-in-out cursor-pointer hover-underline-animation-parent"
+                                                            onClick={() => onClickURLHandler(row.credential_url)}
                                                         >
                                                             <td className="p-3 pr-4 md:pr-10 rounded-l-md">
                                                                 <a className='text-sky-400 hover:text-sky-400 hover-underline-animation'>
                                                                     {row.name}
                                                                 </a>
                                                             </td>
-                                                            <td className="text-gray-400 text-right rounded-r-md pr-2">{formatDate(row.issued_date)}</td>
+                                                            <td className="dark:text-gray-400 text-gray-600 text-right rounded-r-md pr-2">{formatDate(row.issued_date)}</td>
                                                         </tr>
                                                     )
                                                 ))}
@@ -121,7 +121,7 @@ export function Certificates() {
                             </div>
 
                             {filteredIssuers.length === 0 && (
-                                <div className="text-center text-gray-400 py-8">
+                                <div className="text-center dark:text-gray-400 text-gray-600 py-8">
                                     No certificates found matching "{searchTerm}"
                                 </div>
                             )}

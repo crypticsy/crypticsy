@@ -24,13 +24,24 @@ nav{
     background-color: transparent;
 }
 
-nav.navbar-scrolled{
+/* Dark theme navbar */
+:root.dark nav.navbar-scrolled{
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(15px) !important;
     -moz-backdrop-filter: blur(15px) !important;
     -o-backdrop-filter: blur(15px) !important;
     -ms-backdrop-filter: blur(15px) !important;
     background-color: rgba(23, 23, 23, 0.9) !important;
+}
+
+/* Light theme navbar */
+:root.light nav.navbar-scrolled{
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    -moz-backdrop-filter: blur(15px) !important;
+    -o-backdrop-filter: blur(15px) !important;
+    -ms-backdrop-filter: blur(15px) !important;
+    background-color: rgba(241, 245, 249, 0.9) !important;
 }
 
 .scroll-down-hide-nav {

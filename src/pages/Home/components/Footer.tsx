@@ -15,7 +15,7 @@ export function Footer() {
             </div>
             <div className="flex justify-center">
                 <div className="max-w-4xl w-full">
-                    <div className="sfmono-reg text-2xs md:text-xs text-slate-300 text-center">
+                    <div className="sfmono-reg text-2xs md:text-xs dark:text-slate-300 text-gray-600 text-center">
                         Copyright © {new Date().getFullYear()}  {personalInfo.copyright}. All rights reserved.
                     </div>
                 </div>

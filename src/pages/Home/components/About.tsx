@@ -8,7 +8,7 @@ export function About() {
     >
       <div className="space-y-8 max-w-5xl">
         <SectionTitle sn={"01."} title={"About me"} />
-        <div className="calibre-reg sm:text-xs md:text-xl max-w-5xl text-gray-200 text-justify space-y-5">
+        <div className="calibre-reg sm:text-xs md:text-xl max-w-5xl dark:text-gray-200 text-gray-700 text-justify space-y-5">
           <p>
             &emsp; &emsp; I'm a data detective who loves uncovering stories
             behind the numbers. I create fun projects to make daily tasks easier

@@ -11,11 +11,11 @@ export function onClickEmailHandler() {
     window.location.href = `mailto:${socialLinks.email}`;
 }
 
-export function SocialIcon({ IconComponent, url, type, size='medium' }: { IconComponent: IconType, url: string, type: string, size?: string }) {
+export function SocialIcon({ IconComponent, url, type, size = 'medium' }: { IconComponent: IconType, url: string, type: string, size?: string }) {
     return (
-        <div className={"icon-wrapper flex justify-center items-center cursor-pointer hover:text-sky-400" + (size === 'medium' ? " h-8 w-8" : " h-5 w-5") }
+        <div className={"icon-wrapper flex justify-center items-center cursor-pointer hover:text-sky-400" + (size === 'medium' ? " h-8 w-8" : " h-5 w-5")}
             onClick={() => type === "email" ? onClickEmailHandler() : onClickURLHandler(url)} >
-            < IconComponent className={"cursor-pointer social-icon"  + (size === 'medium' ? " w-6 h-6" : " w-4 h-4") } />
+            < IconComponent className={"cursor-pointer social-icon" + (size === 'medium' ? " w-6 h-6" : " w-4 h-4")} />
         </div>
     )
 }
@@ -28,7 +28,7 @@ export function LeftSocials() {
                 <SocialIcon IconComponent={FiLinkedin} url={socialLinks.linkedin} type={'link'} />
                 <SocialIcon IconComponent={FiInstagram} url={socialLinks.instagram} type={'link'} />
                 <div className="h-[8rem] w-8 justify-center flex">
-                    <div className="bg-white w-0.5 h-full rounded-md" />
+                    <div className="dark:bg-white bg-gray-400 w-0.5 h-full rounded-md" />
                 </div>
             </div>
         </div>)
@@ -40,7 +40,7 @@ export function RightSocials() {
             <div className="grid grid-rows-[auto_1fr] gap-6">
                 <SocialIcon IconComponent={FiGithub} url={socialLinks.github} type={'link'} />
                 <div className="h-[8rem] w-8 justify-center flex">
-                    <div className="bg-white w-0.5 h-full rounded-md" />
+                    <div className="dark:bg-white bg-gray-400 w-0.5 h-full rounded-md" />
                 </div>
             </div>
         </div>)
