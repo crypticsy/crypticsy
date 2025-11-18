@@ -38,7 +38,7 @@ export function Contact() {
 
                     <div className="pt-8">
                         <button
-                            className='px-6 py-4 border-2 text-base md:text-lg border-sky-400 text-sky-400 rounded-md'
+                            className='px-6 py-4 border-2 text-base md:text-lg rounded-md bg-sky-500 hover:bg-sky-400 dark:bg-sky-700 dark:hover:bg-sky-600 text-white'
                             onClick={() => onClickEmailHandler()}
                         >
                             {contactInfo.buttonText}

@@ -28,7 +28,7 @@ export function LeftSocials() {
                 <SocialIcon IconComponent={FiLinkedin} url={socialLinks.linkedin} type={'link'} />
                 <SocialIcon IconComponent={FiInstagram} url={socialLinks.instagram} type={'link'} />
                 <div className="h-[8rem] w-8 justify-center flex">
-                    <div className="dark:bg-white bg-gray-400 w-0.5 h-full rounded-md" />
+                    <div className="dark:bg-white bg-black w-0.5 h-full rounded-md" />
                 </div>
             </div>
         </div>)
@@ -40,7 +40,7 @@ export function RightSocials() {
             <div className="grid grid-rows-[auto_1fr] gap-6">
                 <SocialIcon IconComponent={FiGithub} url={socialLinks.github} type={'link'} />
                 <div className="h-[8rem] w-8 justify-center flex">
-                    <div className="dark:bg-white bg-gray-400 w-0.5 h-full rounded-md" />
+                    <div className="dark:bg-white bg-black w-0.5 h-full rounded-md" />
                 </div>
             </div>
         </div>)

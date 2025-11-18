@@ -174,16 +174,13 @@ h2 {
 }
 
 button {
-  border: 1px solid rgb(59 130 246 / 0.5);
   font-family: "SFMono-Regular";
-  background-color: transparent;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 
 button:hover {
   transform: scale(1.06);
-  font-family: "SFMono-Semibold";
 }
 
 input::placeholder {

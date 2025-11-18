@@ -61,7 +61,7 @@ export function Intro() {
                     {personalInfo.description}
                 </p>
                 <button
-                    className='px-4 py-3 border-2 text-sm md:text-xl  border-sky-400 text-sky-400 rounded-md'
+                    className='px-4 py-3 border-2 text-sm md:text-xl rounded-md bg-sky-500 hover:bg-sky-400 dark:bg-sky-700 dark:hover:bg-sky-600 text-white'
                     onClick={() => onClickEmailHandler()}
                 >
                     Say Hello !

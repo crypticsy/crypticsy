@@ -71,7 +71,7 @@ export const projects: Project[] = [
         description:
             "A web application inspired by the Marauder's Map from the Harry Potter universe, enabling users to explore a digital map of Hogwarts with moving footprints and hidden rooms.",
         tags: ["React-Three-Fiber", "Typescript"],
-        imageURL: "https://crypticsy.github.io/the-marauders-map/main_screen.png",
+        imageURL: "https://github.com/crypticsy/the-marauders-map/blob/master/public/demo.gif?raw=true",
         githubURL: "https://github.com/crypticsy/the-marauders-map",
         hostedURL: "https://crypticsy.github.io/the-marauders-map/",
         imagePosition: "top",
@@ -90,7 +90,7 @@ export const projects: Project[] = [
         title: "Chess Engine",
         description:
             "A full fledge chess game developed using pygame, and contains an ai engine that utilizes the minimax and alpha beta pruning algorithms to offer an immersive player-versus-bot experience.",
-        tags: ["Python", "PyGame", "Algorithm"],
+        tags: ["Python", "PyGame", "Minimax Algorithm"],
         githubURL:
             "https://github.com/crypticsy/Playground/tree/master/Game_Engine/Chess/",
     },
