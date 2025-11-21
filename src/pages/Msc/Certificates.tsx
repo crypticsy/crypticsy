@@ -65,7 +65,7 @@ export function Certificates() {
                             <div className="flex items-center justify-center relative mb-16">
                                 <button
                                     onClick={() => navigate('/')}
-                                    className="absolute left-0 mt-8 text-gray-400 hover:text-sky-400 transition-colors cursor-pointer flex items-center gap-2 group border-none bg-transparent"
+                                    className="absolute left-0 mt-8 text-gray-400 hover:text-blue-600 dark:hover:text-sky-400 transition-colors cursor-pointer flex items-center gap-2 group border-none bg-transparent"
                                     aria-label="Back to home"
                                 >
                                     <FiArrowLeft className="w-5 h-5" />
@@ -82,7 +82,7 @@ export function Certificates() {
                                         placeholder="Search by name or issuer..."
                                         value={searchTerm}
                                         onChange={(e) => setSearchTerm(e.target.value)}
-                                        className="w-full pl-11 pr-4 py-3 pt-4 dark:bg-slate-800 bg-slate-200 dark:text-white text-gray-900 rounded-md border dark:border-slate-700 border-gray-300 focus:outline-none focus:border-sky-500 transition-colors dark:placeholder:text-gray-400 placeholder:text-gray-500"
+                                        className="w-full pl-11 pr-4 py-3 pt-4 dark:bg-slate-800 bg-slate-200 dark:text-white text-gray-900 rounded-md border dark:border-slate-700 border-gray-300 focus:outline-none focus:border-blue-600 dark:focus:border-sky-500 transition-colors dark:placeholder:text-gray-400 placeholder:text-gray-500"
                                         style={{ lineHeight: "1.5" }}
                                     />
                                 </div>
@@ -106,7 +106,7 @@ export function Certificates() {
                                                             onClick={() => onClickURLHandler(row.credential_url)}
                                                         >
                                                             <td className="p-3 pr-4 md:pr-10 rounded-l-md">
-                                                                <a className='text-sky-400 hover:text-sky-400 hover-underline-animation'>
+                                                                <a className='text-blue-600 dark:text-sky-400 hover:text-blue-600 dark:hover:text-sky-400 hover-underline-animation'>
                                                                     {row.name}
                                                                 </a>
                                                             </td>

@@ -13,7 +13,7 @@ export function onClickEmailHandler() {
 
 export function SocialIcon({ IconComponent, url, type, size = 'medium' }: { IconComponent: IconType, url: string, type: string, size?: string }) {
     return (
-        <div className={"icon-wrapper flex justify-center items-center cursor-pointer hover:text-sky-400" + (size === 'medium' ? " h-8 w-8" : " h-5 w-5")}
+        <div className={"icon-wrapper flex justify-center items-center cursor-pointer hover:text-blue-600 dark:hover:text-sky-400" + (size === 'medium' ? " h-8 w-8" : " h-5 w-5")}
             onClick={() => type === "email" ? onClickEmailHandler() : onClickURLHandler(url)} >
             < IconComponent className={"cursor-pointer social-icon" + (size === 'medium' ? " w-6 h-6" : " w-4 h-4")} />
         </div>

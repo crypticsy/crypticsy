@@ -30,6 +30,11 @@
   font-family: "Calibre-Regular";
 }
 
+/* Apply theme transitions only to theme-related properties */
+*:not(.no-theme-transition) {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, fill 0.2s ease, stroke 0.2s ease;
+}
+
 @font-face {
   font-family: "Calibre-Regular";
   src: url("./assets/fonts/Calibre/Calibre-Regular.ttf");
@@ -161,6 +166,7 @@ body {
   animation-fill-mode: forwards;
   opacity: 0;
   animation-delay: 0.2s;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 h1 {
@@ -206,7 +212,7 @@ input::placeholder {
   height: 1px;
   bottom: 0;
   left: 0;
-  background-color: rgb(56 189 248);
+  background-color: rgb(37 99 235);
   transform-origin: bottom left;
   transition: transform 0.25s ease-out;
 }
@@ -258,5 +264,5 @@ input::placeholder {
 }
 
 .grIcon path {
-  stroke: rgb(56, 189, 248);
+  stroke: rgb(37, 99, 235);
 }

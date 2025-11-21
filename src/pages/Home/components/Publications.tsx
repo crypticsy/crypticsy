@@ -30,7 +30,7 @@ function Publication(publication: PulicationProp) {
 
   return (
     <div
-      className="dark:bg-slate-800 bg-slate-100 rounded-md overflow-hidden h-full cursor-pointer relative group transition-all duration-300 hover:ring-1 hover:ring-sky-600 border dark:border-slate-700 border-gray-300"
+      className="dark:bg-slate-800 z-0 bg-slate-100 rounded-md overflow-hidden h-full cursor-pointer relative group transition-all duration-300 hover:ring-1 hover:ring-blue-600 dark:hover:ring-sky-600 border dark:border-slate-700 border-gray-300"
       onClick={() => window.open(publication.publicationURL, "_blank")}
       onMouseEnter={animateIn}
       onMouseLeave={animateOut}
@@ -42,7 +42,7 @@ function Publication(publication: PulicationProp) {
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(-45deg, hsla(0,0%,0%,0) 60%, rgba(56, 189, 248, 0.3) 70%, hsla(0,0%,0%,0) 100%)",
+              "linear-gradient(-45deg, hsla(0,0%,0%,0) 60%, rgba(37, 99, 235, 0.3) 70%, hsla(0,0%,0%,0) 100%)",
             backgroundSize: "250% 250%, 100% 100%",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "-100% -100%, 0 0",

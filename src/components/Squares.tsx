@@ -10,19 +10,21 @@ interface GridOffset {
 interface SquaresProps {
   direction?: 'diagonal' | 'up' | 'right' | 'down' | 'left';
   speed?: number;
-  borderColor?: CanvasStrokeStyle;
+  borderColor: CanvasStrokeStyle;
   squareSize?: number;
-  hoverFillColor?: CanvasStrokeStyle;
-  backgroundColor?: string;
+  hoverFillColor: CanvasStrokeStyle;
+  backgroundColor: string;
+  isDark: boolean;
 }
 
 const Squares: React.FC<SquaresProps> = ({
   direction = 'right',
   speed = 1,
-  borderColor = '#999',
+  borderColor,
   squareSize = 40,
-  hoverFillColor = '#222',
-  backgroundColor = '#171717'
+  hoverFillColor,
+  backgroundColor,
+  isDark
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const requestRef = useRef<number | null>(null);
@@ -30,6 +32,14 @@ const Squares: React.FC<SquaresProps> = ({
   const numSquaresY = useRef<number>(0);
   const gridOffset = useRef<GridOffset>({ x: 0, y: 0 });
   const hoveredSquareRef = useRef<GridOffset | null>(null);
+  const drawGridRef = useRef<(() => void) | null>(null);
+
+  // Force immediate redraw when theme changes
+  useEffect(() => {
+    if (drawGridRef.current) {
+      drawGridRef.current();
+    }
+  }, [backgroundColor, isDark, borderColor, hoverFillColor]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -65,7 +75,7 @@ const Squares: React.FC<SquaresProps> = ({
             Math.floor((x - startX) / squareSize) === hoveredSquareRef.current.x &&
             Math.floor((y - startY) / squareSize) === hoveredSquareRef.current.y
           ) {
-            ctx.fillStyle = hoverFillColor;
+            ctx.fillStyle = hoverFillColor as string;
             ctx.fillRect(squareX, squareY, squareSize, squareSize);
           }
 
@@ -88,8 +98,11 @@ const Squares: React.FC<SquaresProps> = ({
         canvas.height / 2,
         Math.sqrt(canvas.width ** 2 + canvas.height ** 2) / 2
       );
+
+      // Adjust gradient opacity based on theme
+      const midOpacity = isDark ? 0.1 : 0.2;
       radialGradient.addColorStop(0, `rgba(${rBg}, ${gBg}, ${bBg}, 0)`);
-      radialGradient.addColorStop(0.5, `rgba(${rBg}, ${gBg}, ${bBg}, 0.1)`);
+      radialGradient.addColorStop(0.5, `rgba(${rBg}, ${gBg}, ${bBg}, ${midOpacity})`);
       radialGradient.addColorStop(1, backgroundColor);
 
       ctx.fillStyle = radialGradient;
@@ -105,6 +118,9 @@ const Squares: React.FC<SquaresProps> = ({
       ctx.fillStyle = verticalGradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     };
+
+    // Store drawGrid in ref for external access
+    drawGridRef.current = drawGrid;
 
     const updateAnimation = () => {
       const effectiveSpeed = Math.max(speed, 0.1);
@@ -167,7 +183,7 @@ const Squares: React.FC<SquaresProps> = ({
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [direction, speed, borderColor, hoverFillColor, squareSize, backgroundColor]);
+  }, [direction, speed, borderColor, hoverFillColor, squareSize, backgroundColor, isDark]);
 
   return <canvas ref={canvasRef} className="w-full h-full border-none block"></canvas>;
 };

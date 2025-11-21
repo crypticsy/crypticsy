@@ -38,7 +38,7 @@ export function About() {
                   Wondering how I got here? Let's just say I've been secretly
                   leveling up with these&nbsp;
                   <a
-                    className="cursor-pointer text-sky-400 hover:text-sky-400 hover-underline-animation"
+                    className="cursor-pointer text-blue-600 dark:text-sky-400 hover:text-blue-600 dark:hover:text-sky-400 hover-underline-animation"
                     onClick={() => handleNavLinkClick("/certificates")}
                   >
                     certificates.

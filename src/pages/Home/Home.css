@@ -9,12 +9,21 @@
   }
 }
 
-.project:hover{
+:root.dark .project:hover{
   transform: translate(0, -0.5rem);
   transition: all 300ms ease;
 
   .title{
     color:rgb(56 189 248);
+  }
+}
+
+:root.light .project:hover{
+  transform: translate(0, -0.5rem);
+  transition: all 300ms ease;
+
+  .title{
+    color:rgb(37 99 235);
   }
 }
 
@@ -31,7 +40,7 @@ nav{
     -moz-backdrop-filter: blur(15px) !important;
     -o-backdrop-filter: blur(15px) !important;
     -ms-backdrop-filter: blur(15px) !important;
-    background-color: rgba(23, 23, 23, 0.9) !important;
+    background-color: rgba(23, 23, 23, 0.5) !important;
 }
 
 /* Light theme navbar */
@@ -41,7 +50,7 @@ nav{
     -moz-backdrop-filter: blur(15px) !important;
     -o-backdrop-filter: blur(15px) !important;
     -ms-backdrop-filter: blur(15px) !important;
-    background-color: rgba(241, 245, 249, 0.9) !important;
+    background-color: rgba(241, 245, 249, 1) !important;
 }
 
 .scroll-down-hide-nav {

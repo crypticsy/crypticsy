@@ -44,7 +44,7 @@ export function ScrollToTop() {
         <div className="fixed bottom-8 right-8 z-50 lg:hidden">
             <button
                 onClick={scrollToTop}
-                className="relative w-12 h-12 flex items-center justify-center dark:bg-slate-800/80 bg-white/90 backdrop-blur-sm rounded-full border dark:border-slate-700 border-gray-300 hover:border-sky-400 transition-all duration-300 hover:scale-110 group shadow-lg"
+                className="relative w-12 h-12 flex items-center justify-center dark:bg-slate-800/80 bg-white/90 backdrop-blur-sm rounded-full border dark:border-slate-700 border-gray-300 hover:border-blue-600 dark:hover:border-sky-400 transition-all duration-300 hover:scale-110 group shadow-lg"
                 aria-label="Scroll to top"
             >
                 {/* Progress circle */}
@@ -64,7 +64,7 @@ export function ScrollToTop() {
                         cy="24"
                         r="18"
                         fill="none"
-                        stroke="rgb(56 189 248)"
+                        stroke="rgb(37 99 235)"
                         strokeWidth="2"
                         strokeDasharray={circumference}
                         strokeDashoffset={strokeDashoffset}
@@ -74,7 +74,7 @@ export function ScrollToTop() {
                 </svg>
 
                 {/* Arrow icon */}
-                <FiArrowUp className="w-5 h-5 dark:text-slate-300 text-gray-700 group-hover:text-sky-400 transition-colors relative z-10" />
+                <FiArrowUp className="w-5 h-5 dark:text-slate-300 text-gray-700 group-hover:text-blue-600 dark:group-hover:text-sky-400 transition-colors relative z-10" />
             </button>
         </div>
     );

@@ -8,7 +8,7 @@ export function Contact() {
 
     return (
         <div
-            className="relative mt-[5vh] md:mt-[10vh] w-full"
+            className="relative mt-[5vh] md:mt-[10vh] w-full bg-[#f1f5f9] dark:bg-[#171717]"
             id="contact"
             style={{ minHeight: '600px' }}
         >
@@ -22,6 +22,7 @@ export function Contact() {
                     borderColor={theme === 'dark' ? '#2a2a2a' : '#d5e2f5'}
                     hoverFillColor={theme === 'dark' ? '#1a1a1a' : '#cbd5e1'}
                     backgroundColor={theme === 'dark' ? '#171717' : '#f1f5f9'}
+                    isDark={theme === 'dark'}
                 />
             </div>
 
@@ -38,7 +39,7 @@ export function Contact() {
 
                     <div className="pt-8">
                         <button
-                            className='px-6 py-4 border-2 text-base md:text-lg rounded-md bg-sky-500 hover:bg-sky-400 dark:bg-sky-700 dark:hover:bg-sky-600 text-white'
+                            className='px-6 py-4 border-2 text-base md:text-lg rounded-md bg-blue-600 hover:bg-blue-700 dark:bg-sky-700 dark:hover:bg-sky-600 text-white'
                             onClick={() => onClickEmailHandler()}
                         >
                             {contactInfo.buttonText}

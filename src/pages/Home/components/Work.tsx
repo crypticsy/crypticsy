@@ -94,7 +94,7 @@ function BentoProject({
   return (
     <div
       className={`dark:bg-slate-800 bg-slate-300 rounded-md project border dark:border-slate-700 border-gray-300 ${(githubURL || hostedURL) && " cursor-pointer "
-        } relative overflow-hidden group flex flex-col transition-all duration-300 hover:ring-1 hover:ring-sky-600 ${hasImage
+        } relative overflow-hidden group flex flex-col transition-all duration-300 hover:ring-1 hover:ring-blue-600 dark:hover:ring-sky-600 ${hasImage
           ? isImageRight
             ? "md:col-span-2 md:row-span-1 md:flex-row-reverse" // Horizontal: wide, image on RIGHT
             : isImageLeft
@@ -114,7 +114,7 @@ function BentoProject({
           position: "absolute",
           inset: 0,
           background:
-            "linear-gradient(-45deg, hsla(0,0%,0%,0) 60%, rgba(56, 189, 248, 0.3) 70%, hsla(0,0%,0%,0) 100%)",
+            "linear-gradient(-45deg, hsla(0,0%,0%,0) 60%, rgba(37, 99, 235, 0.3) 70%, hsla(0,0%,0%,0) 100%)",
           backgroundSize: "250% 250%, 100% 100%",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "-100% -100%, 0 0",
@@ -156,7 +156,7 @@ function BentoProject({
           <div className="flex space-x-5 text-left">
             {githubURL && githubURL.length > 0 && (
               <FiGithub
-                className="w-5 h-5 hover:text-sky-500 cursor-pointer"
+                className="w-5 h-5 hover:text-blue-600 dark:hover:text-sky-500 cursor-pointer"
                 onClick={(e) => {
                   e.stopPropagation();
                   window.open(githubURL, "_blank");
@@ -165,7 +165,7 @@ function BentoProject({
             )}
             {hostedURL && hostedURL.length > 0 && (
               <IoMdOpen
-                className="w-5 h-5 hover:text-sky-500 cursor-pointer"
+                className="w-5 h-5 hover:text-blue-600 dark:hover:text-sky-500 cursor-pointer"
                 onClick={(e) => {
                   e.stopPropagation();
                   window.open(hostedURL, "_blank");
@@ -240,7 +240,7 @@ export function Work() {
               placeholder="Search by name or tags..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-11 pr-4 py-3 pt-4 dark:bg-slate-800 bg-slate-200 dark:text-white text-gray-900 rounded-md border dark:border-slate-700 border-gray-300 focus:outline-none focus:border-sky-500 transition-colors dark:placeholder:text-gray-400 placeholder:text-gray-500"
+              className="w-full pl-11 pr-4 py-3 pt-4 dark:bg-slate-800 bg-slate-200 dark:text-white text-gray-900 rounded-md border dark:border-slate-700 border-gray-300 focus:outline-none focus:border-blue-600 dark:focus:border-sky-500 transition-colors dark:placeholder:text-gray-400 placeholder:text-gray-500"
               style={{ lineHeight: "1.5" }}
             />
           </div>
@@ -273,7 +273,7 @@ export function Work() {
             onClick={() =>
               window.open("https://github.com/crypticsy/", "_blank")
             }
-            className="flex items-center px-6 py-4 bg-transparent dark:hover:bg-slate-800 hover:bg-gray-100 dark:text-slate-300 text-gray-700 hover:text-sky-500 rounded-xl border dark:border-slate-700 border-gray-300 hover:border-sky-500 transition-all duration-300 sfmono-reg group"
+            className="flex items-center px-6 py-4 bg-transparent dark:hover:bg-slate-800 hover:bg-gray-100 dark:text-slate-300 text-gray-700 hover:text-blue-600 dark:hover:text-sky-500 rounded-xl border dark:border-slate-700 border-gray-300 hover:border-blue-600 dark:hover:border-sky-500 transition-all duration-300 sfmono-reg group"
           >
             More projects on GitHub &nbsp;
             <FiGithub className="w-5 h-5 transition-transform" />

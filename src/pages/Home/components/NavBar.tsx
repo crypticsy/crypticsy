@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { navigationItems } from "../../../data";
 import { ThemeToggle } from "../../../components/ThemeToggle";
 import { useTheme } from "../../../hooks/useTheme";
@@ -16,11 +16,11 @@ export function NavBar() {
     const lastScrollTopRef = useRef(0);
     const ticking = useRef(false);
 
-    const movingNavStyles = {
+    const movingNavStyles = useMemo(() => ({
         boxShadow: theme === 'dark' ? '0px 0px 10px black' : '0px 0px 10px rgba(0, 0, 0, 0.1)',
         backgroundColor: theme === 'dark' ? 'rgba(23, 23, 23, 0.8)' : 'rgba(241, 245, 249, 0.8)',
         backdropFilter: 'blur(10px)',
-    };
+    }), [theme]);
 
     const handleScroll = () => {
         const rootDiv = document.getElementById('root');
@@ -89,7 +89,7 @@ export function NavBar() {
             <div className="fixed top-0 right-0 p-6 md:hidden z-50">
                 <button
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    className="text-text-primary hover:text-sky-400 transition-colors duration-200"
+                    className="text-text-primary hover:text-blue-600 dark:hover:text-sky-400 transition-colors duration-200"
                     aria-label="Toggle menu"
                 >
                     {isMobileMenuOpen ? (
@@ -148,8 +148,8 @@ function NavSection({ sn, title, scrollToID }: SectionTitleProps) {
     };
 
     return (<div className="flex items-center">
-        <div onClick={handleScrollToClick} className="gap-1.5 mr-8 flex cursor-pointer p-2 text-sm text-text-primary hover:text-sky-400">
-            <p className="text-sky-400 sfmono-reg">{sn}</p>
+        <div onClick={handleScrollToClick} className="gap-1.5 mr-8 flex cursor-pointer p-2 text-sm text-text-primary hover:text-blue-600 dark:hover:text-sky-400">
+            <p className="text-blue-600 dark:text-sky-400 sfmono-reg">{sn}</p>
             <p className="whitespace-nowrap sfmono-reg">{title}</p>
         </div>
     </div>)
@@ -169,8 +169,8 @@ function MobileNavSection({ sn, title, scrollToID, onClick }: SectionTitleProps 
             onClick={handleScrollToClick}
             className="flex items-center gap-2 cursor-pointer group py-2"
         >
-            <p className="text-sky-400 sfmono-reg text-sm">{sn}</p>
-            <p className="text-text-primary sfmono-reg text-lg group-hover:text-sky-400 transition-colors duration-200">
+            <p className="text-blue-600 dark:text-sky-400 sfmono-reg text-sm">{sn}</p>
+            <p className="text-text-primary sfmono-reg text-lg group-hover:text-blue-600 dark:group-hover:text-sky-400 transition-colors duration-200">
                 {title}
             </p>
         </div>
