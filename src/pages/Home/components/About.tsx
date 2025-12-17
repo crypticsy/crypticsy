@@ -1,12 +1,18 @@
 import { SectionTitle, handleNavLinkClick } from "../../utils";
+import { useScrollAnimation } from "../../../hooks";
 
 export function About() {
+  const { elementRef, isVisible } = useScrollAnimation();
+
   return (
     <div
       className="justify-center flex items-center pt-[15vh] mx-8 lg:mx-20"
       id="about"
     >
-      <div className="space-y-8 max-w-5xl">
+      <div
+        ref={elementRef}
+        className={`space-y-8 max-w-5xl opacity-0 ${isVisible ? 'animate-fade-in-up' : ''}`}
+      >
         <SectionTitle sn={"01."} title={"About me"} />
         <div className="calibre-reg sm:text-xs md:text-xl max-w-5xl dark:text-gray-200 text-gray-700 text-justify space-y-5">
           <p>

@@ -2,9 +2,11 @@ import { contactInfo } from "../../../data";
 import { onClickEmailHandler } from "./Socials";
 import Squares from "../../../components/Squares";
 import { useTheme } from "../../../hooks/useTheme";
+import { useScrollAnimation } from "../../../hooks";
 
 export function Contact() {
     const { theme } = useTheme();
+    const { elementRef, isVisible } = useScrollAnimation();
 
     return (
         <div
@@ -28,7 +30,10 @@ export function Contact() {
 
             {/* Content */}
             <div className="justify-center flex items-center mx-8 lg:mx-20 relative z-10" style={{ minHeight: '600px' }}>
-                <div className="max-w-3xl text-center space-y-6">
+                <div
+                    ref={elementRef}
+                    className={`max-w-3xl text-center space-y-6 opacity-0 ${isVisible ? 'animate-fade-in-up' : ''}`}
+                >
                     <h2 className="text-[2rem] md:text-[3.5rem] calibre-smbold text-text-primary">
                         {contactInfo.title}
                     </h2>

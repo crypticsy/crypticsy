@@ -1,8 +1,16 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { SectionTitle } from "../../utils";
 import { FiGithub, FiStar, FiGitBranch, FiSearch } from "react-icons/fi";
 import { IoMdOpen } from "react-icons/io";
 import { projects, Project as ProjectProps } from "../../../data";
+import { useScrollAnimation } from "../../../hooks";
+
+// Type-cast icons for JSX usage
+const GithubIcon = FiGithub as React.ComponentType<{ className?: string; onClick?: (e: React.MouseEvent) => void }>;
+const OpenIcon = IoMdOpen as React.ComponentType<{ className?: string; onClick?: (e: React.MouseEvent) => void }>;
+const StarIcon = FiStar as React.ComponentType<{ className?: string }>;
+const BranchIcon = FiGitBranch as React.ComponentType<{ className?: string }>;
+const SearchIcon = FiSearch as React.ComponentType<{ className?: string }>;
 
 function BentoProject({
   title,
@@ -12,12 +20,14 @@ function BentoProject({
   hostedURL,
   imageURL,
   imagePosition = "top",
-}: ProjectProps) {
+  index = 0,
+}: ProjectProps & { index?: number }) {
   const [githubStats, setGithubStats] = useState<{
     stars: number;
     forks: number;
   } | null>(null);
   const overlayRef = useRef<HTMLDivElement | null>(null);
+  const { elementRef, isVisible } = useScrollAnimation();
   const hasImage = imageURL && imageURL.length > 0;
   const isImageRight = imagePosition === "right" && hasImage;
   const isImageLeft = imagePosition === "left" && hasImage;
@@ -93,6 +103,7 @@ function BentoProject({
 
   return (
     <div
+      ref={elementRef}
       className={`dark:bg-slate-800 bg-slate-300 rounded-md project border dark:border-slate-700 border-gray-300 ${(githubURL || hostedURL) && " cursor-pointer "
         } relative overflow-hidden group flex flex-col transition-all duration-300 hover:ring-1 hover:ring-blue-600 dark:hover:ring-sky-600 ${hasImage
           ? isImageRight
@@ -103,7 +114,8 @@ function BentoProject({
                 ? "md:row-span-2 md:flex-col-reverse" // Vertical: tall, image on BOTTOM
                 : "md:row-span-2 md:flex-col" // Vertical: tall, image on TOP (default)
           : ""
-        }`}
+        } opacity-0 ${isVisible ? 'animate-fade-in-up' : ''}`}
+      style={{ animationDelay: `${index * 0.01}s` }}
       onClick={clickHandler}
       onMouseEnter={animateIn}
       onMouseLeave={animateOut}
@@ -155,7 +167,7 @@ function BentoProject({
         <div className="flex justify-between items-center pt-6 pb-2">
           <div className="flex space-x-5 text-left">
             {githubURL && githubURL.length > 0 && (
-              <FiGithub
+              <GithubIcon
                 className="w-5 h-5 hover:text-blue-600 dark:hover:text-sky-500 cursor-pointer"
                 onClick={(e) => {
                   e.stopPropagation();
@@ -164,7 +176,7 @@ function BentoProject({
               />
             )}
             {hostedURL && hostedURL.length > 0 && (
-              <IoMdOpen
+              <OpenIcon
                 className="w-5 h-5 hover:text-blue-600 dark:hover:text-sky-500 cursor-pointer"
                 onClick={(e) => {
                   e.stopPropagation();
@@ -178,13 +190,13 @@ function BentoProject({
             <div className="text-sm sfmono-reg flex gap-3 text-gray-500/60">
               {githubStats.stars > 0 && (
                 <div className="flex items-center gap-1">
-                  <FiStar className="w-4 h-4 align-middle" />
+                  <StarIcon className="w-4 h-4 align-middle" />
                   <p className="leading-none pt-1">{githubStats.stars}</p>
                 </div>
               )}
               {githubStats.forks > 0 && (
                 <div className="flex items-center gap-1">
-                  <FiGitBranch className="w-4 h-4 align-middle" />
+                  <BranchIcon className="w-4 h-4 align-middle" />
                   <p className="leading-none pt-1">{githubStats.forks}</p>
                 </div>
               )}
@@ -212,6 +224,7 @@ function BentoProject({
 
 export function Work() {
   const [searchTerm, setSearchTerm] = useState("");
+  const { elementRef, isVisible } = useScrollAnimation();
 
   const filteredProjects = projects.filter((project) => {
     const searchLower = searchTerm.toLowerCase();
@@ -228,13 +241,16 @@ export function Work() {
       id="work"
     >
       <div className="space-y-8 max-w-6xl xl:max-w-full w-full">
-        <div className="max-w-5xl m-auto">
+        <div
+          ref={elementRef}
+          className={`max-w-5xl m-auto opacity-0 ${isVisible ? 'animate-fade-in-up' : ''}`}
+        >
           <SectionTitle sn={"02."} title={"Things I've Built"} />
         </div>
 
         <div className="flex justify-center pb-6">
           <div className="relative w-full md:max-w-5xl">
-            <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <SearchIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
             <input
               type="text"
               placeholder="Search by name or tags..."
@@ -258,6 +274,7 @@ export function Work() {
               hostedURL={project.hostedURL}
               imageURL={project.imageURL}
               imagePosition={project.imagePosition}
+              index={idx}
             />
           ))}
         </div>
@@ -273,10 +290,10 @@ export function Work() {
             onClick={() =>
               window.open("https://github.com/crypticsy/", "_blank")
             }
-            className="flex items-center px-6 py-4 bg-transparent dark:hover:bg-slate-800 hover:bg-gray-100 dark:text-slate-300 text-gray-700 hover:text-blue-600 dark:hover:text-sky-500 rounded-xl border dark:border-slate-700 border-gray-300 hover:border-blue-600 dark:hover:border-sky-500 transition-all duration-300 sfmono-reg group"
+            className="flex items-center px-6 py-4 bg-transparent dark:hover:bg-slate-800 hover:bg-gray-100 dark:text-slate-300 text-gray-700 hover:text-blue-600 dark:hover:text-sky-500 rounded-xl border-2 border-solid dark:border-slate-700 border-gray-300 hover:border-blue-600 dark:hover:border-sky-500 transition-all duration-300 sfmono-reg group"
           >
             More projects on GitHub &nbsp;
-            <FiGithub className="w-5 h-5 transition-transform" />
+            <GithubIcon className="w-5 h-5 transition-transform" />
           </button>
         </div>
       </div>
