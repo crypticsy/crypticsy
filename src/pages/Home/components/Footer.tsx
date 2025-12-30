@@ -1,5 +1,5 @@
 import { FiGithub, FiInstagram, FiLinkedin } from "react-icons/fi";
-import { SiBento } from "react-icons/si";
+import { FaUnsplash } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { SocialIcon } from "./Socials";
 import { socialLinks, personalInfo } from "../../../data";
@@ -12,7 +12,7 @@ export function Footer() {
                 <SocialIcon IconComponent={MdOutlineEmail} url={''} type={'email'} size="small" />
                 <SocialIcon IconComponent={FiLinkedin} url={socialLinks.linkedin} type={'link'} size="small" />
                 <SocialIcon IconComponent={FiInstagram} url={socialLinks.instagram} type={'link'} size="small" />
-                <SocialIcon IconComponent={SiBento} url={socialLinks.bento} type={'link'} size="small" />
+                <SocialIcon IconComponent={FaUnsplash} url={socialLinks.unsplash} type={'link'} size="small" />
                 <SocialIcon IconComponent={FiGithub} url={socialLinks.github} type={'link'} size="small" />
             </div>
             <div className="flex justify-center">

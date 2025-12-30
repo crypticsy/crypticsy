@@ -3,5 +3,5 @@ export const socialLinks = {
     linkedin: 'https://www.linkedin.com/in/animeshbasnet/',
     instagram: 'https://www.instagram.com/crypticsy/',
     github: 'https://github.com/crypticsy/',
-    bento: 'https://bento.me/crypticsy'
+    unsplash: 'https://unsplash.com/@crypticsy'
 };
