@@ -111,11 +111,21 @@ export const projects: Project[] = [
         imagePosition: "top",
     },
     {
+        title: "Global AI Adoption Dashboard",
+        description:
+            "An interactive 3D globe dashboard showing AI tool adoption trends across countries and industries, inspired by Pudding.cool's storytelling approach.",
+        tags: ["React", "GlobeGl", "Data Visualization"],
+        githubURL: "https://github.com/crypticsy/ai-adoption-dashboard/",
+        hostedURL: "https://crypticsy.github.io/ai-adoption-dashboard/",
+        imageURL: "https://github.com/crypticsy/ai-adoption-dashboard/blob/master/public/demo.gif?raw=true",
+        imagePosition: "left",
+    },
+    {
         title: "Path Visualizer",
         description:
             "A python project to visualize search algorithms on a grid,  built using the flask framework and the front-end is built using HTML, CSS and JavaScript, as well as uses tailwindcss for styling.",
         tags: ["Flask", "Javascript", "TailwindCSS"],
         githubURL: "https://github.com/crypticsy/PathVisualizer",
         hostedURL: "https://path-visualizer-crypticsy.vercel.app/",
-    },
+    }
 ];
