@@ -24,14 +24,14 @@ export const projects: Project[] = [
         imagePosition: "top",
     },
     {
-        title: "Pocket Booth",
+        title: "Global AI Adoption Dashboard",
         description:
-            "A pocket-sized digital photo booth application that allows users to capture instant photo strips and store them locally.",
-        tags: ["Camera", "Google-oauth", "Typescript"],
-        imageURL: "https://crypticsy.github.io/pocket-booth/home_screen.png",
-        githubURL: "https://github.com/crypticsy/pocket-booth",
-        hostedURL: "https://crypticsy.github.io/pocket-booth/",
-        imagePosition: "right",
+            "An interactive 3D globe dashboard showing AI tool adoption trends across countries and industries, inspired by Pudding.cool's storytelling approach.",
+        tags: ["React", "GlobeGl", "Data Visualization"],
+        githubURL: "https://github.com/crypticsy/ai-adoption-dashboard/",
+        hostedURL: "https://crypticsy.github.io/ai-adoption-dashboard/",
+        imageURL: "https://github.com/crypticsy/ai-adoption-dashboard/blob/master/public/demo.gif?raw=true",
+        imagePosition: "left",
     },
     {
         title: "Sanctuary.io",
@@ -49,15 +49,14 @@ export const projects: Project[] = [
         githubURL: "https://github.com/crypticsy/VisionCaster",
     },
     {
-        title: "From Me to You",
+        title: "Path Visualizer",
         description:
-            "A web application for sending heartfelt digital letters to friends and loved ones.",
-        tags: ["Typescript", "TailwindCSS"],
-        githubURL: "https://github.com/crypticsy/from-me-to-you",
-        hostedURL: "https://crypticsy.github.io/from-me-to-you/",
-        imageURL:
-            "https://github.com/crypticsy/from-me-to-you/blob/master/public/demo.gif?raw=true",
-        imagePosition: "right",
+            "A python project to visualize search algorithms on a grid,  built using the flask framework and the front-end is built using HTML, CSS and JavaScript, as well as uses tailwindcss for styling.",
+        tags: ["Flask", "Algorithms", "Javascript"],
+        githubURL: "https://github.com/crypticsy/PathVisualizer",
+        hostedURL: "https://path-visualizer-crypticsy.vercel.app/",
+        imageURL: "https://github.com/crypticsy/PathVisualizer/blob/master/demo.gif?raw=true",
+        imagePosition: "left",
     },
     {
         title: "Ropey DVD Management System",
@@ -103,29 +102,32 @@ export const projects: Project[] = [
             "https://github.com/crypticsy/Academia/tree/master/Animated_Movie_Ontology",
     },
     {
+        title: "Pocket Booth",
+        description:
+            "A pocket-sized digital photo booth application that allows users to capture instant photo strips and store them locally.",
+        tags: ["Camera", "Google-oauth", "Typescript"],
+        imageURL: "https://crypticsy.github.io/pocket-booth/home_screen.png",
+        githubURL: "https://github.com/crypticsy/pocket-booth",
+        hostedURL: "https://crypticsy.github.io/pocket-booth/",
+        imagePosition: "top",
+    },
+    {
+        title: "From Me to You",
+        description:
+            "A web application for sending heartfelt digital letters to friends and loved ones.",
+        tags: ["Typescript", "TailwindCSS"],
+        githubURL: "https://github.com/crypticsy/from-me-to-you",
+        hostedURL: "https://crypticsy.github.io/from-me-to-you/",
+        imageURL:
+            "https://github.com/crypticsy/from-me-to-you/blob/master/public/demo.gif?raw=true",
+        imagePosition: "right",
+    },
+    {
         title: "Grago",
         description:
             "Grago, 'Graph on the go', is a graphical visualization tool designed for enthusiasts aiming to bolster the utilization of data analysis within the endeavors of local businesses and startups, developed as a final year project during my undergraduate study.",
         tags: ["Django", "Postgresql", "Data Science"],
         imageURL: gragoPreview,
         imagePosition: "top",
-    },
-    {
-        title: "Global AI Adoption Dashboard",
-        description:
-            "An interactive 3D globe dashboard showing AI tool adoption trends across countries and industries, inspired by Pudding.cool's storytelling approach.",
-        tags: ["React", "GlobeGl", "Data Visualization"],
-        githubURL: "https://github.com/crypticsy/ai-adoption-dashboard/",
-        hostedURL: "https://crypticsy.github.io/ai-adoption-dashboard/",
-        imageURL: "https://github.com/crypticsy/ai-adoption-dashboard/blob/master/public/demo.gif?raw=true",
-        imagePosition: "left",
-    },
-    {
-        title: "Path Visualizer",
-        description:
-            "A python project to visualize search algorithms on a grid,  built using the flask framework and the front-end is built using HTML, CSS and JavaScript, as well as uses tailwindcss for styling.",
-        tags: ["Flask", "Javascript", "TailwindCSS"],
-        githubURL: "https://github.com/crypticsy/PathVisualizer",
-        hostedURL: "https://path-visualizer-crypticsy.vercel.app/",
     }
 ];
