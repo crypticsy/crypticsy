@@ -33,13 +33,13 @@ function Publication({ publication, index }: { publication: PulicationProp; inde
   return (
     <div
       ref={elementRef}
-      className={`dark:bg-slate-800 z-0 bg-slate-100 rounded-md overflow-hidden h-full cursor-pointer relative group transition-all duration-300 hover:ring-1 hover:ring-blue-600 dark:hover:ring-sky-600 border dark:border-slate-700 border-gray-300 opacity-0 ${isVisible ? 'animate-fade-in-up' : ''}`}
+      className={`dark:bg-slate-800 z-0 bg-slate-100 rounded-md overflow-hidden cursor-pointer relative group transition-all duration-300 hover:ring-1 hover:ring-blue-600 dark:hover:ring-sky-600 border dark:border-slate-700 border-gray-300 opacity-0 ${isVisible ? 'animate-fade-in-up' : ''}`}
       style={{ animationDelay: `${index * 0.1}s` }}
       onClick={() => window.open(publication.publicationURL, "_blank")}
       onMouseEnter={animateIn}
       onMouseLeave={animateOut}
     >
-      <div className="w-full h-full overflow-hidden relative">
+      <div className="w-full aspect-[3/4] overflow-hidden relative">
         <div
           ref={overlayRef}
           style={{

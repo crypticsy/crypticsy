@@ -10,8 +10,11 @@ export function useScrollAnimation(options = {}) {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Toggle visibility based on whether element is intersecting
-        setIsVisible(entry.isIntersecting);
+        // Once visible, stay visible (don't toggle off when leaving viewport)
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(element);
+        }
       },
       {
         threshold: 0.1,
