@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { SectionTitle } from "../../utils";
 import { publications, Publication as PulicationProp } from "../../../data";
 import { useScrollAnimation } from "../../../hooks";
@@ -13,8 +13,10 @@ function formatDate(date: Date) {
 function Publication({ publication, index }: { publication: PulicationProp; index: number }) {
   const overlayRef = useRef<HTMLDivElement | null>(null);
   const { elementRef, isVisible } = useScrollAnimation();
+  const [hovered, setHovered] = useState(false);
 
-  const animateIn = () => {
+  const handleMouseEnter = () => {
+    setHovered(true);
     const el = overlayRef.current;
     if (!el) return;
     el.style.transition = "none";
@@ -23,7 +25,8 @@ function Publication({ publication, index }: { publication: PulicationProp; inde
     el.style.backgroundPosition = "100% 100%, 0 0";
   };
 
-  const animateOut = () => {
+  const handleMouseLeave = () => {
+    setHovered(false);
     const el = overlayRef.current;
     if (!el) return;
     el.style.transition = "none";
@@ -36,8 +39,8 @@ function Publication({ publication, index }: { publication: PulicationProp; inde
       className={`dark:bg-slate-800 z-0 bg-slate-100 rounded-md overflow-hidden cursor-pointer relative group transition-all duration-300 hover:ring-1 hover:ring-blue-600 dark:hover:ring-sky-600 border dark:border-slate-700 border-gray-300 opacity-0 ${isVisible ? 'animate-fade-in-up' : ''}`}
       style={{ animationDelay: `${index * 0.1}s` }}
       onClick={() => window.open(publication.publicationURL, "_blank")}
-      onMouseEnter={animateIn}
-      onMouseLeave={animateOut}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div className="w-full aspect-[3/4] overflow-hidden relative">
         <div
@@ -59,12 +62,21 @@ function Publication({ publication, index }: { publication: PulicationProp; inde
           src={publication.publicationImage}
         />
       </div>
-      <div className="absolute bottom-0 left-0 right-0 dark:bg-slate-800 bg-slate-300 px-5 py-6 md:p-7 flex flex-col transition-all duration-500 ease-in-out group-hover:h-auto z-20" style={{ minHeight: 'fit-content' }}>
+      <div className="absolute bottom-0 left-0 right-0 dark:bg-slate-800 bg-slate-300 px-5 py-6 md:p-7 flex flex-col z-20">
         <div className="calibre-smbold mb-2 text-left dark:text-white text-gray-900">{publication.title}</div>
         {publication.subtitle && (
-          <div className="overflow-hidden max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out">
-            <div className="text-sm md:text-base text-left pb-2 dark:text-gray-300 text-gray-700">
-              {publication.subtitle}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateRows: hovered ? '1fr' : '0fr',
+              opacity: hovered ? 1 : 0,
+              transition: 'grid-template-rows 340ms ease-in-out, opacity 400ms ease-in-out',
+            }}
+          >
+            <div className="overflow-hidden">
+              <div className="text-sm md:text-base text-left pb-2 dark:text-gray-300 text-gray-700">
+                {publication.subtitle}
+              </div>
             </div>
           </div>
         )}
