@@ -112,6 +112,16 @@ export const projects: Project[] = [
         imagePosition: "top",
     },
     {
+        title: "Punchcard Poetry",
+        description:
+            "Punchcard Poetry is a web-based homage to the classic punch card, reimagined as a medium for poetic expression. The project was created for Autopoiesis, an artist-led exhibition in London hosted by The Koppel Project, exploring themes of self-creation, systems, and generative processes.",
+        tags: ["Punchcard", "React ", "Exhibition"],
+        githubURL: "https://github.com/crypticsy/punchcard",
+        hostedURL: "https://crypticsy.github.io/punchcard/",
+        imageURL: "https://github.com/crypticsy/punchcard/blob/master/public/demo.gif?raw=true",
+        imagePosition: "right",
+    },
+    {
         title: "From Me to You",
         description:
             "A web application for sending heartfelt digital letters to friends and loved ones.",
@@ -120,7 +130,7 @@ export const projects: Project[] = [
         hostedURL: "https://crypticsy.github.io/from-me-to-you/",
         imageURL:
             "https://github.com/crypticsy/from-me-to-you/blob/master/public/demo.gif?raw=true",
-        imagePosition: "right",
+        imagePosition: "top",
     },
     {
         title: "Grago",
