@@ -20,6 +20,7 @@ function BentoProject({
   hostedURL,
   imageURL,
   imagePosition = "top",
+  objectPosition,
   index = 0,
 }: ProjectProps & { index?: number }) {
   const [githubStats, setGithubStats] = useState<{
@@ -146,6 +147,7 @@ function BentoProject({
             src={imageURL}
             alt={title}
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            style={objectPosition ? { objectPosition } : undefined}
           />
         </div>
       )}
@@ -274,6 +276,7 @@ export function Work() {
               hostedURL={project.hostedURL}
               imageURL={project.imageURL}
               imagePosition={project.imagePosition}
+              objectPosition={project.objectPosition}
               index={idx}
             />
           ))}

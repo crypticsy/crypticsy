@@ -5,7 +5,7 @@
 <!-- Bio and interest -->
 <div>
 <p align="justify">
-I’m a data detective who loves uncovering stories behind the numbers. I create fun projects to make daily tasks easier for everyone—myself included. When I’m not analyzing data, you’ll find me doodling or diving into research papers.
+I’m a data detective who loves uncovering stories behind the numbers. I create fun projects to make daily tasks easier for everyone; myself included. When I’m not analyzing data, you’ll find me doodling or diving into research papers.
 </p>
 
 <p align="justify">

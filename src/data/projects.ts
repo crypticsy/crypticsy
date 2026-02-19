@@ -11,6 +11,7 @@ export type Project = {
     hostedURL?: string;
     imageURL?: string;
     imagePosition?: ImagePosition;
+    objectPosition?: string;
 };
 
 export const projects: Project[] = [
@@ -120,6 +121,7 @@ export const projects: Project[] = [
         hostedURL: "https://crypticsy.github.io/punchcard/",
         imageURL: "https://github.com/crypticsy/punchcard/blob/master/public/demo.gif?raw=true",
         imagePosition: "right",
+        objectPosition: "left",
     },
     {
         title: "From Me to You",
