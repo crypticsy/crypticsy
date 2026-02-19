@@ -1,10 +1,51 @@
+import { useState, useEffect } from "react";
 import { onClickEmailHandler } from "./Socials";
 import { personalInfo } from "../../../data";
 import { useTheme } from "../../../hooks/useTheme";
 import { PixelBlast } from "../../../components/PixelBlast";
 
+const TYPING_SPEED = 60;
+const DELETING_SPEED = 35;
+const PAUSE_AFTER_TYPE = 2000;
+const PAUSE_AFTER_DELETE = 400;
+
+function useTypewriter(phrases: string[]) {
+    const [displayed, setDisplayed] = useState("");
+    const [phraseIndex, setPhraseIndex] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+        const current = phrases[phraseIndex];
+
+        if (!isDeleting && displayed === current) {
+            const timeout = setTimeout(() => setIsDeleting(true), PAUSE_AFTER_TYPE);
+            return () => clearTimeout(timeout);
+        }
+
+        if (isDeleting && displayed === "") {
+            const timeout = setTimeout(() => {
+                setIsDeleting(false);
+                setPhraseIndex((i) => (i + 1) % phrases.length);
+            }, PAUSE_AFTER_DELETE);
+            return () => clearTimeout(timeout);
+        }
+
+        const timeout = setTimeout(() => {
+            setDisplayed(isDeleting
+                ? current.slice(0, displayed.length - 1)
+                : current.slice(0, displayed.length + 1)
+            );
+        }, isDeleting ? DELETING_SPEED : TYPING_SPEED);
+
+        return () => clearTimeout(timeout);
+    }, [displayed, isDeleting, phraseIndex, phrases]);
+
+    return displayed;
+}
+
 export function Intro() {
     const { theme } = useTheme();
+    const tagline = useTypewriter(personalInfo.taglines);
 
     return (
         <div
@@ -46,7 +87,10 @@ export function Intro() {
                 <p className="sfmono-reg text-lg text-blue-600 dark:text-sky-400  pb-2">{personalInfo.greeting}</p>
 
                 <h1 className="text-[2.2rem] md:text-[4.2rem] text-text-primary">{personalInfo.name}</h1>
-                <h2 className="dark:text-gray-300/60 text-gray-500/80 text-[1.4rem] md:text-[3.2rem]">{personalInfo.tagline}</h2>
+                <h2 className="dark:text-gray-300/60 text-gray-500/80 text-[1.4rem] md:text-[3.2rem]">
+                    {tagline}
+                    <span className="inline-block w-[2px] h-[1.2em] ml-1 align-middle bg-current animate-[blink_1s_step-end_infinite] text-blue-400 dark:text-sky-400" />
+                </h2>
 
                 <p className="calibre-reg sm:text-l md:text-xl dark:text-white text-gray-700 pb-6 text-justify max-w-3xl">
                     {personalInfo.description}
