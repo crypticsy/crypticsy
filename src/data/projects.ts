@@ -25,7 +25,7 @@ export const projects: Project[] = [
         imagePosition: "top",
     },
     {
-        title: "मतपत्र परीक्षक — Ballot Inspector",
+        title: "Ballot Inspector ( मतपत्र परीक्षक )",
         description:
             "Ballot Inspector is a Papers Please-inspired browser game set inside the Election Commission of Nepal. Your job: examine each Proportional Representation ballot that comes across your desk and decide in real time, whether it is valid or invalid before the clock runs out.",
         tags: ["React", "Simulation Game", "Election"],
