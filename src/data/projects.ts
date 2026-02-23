@@ -25,14 +25,15 @@ export const projects: Project[] = [
         imagePosition: "top",
     },
     {
-        title: "Global AI Adoption Dashboard",
+        title: "मतपत्र परीक्षक — Ballot Inspector",
         description:
-            "An interactive 3D globe dashboard showing AI tool adoption trends across countries and industries, inspired by Pudding.cool's storytelling approach.",
-        tags: ["React", "GlobeGl", "Data Visualization"],
-        githubURL: "https://github.com/crypticsy/ai-adoption-dashboard/",
-        hostedURL: "https://crypticsy.github.io/ai-adoption-dashboard/",
-        imageURL: "https://github.com/crypticsy/ai-adoption-dashboard/blob/master/public/demo.gif?raw=true",
+            "Ballot Inspector is a Papers Please-inspired browser game set inside the Election Commission of Nepal. Your job: examine each Proportional Representation ballot that comes across your desk and decide in real time, whether it is valid or invalid before the clock runs out.",
+        tags: ["React", "Simulation Game", "Election"],
+        githubURL: "https://github.com/crypticsy/ballot-inspector/",
+        hostedURL: "https://crypticsy.github.io/ballot-inspector/",
+        imageURL: "https://github.com/crypticsy/ballot-inspector/blob/master/public/demo.gif?raw=true",
         imagePosition: "left",
+        objectPosition: "right",
     },
     {
         title: "Sanctuary.io",
@@ -48,6 +49,24 @@ export const projects: Project[] = [
             "An interactive image analysis system for the visually impaired. It uses the BLIP model on a Raspberry Pi to process images and give real-time descriptive captions and auditory feedback.",
         tags: ["RasberryPi", "Transformers", "Azure"],
         githubURL: "https://github.com/crypticsy/VisionCaster",
+    },
+    {
+        title: "Global AI Adoption Dashboard",
+        description:
+            "An interactive 3D globe dashboard showing AI tool adoption trends across countries and industries, inspired by Pudding.cool's storytelling approach.",
+        tags: ["React", "GlobeGl", "Data Visualization"],
+        githubURL: "https://github.com/crypticsy/ai-adoption-dashboard/",
+        hostedURL: "https://crypticsy.github.io/ai-adoption-dashboard/",
+        imageURL: "https://github.com/crypticsy/ai-adoption-dashboard/blob/master/public/demo.gif?raw=true",
+        imagePosition: "right",
+    },
+    {
+        title: "Chess Engine",
+        description:
+            "A full fledge chess game developed using pygame, and contains an ai engine that utilizes the minimax and alpha beta pruning algorithms to offer an immersive player-versus-bot experience.",
+        tags: ["Python", "PyGame", "Minimax Algorithm"],
+        githubURL:
+            "https://github.com/crypticsy/Playground/tree/master/Game_Engine/Chess/",
     },
     {
         title: "Path Visualizer",
@@ -85,14 +104,6 @@ export const projects: Project[] = [
             "https://github.com/crypticsy/human-activity-recognition/blob/master/Images/demo.gif?raw=true",
         githubURL: "https://github.com/crypticsy/human-activity-recognition",
         imagePosition: "right",
-    },
-    {
-        title: "Chess Engine",
-        description:
-            "A full fledge chess game developed using pygame, and contains an ai engine that utilizes the minimax and alpha beta pruning algorithms to offer an immersive player-versus-bot experience.",
-        tags: ["Python", "PyGame", "Minimax Algorithm"],
-        githubURL:
-            "https://github.com/crypticsy/Playground/tree/master/Game_Engine/Chess/",
     },
     {
         title: "Animated Movie Ontology",
