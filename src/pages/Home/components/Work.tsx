@@ -105,7 +105,7 @@ function BentoProject({
   return (
     <div
       ref={elementRef}
-      className={`dark:bg-slate-800 bg-slate-300 rounded-md project border dark:border-slate-700 border-gray-300 ${(githubURL || hostedURL) && " cursor-pointer "
+      className={`dark:bg-slate-800 bg-slate-300 rounded-md project ring ring-slate-300/5 border dark:border-slate-700  border-gray-300 ${(githubURL || hostedURL) && " cursor-pointer "
         } relative overflow-hidden group flex flex-col transition-all duration-300 hover:ring-1 hover:ring-blue-600 dark:hover:ring-sky-600 ${hasImage
           ? isImageRight
             ? "md:col-span-2 md:row-span-1 md:flex-row-reverse" // Horizontal: wide, image on RIGHT
@@ -265,7 +265,7 @@ export function Work() {
         </div>
 
         {/* Bento Box Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-7 auto-rows-[minmax(280px,auto)] px-4 lg:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-7 auto-rows-[minmax(280px,auto)] px-0 md:px-4 lg:px-0">
           {filteredProjects.map((project, idx) => (
             <BentoProject
               key={idx}

@@ -19,7 +19,7 @@ export const projects: Project[] = [
         title: "Snadder",
         description:
             "Snadder is a spin on the popular Snakes 'n Ladders game, combining the problem-solving ability of Sudoku and the user experience of Wordle, developed during my tenure at Bhoos.",
-        tags: ["Python", "React", "Tailwind"],
+        tags: ["Game", "Python", "React TS"],
         imageURL: snadderPreview,
         hostedURL: "https://snadder.io/",
         imagePosition: "top",
@@ -28,7 +28,7 @@ export const projects: Project[] = [
         title: "Ballot Inspector ( मतपत्र परीक्षक )",
         description:
             "Ballot Inspector is a Papers Please-inspired browser game set inside the Election Commission of Nepal. Your job: examine each Proportional Representation ballot that comes across your desk and decide in real time, whether it is valid or invalid before the clock runs out.",
-        tags: ["React", "Simulation Game", "Election"],
+        tags: ["Game", "React TS", "Election"],
         githubURL: "https://github.com/crypticsy/ballot-inspector/",
         hostedURL: "https://crypticsy.github.io/ballot-inspector/",
         imageURL: "https://github.com/crypticsy/ballot-inspector/blob/master/public/demo.gif?raw=true",
@@ -54,11 +54,12 @@ export const projects: Project[] = [
         title: "Global AI Adoption Dashboard",
         description:
             "An interactive 3D globe dashboard showing AI tool adoption trends across countries and industries, inspired by Pudding.cool's storytelling approach.",
-        tags: ["React", "GlobeGl", "Data Visualization"],
+        tags: ["React TS", "GlobeGl", "Data Visualization"],
         githubURL: "https://github.com/crypticsy/ai-adoption-dashboard/",
         hostedURL: "https://crypticsy.github.io/ai-adoption-dashboard/",
         imageURL: "https://github.com/crypticsy/ai-adoption-dashboard/blob/master/public/demo.gif?raw=true",
         imagePosition: "right",
+        objectPosition: "right",
     },
     {
         title: "Chess Engine",
@@ -72,7 +73,7 @@ export const projects: Project[] = [
         title: "Path Visualizer",
         description:
             "A python project to visualize search algorithms on a grid,  built using the flask framework and the front-end is built using HTML, CSS and JavaScript, as well as uses tailwindcss for styling.",
-        tags: ["Flask", "Algorithms", "Javascript"],
+        tags: ["Flask", "Search Algorithms", "Javascript"],
         githubURL: "https://github.com/crypticsy/PathVisualizer",
         hostedURL: "https://path-visualizer-crypticsy.vercel.app/",
         imageURL: "https://github.com/crypticsy/PathVisualizer/blob/master/demo.gif?raw=true",
@@ -89,7 +90,7 @@ export const projects: Project[] = [
         title: "The Marauder's Map",
         description:
             "A web application inspired by the Marauder's Map from the Harry Potter universe, enabling users to explore a digital map of Hogwarts with moving footprints and hidden rooms.",
-        tags: ["React-Three-Fiber", "Typescript"],
+        tags: ["React-Three-Fiber", "React TS"],
         imageURL: "https://github.com/crypticsy/the-marauders-map/blob/master/public/demo.gif?raw=true",
         githubURL: "https://github.com/crypticsy/the-marauders-map",
         hostedURL: "https://crypticsy.github.io/the-marauders-map/",
@@ -117,7 +118,7 @@ export const projects: Project[] = [
         title: "Pocket Booth",
         description:
             "A pocket-sized digital photo booth application that allows users to capture instant photo strips and store them locally.",
-        tags: ["Camera", "Google-oauth", "Typescript"],
+        tags: ["Camera", "Google-oauth", "React TS"],
         imageURL: "https://crypticsy.github.io/pocket-booth/home_screen.png",
         githubURL: "https://github.com/crypticsy/pocket-booth",
         hostedURL: "https://crypticsy.github.io/pocket-booth/",
@@ -138,7 +139,7 @@ export const projects: Project[] = [
         title: "From Me to You",
         description:
             "A web application for sending heartfelt digital letters to friends and loved ones.",
-        tags: ["Typescript", "TailwindCSS"],
+        tags: ["React TS", "TailwindCSS"],
         githubURL: "https://github.com/crypticsy/from-me-to-you",
         hostedURL: "https://crypticsy.github.io/from-me-to-you/",
         imageURL:

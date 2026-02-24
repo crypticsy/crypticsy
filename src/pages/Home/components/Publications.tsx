@@ -105,7 +105,7 @@ export function Publications() {
           <SectionTitle sn={"03."} title={"Publications"} />
         </div>
         <div className="calibre-reg pt-2 md:pt-10 sm:text-xs md:text-xl text-gray-300 text-justify space-y-8 md:space-y-32 w-full">
-          <div className={"grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-8 px-4 lg:px-0"}>
+          <div className={"grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-8 px-0 md:px-4 lg:px-0"}>
             {publications.map((publication, idx) => (
               <Publication key={idx} publication={publication} index={idx} />
             ))}
