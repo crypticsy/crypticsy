@@ -152,12 +152,15 @@ export const projects: Project[] = [
     imagePosition: "top",
   },
   {
-    title: "Unfollower",
+    title: "Grocery Splitter",
     description:
-      "A Streamlit web app that helps you identify accounts that do not follow you back. It analyzes your followers and following lists, highlights non-reciprocal connections, and helps you manage your social network more effectively.",
-    tags: ["Streamlit", "Python", "DataAnalysis"],
-    githubURL: "https://github.com/your-username/Unfollower",
-    hostedURL: "https://unfollower-tool.streamlit.app/",
+      "Grocery Splitter is a simple Streamlit app that helps you split a grocery bill with friends and family. It calculates each person’s share based on selected items and provides a clear breakdown of the total cost.",
+    tags: ["Streamlit", "Python", "Utilities"],
+    githubURL: "https://github.com/crypticsy/grocery-splitter",
+    hostedURL: "https://grocery-splitter.streamlit.app/",
+    imageURL: "https://github.com/crypticsy/grocery-splitter/blob/master/demo/demo.gif?raw=true",
+    imagePosition: "top",
+    objectPosition: "left",
   },
   {
     title: "Grago",
@@ -167,4 +170,12 @@ export const projects: Project[] = [
     imageURL: gragoPreview,
     imagePosition: "top",
   },
+  {
+    title: "Unfollower",
+    description:
+      "A Streamlit web app that helps you identify accounts that do not follow you back. It analyzes your followers and following lists, highlights non-reciprocal connections, and helps you manage your social network more effectively.",
+    tags: ["Streamlit", "Python", "DataAnalysis"],
+    githubURL: "https://github.com/crypticsy/Unfollower",
+    hostedURL: "https://unfollower-tool.streamlit.app/",
+  }
 ];
