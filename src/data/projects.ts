@@ -123,7 +123,8 @@ export const projects: Project[] = [
     description:
       "A pocket-sized digital photo booth application that allows users to capture instant photo strips and store them locally.",
     tags: ["Camera", "Google-oauth", "React TS"],
-    imageURL: "https://crypticsy.github.io/pocket-booth/home_screen.png",
+    imageURL: 
+      "https://github.com/crypticsy/pocket-booth/blob/master/public/demo.gif?raw=true",
     githubURL: "https://github.com/crypticsy/pocket-booth",
     hostedURL: "https://crypticsy.github.io/pocket-booth/",
     imagePosition: "top",
