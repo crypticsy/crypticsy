@@ -52,14 +52,14 @@ export const projects: Project[] = [
     githubURL: "https://github.com/crypticsy/VisionCaster",
   },
   {
-    title: "Global AI Adoption Dashboard",
+    title: "Global Stats Monitor",
     description:
-      "An interactive 3D globe dashboard showing AI tool adoption trends across countries and industries, inspired by Pudding.cool's storytelling approach.",
+      "An interactive 3D globe dashboard visualizing various dataset obtained from Our World in Data trends across countries, inspired by Pudding.cool's storytelling approach. The concept was developed through a collaboration with Sudip Shrestha. ",
     tags: ["React TS", "GlobeGl", "DataAnalysis"],
-    githubURL: "https://github.com/crypticsy/ai-adoption-dashboard/",
-    hostedURL: "https://crypticsy.github.io/ai-adoption-dashboard/",
+    githubURL: "https://github.com/sudip70/stats",
+    hostedURL: "https://sudip70.github.io/stats/",
     imageURL:
-      "https://github.com/crypticsy/ai-adoption-dashboard/blob/master/public/demo.gif?raw=true",
+      "https://github.com/sudip70/stats/blob/main/assets/demo.gif?raw=true",
     imagePosition: "right",
     objectPosition: "right",
   },
