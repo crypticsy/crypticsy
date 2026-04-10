@@ -5,7 +5,7 @@
 <!-- Bio and interest -->
 <div>
 <p align="justify">
-I’m a data detective who loves uncovering stories behind the numbers. I create fun projects to make daily tasks easier for everyone; myself included. When I’m not analyzing data, you’ll find me doodling or diving into research papers.
+I’m someone who enjoys finding simple meaning in complex things and turning ideas into small, useful projects. I like building things that make everyday tasks easier for myself and others. When I’m not working, I’m usually doodling, exploring new ideas, or reading research papers to understand how things work a little better.
 </p>
 
 <p align="justify">

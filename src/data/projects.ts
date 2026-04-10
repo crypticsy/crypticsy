@@ -21,7 +21,7 @@ export const projects: Project[] = [
       "Snadder is a spin on the popular Snakes 'n Ladders game, combining the problem-solving ability of Sudoku and the user experience of Wordle, developed during my tenure at Bhoos.",
     tags: ["Game", "Python", "React TS"],
     imageURL: snadderPreview,
-    hostedURL: "https://snadder.io/",
+    hostedURL: "https://snadder.bhoos.games/",
     imagePosition: "top",
   },
   {
